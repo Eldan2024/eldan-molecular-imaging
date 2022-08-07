@@ -1,0 +1,25 @@
+<div class="jarallax d-none d-md-block" data-jarallax data-speed="0.35">
+  <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary-translucent"></span>
+  <div class="jarallax-img" style="background-image: url(<%= asset_path("cover.jpg") %>);"></div>
+  <div class="d-none d-xxl-block" style="height: 200px;"></div>
+  <div class="d-none d-md-block d-xxl-none" style="height: 200px;"></div>
+</div>
+
+<!-- Breadcrumb -->
+<nav class="container py-4 mb-2 my-lg-3" aria-label="breadcrumb">
+  <ol class="breadcrumb mb-0">
+    <li class="breadcrumb-item">
+      <a href="<%= root_path %>"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><%= request.path.split('/').third.titleize %></li>
+  </ol>
+</nav>
+
+
+<!-- About company -->
+<section class="container pb-5 mb-md-2 mb-lg-4">
+  <h1 class="border-bottom pb-4"><%= request.path.split('/').third.titleize %></h1>
+  <div class="row pt-2 pt-md-3">
+    <%= yield %>
+  </div>
+</section>

@@ -1,0 +1,68 @@
+<!-- Navbar -->
+<!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+<header class="header navbar navbar-expand-lg navbar-sticky <%= 'position-absolute' if current_page?(root_path) %>">
+  <div class="container px-3">
+    <a href="<%= root_path %>" class="navbar-brand pe-3">
+      <img src="<%= asset_path("human_spinning.gif") %>" width="47" alt="Eldan Molecular Imaging">
+      Eldan Molecular Imaging
+    </a>
+    <div id="navbarNav" class="offcanvas offcanvas-end">
+      <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle <%= "active" if controller.controller_name == 'about' %>" data-bs-toggle="dropdown">About Us</a>
+            <div class="dropdown-menu p-0">
+              <div class="d-lg-flex">
+                <div class="mega-dropdown-column pt-lg-3 pb-lg-4">
+                  <ul class="list-unstyled mb-0">
+                    <li><a href="<%= about_molecular_imaging_path %>" class="dropdown-item <%= is_active(about_molecular_imaging_path) %>">Molecular Imaging</a></li>
+                    <li><a href="<%= about_eldan_path %>" class="dropdown-item <%= is_active(about_eldan_path) %>">Eldan</a></li>
+                    <li><a href="<%= about_neopharm_path %>" class="dropdown-item <%= is_active(about_neopharm_path) %>">Neopharm</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle <%= "active" if controller.controller_name == 'products' %>" data-bs-toggle="dropdown">Products</a>
+            <div class="dropdown-menu p-0">
+              <div class="d-lg-flex">
+                <div class="mega-dropdown-column pt-lg-3 pb-lg-4">
+                  <ul class="list-unstyled mb-0">
+                    <li><a href="<%= products_mo99_path %>" class="dropdown-item <%= is_active(products_mo99_path) %>">99Mo/99mTc Generator</a></li>
+                    <li><a href="<%= products_tl201_path %>" class="dropdown-item <%= is_active(products_tl201_path) %>">Thallium Chloride (201TI)</a></li>
+                    <li><a href="<%= products_ga67_path %>" class="dropdown-item <%= is_active(products_ga67_path) %>">Gallium citrate (Ga67)</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="<%= pages_team_path %>" class="nav-link <%= is_active(pages_team_path) %>">Team</a>
+          </li>
+          <li class="nav-item">
+            <a href="<%= pages_partners_path %>" class="nav-link <%= is_active(pages_partners_path) %>">Partners</a>
+          </li>
+          <li class="nav-item">
+            <a href="<%= news_index_path %>" class="nav-link <%= is_active(news_index_path) %>">News</a>
+          </li>
+          <li class="nav-item">
+            <a href="<%= pages_contact_path %>" class="nav-link <%= is_active(pages_contact_path) %>">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
+      <input type="checkbox" class="form-check-input" id="theme-mode">
+      <label class="form-check-label d-none d-sm-block" for="theme-mode">Light</label>
+      <label class="form-check-label d-none d-sm-block" for="theme-mode">Dark</label>
+    </div>
+    <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</header>
