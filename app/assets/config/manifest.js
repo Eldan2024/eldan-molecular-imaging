@@ -25,3 +25,5 @@
 //= link_directory ../images/team
 //= link_directory ../images/news
 //= link_directory ../images/contacts
+//= link_directory ../json
+//= link_directory ../vendor/@lottiefiles/lottie-player/dist

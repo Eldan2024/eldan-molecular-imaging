@@ -9,5 +9,6 @@ module Emi
     config.load_defaults 7.0
     config.serve_static_assets = true
 
+    config.exceptions_app = self.routes
   end
 end
