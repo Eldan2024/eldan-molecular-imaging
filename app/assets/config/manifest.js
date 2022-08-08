@@ -3,7 +3,7 @@
 //= link_tree ../../javascript .js
 //= link_tree ../../../vendor/javascript .js
 
-//= link_directory ../vendor/boxicons/css
+//= link_directory ../vendor/boxicons/css .css
 //= link_directory ../vendor/bootstrap/dist/js
 //= link_directory ../vendor/smooth-scroll/dist
 //= link_directory ../vendor/cleave.js/dist
