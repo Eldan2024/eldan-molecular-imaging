@@ -23,3 +23,5 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "image
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "contacts")
 
 Rails.application.config.assets.precompile += %w( boxicons.min.css )
+
+config.assets.compile = true
