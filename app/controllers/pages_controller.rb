@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @via = params[:via]
   end
 
   def partners

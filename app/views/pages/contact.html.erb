@@ -28,23 +28,23 @@
           <div class="row g-4">
             <div class="col-sm-6">
               <label for="fn" class="form-label fs-base">Full name</label>
-              <input type="text" class="form-control form-control-lg" id="fn" required>
+              <input type="text" class="form-control form-control-lg" id="fn" placeholder="John Doe" required>
               <div class="invalid-feedback">Please enter your full name!</div>
             </div>
             <div class="col-sm-6">
               <label for="email" class="form-label fs-base">Email</label>
-              <input type="email" class="form-control form-control-lg" id="email" required>
+              <input type="email" class="form-control form-control-lg" id="email" placeholder="john.doe@gmail.com" required>
               <div class="invalid-feedback">Please provide a valid email address!</div>
             </div>
             <div class="col-sm-12">
               <label for="subject" class="form-label fs-base">Subject</label>
-              <input type="text" class="form-control form-control-lg" id="subject" required>
+              <input type="text" class="form-control form-control-lg" id="subject" placeholder="Write your subject here" value="<%= @via %>" required>
               <div class="invalid-feedback">Please provide a valid subject!</div>
             </div>
             <div class="col-12 pb-2">
               <label for="message" class="form-label fs-base">Message</label>
-              <textarea class="form-control form-control-lg" id="message" rows="3" required></textarea>
-              <div class="invalid-feedback">Please provide a valid email address!</div>
+              <textarea class="form-control form-control-lg" id="message" rows="3" placeholder="Write your message here" required></textarea>
+              <div class="invalid-feedback">Please provide a valid message!</div>
             </div>
             <div class="col-12">
               <button type="submit" class="btn btn-lg btn-primary w-100 w-sm-auto">Contact Us</button>
