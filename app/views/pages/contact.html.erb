@@ -27,23 +27,68 @@
         <form class="needs-validation" novalidate>
           <div class="row g-4">
             <div class="col-sm-6">
-              <label for="fn" class="form-label fs-base">Full name</label>
-              <input type="text" class="form-control form-control-lg" id="fn" placeholder="John Doe" required>
+              <label for="fn" class="form-label fs-base">Full name</label><div class="input-group">
+                <span class="input-group-text">
+                  <i class='bx bx-rename' ></i>
+                </span>
+                <input type="text" class="form-control form-control-lg" id="fn" placeholder="John Doe" required>
+              </div>
               <div class="invalid-feedback">Please enter your full name!</div>
             </div>
             <div class="col-sm-6">
-              <label for="email" class="form-label fs-base">Email</label>
-              <input type="email" class="form-control form-control-lg" id="email" placeholder="john.doe@gmail.com" required>
+              <label for="email" class="form-label fs-base">Email</label><div class="input-group">
+                <span class="input-group-text">
+                  <i class='bx bx-envelope'></i>
+                </span>
+                <input type="email" class="form-control form-control-lg" id="email" placeholder="john.doe@gmail.com" required>
+              </div>
               <div class="invalid-feedback">Please provide a valid email address!</div>
             </div>
             <div class="col-sm-12">
               <label for="subject" class="form-label fs-base">Subject</label>
-              <input type="text" class="form-control form-control-lg" id="subject" placeholder="Write your subject here" value="<%= @via %>" required>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class='bx bx-book' ></i>
+                </span>
+                <input type="text" class="form-control form-control-lg" id="subject" placeholder="Write your subject here" value="<%= @via %>" required>
+                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">Choose a subject</button>
+                <div class="dropdown-menu my-1">
+                  <div class="d-lg-flex pt-lg-3">
+                    <div class="mega-dropdown-column">
+                      <h6 class="px-3 mb-2">Products</h6>
+                      <ul class="list-unstyled mb-3">
+                        <li><a class="dropdown-item" href="#" onclick="changeInputText(this.innerText)">⁹⁹Mo/⁹⁹ᵐTc Generator</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="changeInputText(this.innerText)">Thallium Chloride (²⁰¹TI) injection</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="changeInputText(this.innerText)">Gallium citrate (Ga-67) injection</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-dropdown-column">
+                      <h6 class="px-3 mb-2">About</h6>
+                      <ul class="list-unstyled mb-3">
+                        <li><a class="dropdown-item" href="#" onclick="changeInputText(this.innerText)">Molecular Imaging</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="changeInputText(this.innerText)">Eldan</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="changeInputText(this.innerText)">Neopharm</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-dropdown-column">
+                      <h6 class="px-3 mb-2">Partners</h6>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="#" onclick="changeInputText(this.innerText)">Isorad</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="invalid-feedback">Please provide a valid subject!</div>
             </div>
             <div class="col-12 pb-2">
               <label for="message" class="form-label fs-base">Message</label>
-              <textarea class="form-control form-control-lg" id="message" rows="3" placeholder="Write your message here" required></textarea>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="bx bx-message fs-lg"></i>
+                </span>
+                <textarea class="form-control form-control-lg" id="message" rows="3" placeholder="Write your message here" required></textarea>
+              </div>
               <div class="invalid-feedback">Please provide a valid message!</div>
             </div>
             <div class="col-12">
@@ -55,3 +100,9 @@
     </div>
   </div>
 </section>
+
+<script>
+  function changeInputText(value){
+    document.getElementById('subject').value = value;
+  }
+</script>

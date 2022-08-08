@@ -1,0 +1,80 @@
+<!-- Hero -->
+<section class="bg-dark dark-mode py-4">
+  <div class="container pb-2 py-lg-3">
+
+    <!-- Breadcrumb -->
+    <nav class="pb-4 mb-lg-3" aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+        <li class="breadcrumb-item">
+          <a href=""><i class="bx bx-home-alt fs-lg me-1"></i>Products</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page"><%= @breadcrumb %></li>
+      </ol>
+    </nav>
+    <h1 class="text-center mb-5"><%= @title %></h1>
+    <div class="row text-center">
+      <div class="col-lg"></div>
+      <p class="mb-md-0 col-lg"><%= @desc %></p>
+      <div class="col-lg"></div>
+    </div>
+  </div>
+</section>
+
+<%= yield %>
+
+<!-- FAQ -->
+<section class="bg-secondary py-5">
+  <div class="container my-2 py-md-2 py-lg-5">
+    <div class="row">
+      <div class="col-xl-4 col-md-5 text-center text-md-start pb-2 pb-md-0 mb-4 mb-md-0">
+        <h2 class="pb-3 mb-1 mb-lg-2">Any questions? <br class="d-none d-md-inline">Check out the FAQs</h2>
+        <p class="fs-lg pb-3 mb-2 mb-lg-3">Still have unanswered questions and need to get in touch?</p>
+        <a href="../pages/contact?via=<%= @title %>" class="btn btn-primary">Contact support</a>
+      </div>
+      <div class="col-md-7 offset-xl-1">
+        <div class="accordion" id="faq">
+          <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+            <h2 class="accordion-header" id="q1-heading">
+              <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q1" aria-expanded="true" aria-controls="q1">
+                <%= @question1 %>
+              </button>
+            </h2>
+            <div id="q1" class="accordion-collapse collapse show" aria-labelledby="q1-heading" data-bs-parent="#faq">
+              <div class="accordion-body fs-sm pt-0"><%= @answer1 %></div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+            <h2 class="accordion-header" id="q2-heading">
+              <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2" aria-expanded="false" aria-controls="q2">
+                <%= @question2 %>
+              </button>
+            </h2>
+            <div id="q2" class="accordion-collapse collapse" aria-labelledby="q2-heading" data-bs-parent="#faq">
+              <div class="accordion-body fs-sm pt-0"><%= @answer2 %> </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+            <h2 class="accordion-header" id="q3-heading">
+              <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3" aria-expanded="false" aria-controls="q3">
+                <%= @question3 %>
+              </button>
+            </h2>
+            <div id="q3" class="accordion-collapse collapse" aria-labelledby="q3-heading" data-bs-parent="#faq">
+              <div class="accordion-body fs-sm pt-0"><%= @answer3 %></div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+            <h2 class="accordion-header" id="q4-heading">
+              <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4" aria-expanded="false" aria-controls="q4">
+                <%= @question4 %>
+              </button>
+            </h2>
+            <div id="q4" class="accordion-collapse collapse" aria-labelledby="q4-heading" data-bs-parent="#faq">
+              <div class="accordion-body fs-sm pt-0"><%= @answer4 %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
