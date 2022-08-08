@@ -1,5 +1,6 @@
 Rails.application.config.assets.version = "1.0"
 
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "vendor", "boxicons")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "vendor", "boxicons", "css")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "vendor", "bootstrap" , "dist" , "js")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "vendor", "smooth-scroll" , "dist")
