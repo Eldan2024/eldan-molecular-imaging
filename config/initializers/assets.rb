@@ -25,3 +25,5 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "json"
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "vendor", "@lottiefiles", "lottie-player", "dist")
 
 Rails.application.config.assets.compile = true
+
+Rails.application.config.assets.css_compressor = :sass
