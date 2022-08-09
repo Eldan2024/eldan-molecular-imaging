@@ -55,7 +55,7 @@
                 <span class="input-group-text">
                   <i class='bx bx-rename' ></i>
                 </span>
-                <input autocomplete="name" type="text" class="form-control form-control-lg" id="fn" placeholder="John Doe" required>
+                <%= f.text_field  :fn, required: true, class: "contact-form-text-area form-control form-control-lg", autocomplete:"name", placeholder:"John Doe" %>
                 <div class="invalid-feedback">Please enter your full name!</div>
               </div>
             </div>
@@ -64,7 +64,7 @@
                 <span class="input-group-text">
                   <i class='bx bx-envelope'></i>
                 </span>
-                <input autocomplete="email" type="email" class="form-control form-control-lg" id="email" placeholder="john.doe@gmail.com" required>
+                <%= f.text_field  :email, required: true, class: "contact-form-text-area form-control form-control-lg", autocomplete:"email", placeholder:"john.doe@gmail.com" %>
                 <div class="invalid-feedback">Please provide a valid email address!</div>
               </div>
             </div>
@@ -74,7 +74,7 @@
                 <span class="input-group-text">
                   <i class='bx bx-book' ></i>
                 </span>
-                <input type="text" class="form-control form-control-lg" id="subject" placeholder="Write your subject here..." value="<%= @via %>" required>
+                <%= f.text_field  :subject, required: true, class: "contact-form-text-area form-control form-control-lg", id:"subject", placeholder:"Write your subject here...", value:@via %>
                 <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">Choose a subject</button>
                 <div class="invalid-feedback">Please provide a valid subject!</div>
                 <div class="dropdown-menu my-1">
@@ -111,7 +111,7 @@
                 <span class="input-group-text">
                   <i class="bx bx-message fs-lg"></i>
                 </span>
-                <textarea class="form-control form-control-lg" id="message" rows="3" placeholder="Write your message here..." required></textarea>
+                <%= f.text_area  :message, rows: 3, required: true, class: "contact-form-text-area form-control form-control-lg", placeholder:"Write your message here..." %>
                 <div class="invalid-feedback">Please provide a valid message!</div>
               </div>
             </div>
@@ -120,7 +120,7 @@
               <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
             </div>
             <div class="col-12">
-              <button type="submit" class="btn btn-lg btn-primary w-100 w-sm-auto">Submit Form</button>
+              <%= f.submit 'Send Message', class: 'btn btn-lg btn-primary w-100 w-sm-auto' %>
             </div>
           </div>
         <% end %>
