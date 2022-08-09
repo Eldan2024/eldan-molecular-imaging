@@ -1,3 +1,9 @@
+<style>
+  h3 {
+    text-wrap: nowrap;
+  }
+</style>
+
 <div class="jarallax d-none d-md-block" data-jarallax data-speed="0.35">
   <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary-translucent"></span>
   <div class="jarallax-img" style="background-image: url(<%= asset_path("cover.jpg") %>);"></div>
@@ -15,96 +21,226 @@
   </ol>
 </nav>
 
-<!-- Team -->
-<section class="container pb-5 mb-md-3 mb-lg-5">
+<!-- Brands (Carousel) -->
+<section class="container pb-3 pb-lg-5 mb-3 px-5">
+  <h2 class="text-center pb-md-2">Our leadership</h2>
+  <div class="swiper mx-n2" data-swiper-options='{
+    "centerInsufficientSlides": true,
+    "slidesPerView": 2,
+    "spaceBetween": 20,
+    "pagination": {
+      "el": ".swiper-pagination",
+      "clickable": true
+    },
+    "breakpoints": {
+      "500": {
+        "slidesPerView": 3,
+        "spaceBetween": 40
+      },
+      "650": {
+        "slidesPerView": 4,
+        "spaceBetween": 40
+      },
+      "900": {
+        "slidesPerView": 5,
+        "spaceBetween": 40
+      },
+      "1100": {
+        "slidesPerView": 5,
+        "spaceBetween": 40
+      }
+    }
+  }'>
+    <div class="swiper-wrapper">
 
-  <h2 class="h1 text-center pt-1 pb-3 mb-3 mb-lg-4">Our Leadership</h2>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-
-    <!-- Item -->
-    <div class="col">
-      <div class="card card-hover border-0 bg-transparent">
-        <div class="position-relative">
-          <img src="<%= asset_path("rabinovich.png") %>" class="rounded-3" alt="Tal Rabinovich">
+      <!-- Item -->
+      <div class="swiper-slide py-3 card card-hover border-0 bg-transparent">
+        <div class="position-relative" data-bs-toggle="modal" data-bs-target="#<%= @member1_name.split(' ').second %>">
+          <img src="<%= asset_path(@member1_image) %>" class="rounded-3" alt="<%= @member1_name %>">
           <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
             <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25 rounded-3"></span>
             <div class="position-relative d-flex zindex-2">
-              <a href="https://www.linkedin.com/in/tal-rabinovich-659a54/" target="_blank" class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
+              <a href="<%= @member1_linkedin %>" target="_blank" class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
                 <i class="bx bxl-linkedin"></i>
               </a>
             </div>
           </div>
         </div>
         <div class="card-body text-center p-3">
-          <h3 class="fs-lg fw-semibold pt-1 mb-2">Tal Rabinovich</h3>
-          <p class="fs-sm mb-0">General Manager</p>
+          <h3 class="fs-lg fw-semibold pt-1 mb-2"><%= @member1_name %></h3>
+          <p class="fs-sm mb-0"><%= @member1_pos %></p>
         </div>
       </div>
-    </div>
 
-    <!-- Item -->
-    <div class="col">
-      <div class="card card-hover border-0 bg-transparent">
-        <div class="position-relative">
-          <img src="<%= asset_path("gelbhart.png") %>" class="rounded-3" alt="Bareket Gelbhart">
+      <!-- Item -->
+      <div class="swiper-slide py-3 card card-hover border-0 bg-transparent">
+        <div class="position-relative" data-bs-toggle="modal" data-bs-target="#<%= @member2_name.split(' ').second %>">
+          <img src="<%= asset_path(@member2_image) %>" class="rounded-3" alt="<%= @member2_name %>">
           <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
             <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25 rounded-3"></span>
             <div class="position-relative d-flex zindex-2">
-              <a href="https://www.linkedin.com/in/bareket-gelbhart-83904a16" target="_blank" class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
+              <a href="<%= @member2_linkedin %>" target="_blank" class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
                 <i class="bx bxl-linkedin"></i>
               </a>
             </div>
           </div>
         </div>
         <div class="card-body text-center p-3">
-          <h3 class="fs-lg fw-semibold pt-1 mb-2">Bareket Gelbhart</h3>
-          <p class="fs-sm mb-0">International Business Manager</p>
+          <h3 class="fs-lg fw-semibold pt-1 mb-2"><%= @member2_name %></h3>
+          <p class="fs-sm mb-0"><%= @member2_pos %></p>
         </div>
       </div>
-    </div>
 
-    <!-- Item -->
-    <div class="col">
-      <div class="card card-hover border-0 bg-transparent">
-        <div class="position-relative">
-          <img src="<%= asset_path("ikan.png") %>" class="rounded-3" alt="Ariel Ikan">
+      <!-- Item -->
+      <div class="swiper-slide py-3 card card-hover border-0 bg-transparent">
+        <div class="position-relative" data-bs-toggle="modal" data-bs-target="#<%= @member3_name.split(' ').second %>">
+          <img src="<%= asset_path(@member3_image) %>" class="rounded-3" alt="<%= @member3_name %>">
           <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
             <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25 rounded-3"></span>
             <div class="position-relative d-flex zindex-2">
-              <a href="https://www.linkedin.com/in/ariel-ikan/" target="_blank" class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
+              <a href="<%= @member3_linkedin %>" target="_blank" class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
                 <i class="bx bxl-linkedin"></i>
               </a>
             </div>
           </div>
         </div>
         <div class="card-body text-center p-3">
-          <h3 class="fs-lg fw-semibold pt-1 mb-2">Ariel Ikan</h3>
-          <p class="fs-sm mb-0">TBD</p>
+          <h3 class="fs-lg fw-semibold pt-1 mb-2"><%= @member3_name %></h3>
+          <p class="fs-sm mb-0"><%= @member3_pos %></p>
         </div>
       </div>
-    </div>
 
-    <!-- Item -->
-    <div class="col">
-      <div class="card card-hover border-0 bg-transparent">
-        <div class="position-relative">
-          <img src="<%= asset_path("duanis.png") %>" class="rounded-3" alt="Ronit Duanis">
+      <!-- Item -->
+      <div class="swiper-slide py-3 card card-hover border-0 bg-transparent">
+        <div class="position-relative" data-bs-toggle="modal" data-bs-target="#<%= @member4_name.split(' ').second %>">
+          <img src="<%= asset_path(@member4_image) %>" class="rounded-3" alt="<%= @member4_name %>">
           <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
             <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25 rounded-3"></span>
             <div class="position-relative d-flex zindex-2">
-            
-              <a href="#" class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
+              <a href="<%= @member4_linkedin %>" target="_blank" class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
                 <i class="bx bxl-linkedin"></i>
               </a>
             </div>
           </div>
         </div>
         <div class="card-body text-center p-3">
-          <h3 class="fs-lg fw-semibold pt-1 mb-2">Ronit Duanis</h3>
-          <p class="fs-sm mb-0">TBD</p>
+          <h3 class="fs-lg fw-semibold pt-1 mb-2"><%= @member4_name %></h3>
+          <p class="fs-sm mb-0"><%= @member4_pos %></p>
         </div>
       </div>
-    </div>
 
+      <!-- Item -->
+      <div class="swiper-slide py-3 card card-hover border-0 bg-transparent">
+        <div class="position-relative" data-bs-toggle="modal" data-bs-target="#<%= @member5_name.split(' ').second %>">
+          <img src="<%= asset_path(@member5_image) %>" class="rounded-3" alt="<%= @member5_name %>">
+          <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
+            <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25 rounded-3"></span>
+            <div class="position-relative d-flex zindex-2">
+              <a href="<%= @member5_linkedin %>" target="_blank" class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
+                <i class="bx bxl-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body text-center p-3">
+          <h3 class="fs-lg fw-semibold pt-1 mb-2"><%= @member5_name %></h3>
+          <p class="fs-sm mb-0"><%= @member5_pos %></p>
+        </div>
+      </div>
+
+    </div>
+    <!-- Pagination (bullets) -->
+    <div class="swiper-pagination position-relative pt-2 mt-4"></div>
   </div>
+
+  <!-- Item Modal -->
+  <div class="modal fade" id="<%= @member1_name.split(' ').second %>" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header row">
+          <div class="col-6 text-start">
+            <h5 class="modal-title"><%= @member1_name %></h5>
+            <p class="fs-sm mb-0"><%= @member1_pos %></p>
+          </div>
+          <div class="col-6 text-end">
+            <img src="<%= asset_path(@member1_image) %>" class="rounded-3" width="100" alt="<%= @member1_name %>">
+          </div>
+        </div>
+        <div class="modal-body"><p><%= @member1_desc %></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item Modal -->
+  <div class="modal fade" id="<%= @member2_name.split(' ').second %>" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header row">
+          <div class="col-6 text-start">
+            <h5 class="modal-title"><%= @member2_name %></h5>
+            <p class="fs-sm mb-0"><%= @member2_pos %></p>
+          </div>
+          <div class="col-6 text-end">
+            <img src="<%= asset_path(@member2_image) %>" class="rounded-3" width="100" alt="<%= @member2_name %>">
+          </div>
+        </div>
+        <div class="modal-body"><p><%= @member2_desc %></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item Modal -->
+  <div class="modal fade" id="<%= @member3_name.split(' ').second %>" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header row">
+          <div class="col-6 text-start">
+            <h5 class="modal-title"><%= @member3_name %></h5>
+            <p class="fs-sm mb-0"><%= @member3_pos %></p>
+          </div>
+          <div class="col-6 text-end">
+            <img src="<%= asset_path(@member3_image) %>" class="rounded-3" width="100" alt="<%= @member3_name %>">
+          </div>
+        </div>
+        <div class="modal-body"><p><%= @member3_desc %></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item Modal -->
+  <div class="modal fade" id="<%= @member4_name.split(' ').second %>" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header row">
+          <div class="col-6 text-start">
+            <h5 class="modal-title"><%= @member4_name %></h5>
+            <p class="fs-sm mb-0"><%= @member4_pos %></p>
+          </div>
+          <div class="col-6 text-end">
+            <img src="<%= asset_path(@member4_image) %>" class="rounded-3" width="100" alt="<%= @member4_name %>">
+          </div>
+        </div>
+        <div class="modal-body"><p><%= @member4_desc %></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item Modal -->
+  <div class="modal fade" id="<%= @member5_name.split(' ').second %>" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header row">
+          <div class="col-6 text-start">
+            <h5 class="modal-title"><%= @member5_name %></h5>
+            <p class="fs-sm mb-0"><%= @member5_pos %></p>
+          </div>
+          <div class="col-6 text-end">
+            <img src="<%= asset_path(@member5_image) %>" class="rounded-3" width="100" alt="<%= @member5_name %>">
+          </div>
+        </div>
+        <div class="modal-body"><p><%= @member5_desc %></p></div>
+      </div>
+    </div>
+  </div>
+
 </section>
