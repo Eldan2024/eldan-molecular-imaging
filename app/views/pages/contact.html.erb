@@ -19,7 +19,7 @@
         <div class="nav d-block lead">
           <div class="text-nav">Bareket Gelbhart</div>
           <div class="text-nav">International Business Manager</div>
-          <a href="" class="nav-link fw-normal text-decoration-underline p-0 mb-2">bareketg@eldan.biz</a>
+          <a href="#" class="nav-link fw-normal text-decoration-underline p-0 mb-2">bareketg@eldan.biz</a>
           <div class="text-nav">+41 797 995 117</div>
         </div>
       </div>
@@ -31,18 +31,18 @@
                 <span class="input-group-text">
                   <i class='bx bx-rename' ></i>
                 </span>
-                <input type="text" class="form-control form-control-lg" id="fn" placeholder="John Doe" required>
+                <input autocomplete="name" type="text" class="form-control form-control-lg" id="fn" placeholder="John Doe" required>
+                <div class="invalid-feedback">Please enter your full name!</div>
               </div>
-              <div class="invalid-feedback">Please enter your full name!</div>
             </div>
             <div class="col-sm-6">
               <label for="email" class="form-label fs-base">Email</label><div class="input-group">
                 <span class="input-group-text">
                   <i class='bx bx-envelope'></i>
                 </span>
-                <input type="email" class="form-control form-control-lg" id="email" placeholder="john.doe@gmail.com" required>
+                <input autocomplete="email" type="email" class="form-control form-control-lg" id="email" placeholder="john.doe@gmail.com" required>
+                <div class="invalid-feedback">Please provide a valid email address!</div>
               </div>
-              <div class="invalid-feedback">Please provide a valid email address!</div>
             </div>
             <div class="col-sm-12">
               <label for="subject" class="form-label fs-base">Subject</label>
@@ -52,6 +52,7 @@
                 </span>
                 <input type="text" class="form-control form-control-lg" id="subject" placeholder="Write your subject here..." value="<%= @via %>" required>
                 <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">Choose a subject</button>
+                <div class="invalid-feedback">Please provide a valid subject!</div>
                 <div class="dropdown-menu my-1">
                   <div class="d-lg-flex pt-lg-3">
                     <div class="mega-dropdown-column">
@@ -79,7 +80,6 @@
                   </div>
                 </div>
               </div>
-              <div class="invalid-feedback">Please provide a valid subject!</div>
             </div>
             <div class="col-12 pb-2">
               <label for="message" class="form-label fs-base">Message</label>
@@ -88,11 +88,11 @@
                   <i class="bx bx-message fs-lg"></i>
                 </span>
                 <textarea class="form-control form-control-lg" id="message" rows="3" placeholder="Write your message here..." required></textarea>
+                <div class="invalid-feedback">Please provide a valid message!</div>
               </div>
-              <div class="invalid-feedback">Please provide a valid message!</div>
             </div>
             <div class="col-12">
-              <button type="submit" class="btn btn-lg btn-primary w-100 w-sm-auto">Contact Us</button>
+              <button type="submit" class="btn btn-lg btn-primary w-100 w-sm-auto">Submit Form</button>
             </div>
           </div>
         </form>
