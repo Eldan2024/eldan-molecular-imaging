@@ -20,8 +20,11 @@
 //= link_directory ../vendor/lightgallery/plugins/video
 //= link_directory ../vendor/lightgallery/plugins/thumbnail
 //= link_directory ../favicon
+//= link_directory ../images
+//= link_directory ../images/about
+//= link_directory ../images/team
+//= link_directory ../images/news
+//= link_directory ../images/contacts
 //= link_directory ../json
 //= link_directory ../vendor/@lottiefiles/lottie-player/dist
 //= link_directory ../images/partners
-
-//= require images
