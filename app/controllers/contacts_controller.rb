@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
     @page_desc = "Eldan Molecular Imaging"
     @page_title =  "Contact"
     @via = params[:via]
+    
     @contact = Contact.new
   end
 
