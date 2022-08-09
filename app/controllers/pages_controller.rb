@@ -4,12 +4,6 @@ class PagesController < ApplicationController
     @page_title =  "Home"
   end
 
-  def contact
-    @page_desc = "Eldan Molecular Imaging"
-    @page_title =  "Contact"
-    @via = params[:via]
-  end
-
   def partners
     @page_desc = "Eldan Molecular Imaging"
     @page_title =  "Partners"

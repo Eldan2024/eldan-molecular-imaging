@@ -1,5 +1,13 @@
 <!-- Page content -->
-<section class="bg-size-cover bg-position-bottom-center bg-repeat-0 py-5" style="background-image: url(<%= asset_path("bg.svg") %>);">
+<section class="bg-size-cover bg-position-bottom-center bg-repeat-0 pb-5" style="background-image: url(<%= asset_path("bg.svg") %>);">
+
+  <!-- Contact form alert -->
+  <div class="px-5 pt-3 text-center">
+    <% flash.each do |key, message| %>
+      <p class="alert alert-<%= key %>"><%= message %></p>
+    <% end %>
+  </div>
+
   <div class="container pb-lg-4 pb-xl-5">
 
     <!-- Breadcrumb -->
