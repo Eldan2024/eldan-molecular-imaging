@@ -115,6 +115,10 @@
                 <div class="invalid-feedback">Please provide a valid message!</div>
               </div>
             </div>
+            <div class= "d-none">
+              <%= f.label :nickname %>
+              <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+            </div>
             <div class="col-12">
               <button type="submit" class="btn btn-lg btn-primary w-100 w-sm-auto">Submit Form</button>
             </div>
