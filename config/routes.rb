@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   get 'news/index'
   get 'news/example'
 
-  get 'pages/contact'
-  get 'pages/partners'
-  get 'pages/team'
+  get 'partners', controller: 'pages'
+  get 'team', controller: 'pages'
 
   get 'about/eldan'
   get 'about/molecular_imaging'
@@ -22,6 +21,6 @@ Rails.application.routes.draw do
   match "/404", to: "errors#not_found", via: :all
   match "/500", to: "errors#internal_server_error", via: :all
 
-  get 'contacts/new'
+  get 'new', controller: 'contacts', as: 'contacts'
   resources :contacts, only: [:new, :create]
 end
