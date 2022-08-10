@@ -30,61 +30,71 @@
     </div>
   </div>
 
-  <!-- Item -->
-  <article class="card border-0 shadow-sm overflow-hidden mb-4">
-    <div class="row g-0">
-      <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url(<%= asset_path("10.jpg") %>); min-height: 15rem;">
-        <a href="<%= news_example_path %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-        <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="Read later">
-          <i class="bx bx-bookmark"></i>
-        </a>
-      </div>
-      <div class="col-sm-8">
-        <div class="card-body">
-          <div class="d-flex align-items-center mb-3">
-            <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Radiopharmaceuticals</a>
-            <span class="fs-sm text-muted border-start ps-3 ms-3">Feb 5, 2021</span>
-          </div>
-          <h3 class="h4">
-            <a href="<%= news_example_path %>">Solutions for Emerging Nitrosamine Contamination of Pharmaceuticals</a>
-          </h3>
-          <p>Nitrosamines are chemical compounds classified as probable human carcinogens on the basis of animal studies.</p>
-          <hr class="my-4">
-          <div class="d-flex align-items-center justify-content-between">
-            <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
-              <img src="<%= asset_path("ikan.png") %>" class="rounded-circle me-3" width="48" alt="Avatar">
-              Ariel Ikan
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
+  <!-- Pagination: Pager -->
+  <div class="swiper swiper-pager swiper-nav-onhover" data-swiper-options='{
+    "spaceBetween": 20,
+    "loop": true,
+    "pager": true,
+    "navigation": {
+      "prevEl": ".page-prev",
+      "nextEl": ".page-next"
+    }
+  }'>
+    <div class="swiper-wrapper">
 
-  <!-- Pagination -->
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center pt-lg-3 pt-1">
-      <li class="page-item">
-        <a href="#" class="page-link">
-          <i class="bx bx-chevron-left mx-n1"></i>
-        </a>
-      </li>
-      <li class="page-item disabled d-sm-none">
-        <span class="page-link text-body">1 / 1</span>
-      </li>
-      <li class="page-item d-none d-sm-block active" aria-current="page">
-        <span class="page-link">
-          1
-          <span class="visually-hidden">(current)</span>
-        </span>
-      </li>
-      <li class="page-item">
-        <a href="#" class="page-link">
-          <i class="bx bx-chevron-right mx-n1"></i>
-        </a>
-      </li>
-    </ul>
-  </nav>
+      <!-- Swiper Slide -->
+      <div class="swiper-slide">
+        <!-- Item -->
+        <article class="card border-0 shadow-sm overflow-hidden mb-4">
+          <div class="row g-0">
+            <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url(<%= asset_path("10.jpg") %>); min-height: 15rem;">
+              <a href="<%= news_example_path %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+            </div>
+            <div class="col-sm-8">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Radiopharmaceuticals</a>
+                  <span class="fs-sm text-muted border-start ps-3 ms-3">Feb 5, 2021</span>
+                </div>
+                <h3 class="h4">
+                  <a href="<%= news_example_path %>">Solutions for Emerging Nitrosamine Contamination of Pharmaceuticals</a>
+                </h3>
+                <p>Nitrosamines are chemical compounds classified as probable human carcinogens on the basis of animal studies.</p>
+                <hr class="my-4">
+                <div class="d-flex align-items-center justify-content-between">
+                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                    <img src="<%= asset_path("ikan.png") %>" class="rounded-circle me-3" width="48" alt="Avatar">
+                    Ariel Ikan
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- Item Ends -->
+      </div>
+      <!-- Swiper Slide Ends -->
+
+    </div>
+    <!-- Pagination -->
+    <div class="pt-5">
+      <nav class="pagination d-flex justify-content-center position-absolute bottom-0 zindex-2 start-50 translate-middle-x px-2">
+        <div class="page-item me-2">
+          <a class="page-link page-prev btn-icon btn-sm" href="#">
+            <i class="bx bx-chevron-left"></i>
+          </a>
+        </div>
+        <ul class="list-unstyled d-flex justify-content-center mb-0"></ul>
+        <div class="page-item ms-2">
+          <a class="page-link page-next btn-icon btn-sm" href="#">
+            <i class="bx bx-chevron-right"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+
+
+  </div>
 </section>
 
 
@@ -104,7 +114,7 @@
         <form class="d-flex flex-sm-row flex-column mb-3 needs-validation" novalidate>
           <div class="input-group me-sm-3 mb-sm-0 mb-3">
             <i class="bx bx-envelope position-absolute start-0 top-50 translate-middle-y ms-3 zindex-5 fs-5 text-muted"></i>
-            <input autocomplete="email" type="email" class="form-control form-control-lg rounded-3 ps-5" placeholder="Your email" required>
+            <input type="email" class="form-control form-control-lg rounded-3 ps-5" placeholder="Your email" required>
             <div class="invalid-tooltip position-absolute start-0 top-0 mt-n4">Please provide a valid email address!</div>
           </div>
           <button class="btn btn-lg btn-primary">Subscribe *</button>
