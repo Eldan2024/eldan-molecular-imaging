@@ -15,14 +15,17 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "vendo
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "vendor", "lightgallery", "plugins", "video")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "vendor", "lightgallery", "plugins", "thumbnail")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "favicon")
-Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images")
-Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "about")
-Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "team")
-Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "news")
-Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "contacts")
-Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "partners")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "json")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "vendor", "@lottiefiles", "lottie-player", "dist")
+
+
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images")
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "logos")
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "news")
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "partners")
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "parents")
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "products")
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "team")
 
 Rails.application.config.assets.compile = true
 
