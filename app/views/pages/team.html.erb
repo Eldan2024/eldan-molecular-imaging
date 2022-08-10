@@ -167,7 +167,7 @@
             <p class="fs-sm mb-0"><%= @member1_pos %></p>
           </div>
           <div class="col-6 text-end">
-            <img src="<%= asset_path(@member1_image) %>" class="rounded-3" width="100" alt="<%= @member1_name %>">
+            <img src="<%= asset_path(@member1_name.split(' ').second.downcase + ".png") %>" class="rounded-3" width="100" alt="<%= @member1_name %>">
           </div>
         </div>
         <div class="modal-body"><p><%= @member1_desc %></p></div>
@@ -185,7 +185,7 @@
             <p class="fs-sm mb-0"><%= @member2_pos %></p>
           </div>
           <div class="col-6 text-end">
-            <img src="<%= asset_path(@member2_image) %>" class="rounded-3" width="100" alt="<%= @member2_name %>">
+            <img src="<%= asset_path(@member2_name.split(' ').second.downcase + ".png") %>" class="rounded-3" width="100" alt="<%= @member2_name %>">
           </div>
         </div>
         <div class="modal-body"><p><%= @member2_desc %></p></div>
@@ -203,7 +203,7 @@
             <p class="fs-sm mb-0"><%= @member3_pos %></p>
           </div>
           <div class="col-6 text-end">
-            <img src="<%= asset_path(@member3_image) %>" class="rounded-3" width="100" alt="<%= @member3_name %>">
+            <img src="<%= asset_path(@member3_name.split(' ').second.downcase + ".png") %>" class="rounded-3" width="100" alt="<%= @member3_name %>">
           </div>
         </div>
         <div class="modal-body"><p><%= @member3_desc %></p></div>
@@ -221,7 +221,7 @@
             <p class="fs-sm mb-0"><%= @member4_pos %></p>
           </div>
           <div class="col-6 text-end">
-            <img src="<%= asset_path(@member4_image) %>" class="rounded-3" width="100" alt="<%= @member4_name %>">
+            <img src="<%= asset_path(@member4_name.split(' ').second.downcase + ".png") %>" class="rounded-3" width="100" alt="<%= @member4_name %>">
           </div>
         </div>
         <div class="modal-body"><p><%= @member4_desc %></p></div>
@@ -239,7 +239,7 @@
             <p class="fs-sm mb-0"><%= @member5_pos %></p>
           </div>
           <div class="col-6 text-end">
-            <img src="<%= asset_path(@member5_image) %>" class="rounded-3" width="100" alt="<%= @member5_name %>">
+            <img src="<%= asset_path(@member5_name.split(' ').second.downcase + ".png") %>" class="rounded-3" width="100" alt="<%= @member5_name %>">
           </div>
         </div>
         <div class="modal-body"><p><%= @member5_desc %></p></div>
