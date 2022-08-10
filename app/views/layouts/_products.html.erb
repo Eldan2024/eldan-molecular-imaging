@@ -1,3 +1,9 @@
+<style>
+  .mobile-col {
+    font-size: 14px;
+  }
+</style>
+
 <!-- Hero -->
 <section class="bg-dark dark-mode py-4">
   <div class="container pb-2 py-lg-3">
@@ -24,23 +30,19 @@
 </section>
 
 <section class="container my-md-3 my-lg-3">
-  <div class="row align-items-center">
-    <div class="col-md-8">
-      <div class="row row-cols-1 row-cols-md-3">
-        <div class="col text-md-center pb-2 mb-4">
-          <ul class="d-md-none list-unstyled">
-            <% i = 0 %>
-            <% for j in @data do %>
-              <li class="d-flex align-items-center p-2 <%= "bg-secondary" if i.odd? %>">
-                <span class="text-dark fw-medium"><%= @data[i][0] %>:&nbsp;</span>
-                <%= @data[i][1] %>
-              </li>
-              <% i += 1 %>
-            <% end %>
-          </ul>
+  <div class="d-md-none my-3 mx-3">
+    <% i = 0 %>
+    <% for j in @data do %>
+      <div class="row align-items-center px-2 py-2 <%= "bg-secondary" if i.even? %>">
+        <div class="mobile-col col text-dark fw-semibold">
+          <%= @data[i][0] %>
+        </div>
+        <div class="mobile-col col">
+          <%= @data[i][1] %>
         </div>
       </div>
-    </div>
+      <% i += 1 %>
+    <% end %>
   </div>
   <div class="d-none d-md-block mt-2 pb-4">
     <% i = 0 %>
