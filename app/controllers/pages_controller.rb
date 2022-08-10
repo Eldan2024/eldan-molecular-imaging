@@ -8,41 +8,33 @@ class PagesController < ApplicationController
     @page_desc = "Eldan Molecular Imaging"
     @page_title =  "Partners"
 
-    @partner1_name = "Isorad"
-    @partner1_desc = "Established more than 40 years ago, Isorad Radiopharmaceuticals is a leading manufacturer of SPECT, PET, MRI contrast agents, and nuclear products, located in the SOREQ Nuclear Research Center (Soreq NRC) near Yavne, Israel."
+    @partners = [
+      ["Isorad" , "Established more than 40 years ago, Isorad Radiopharmaceuticals is a leading manufacturer of SPECT, PET, MRI contrast agents, and nuclear products, located in the SOREQ Nuclear Research Center (Soreq NRC) near Yavne, Israel."]]
   end
 
   def team
     @page_desc = "Eldan Molecular Imaging"
     @page_title =  "Team"
 
-    @member1_name = "Ariel Ikan"
-    @member1_pos = ""
-    @member1_linkedin = "https://www.linkedin.com/in/ariel-ikan/"
-    @member1_desc = ""
+    @desc1 = ""
 
-    @member2_name = "Tal Rabinovich"
-    @member2_pos = "General Manager"
-    @member2_linkedin = "https://www.linkedin.com/in/tal-rabinovich-659a54/"
-    @member2_desc = "Tal Rabinovitch joined the Neopharm Group in 2007 and was appointed as Eldan’s GM in 2013. Previously he served as VP for Business Development and Operations in LDD Advanced Technologies for 5 years. In 2012 he joined Eldan and was appointed VP for Strategic Development.
+    @desc2 = "Tal Rabinovitch joined the Neopharm Group in 2007 and was appointed as Eldan’s GM in 2013. Previously he served as VP for Business Development and Operations in LDD Advanced Technologies for 5 years. In 2012 he joined Eldan and was appointed VP for Strategic Development.
+    <br><br>
+    Prior to joining the group Mr. Rabinovich gained experience in business development and strategic planning while working in Shaldor, a strategy and management consulting firm. Mr. Rabinovitch holds an MBA degree as well as M.Sc. and B.Sc. degrees in Electrical Engineering.".html_safe
 
-Prior to joining the group Mr. Rabinovich gained experience in business development and strategic planning while working in Shaldor, a strategy and management consulting firm. Mr. Rabinovitch holds an MBA degree as well as M.Sc. and B.Sc. degrees in Electrical Engineering."
+    @desc3 = "Bareket Gelbhart joined Eldan Molecular Imaging in January 2022 as the International Business Manager. Previously she worked in Dipharma, serving as Head of Marketing for 6 years and as Chief Business Development Officer for additional 3 years.
+    <br><br>
+    Prior to Dipharma, Bareket worked in Teva Pharmaceuticals for 17 years, in different positions.".html_safe
 
-    @member3_name = "Bareket Gelbhart"
-    @member3_pos = "International Business Manager"
-    @member3_linkedin = "https://www.linkedin.com/in/bareket-gelbhart-83904a16/"
-    @member3_desc = "Bareket Gelbhart joined Eldan Molecular Imaging in January 2022 as the International Business Manager. Previously she worked in Dipharma, serving as Head of Marketing for 6 years and as Chief Business Development Officer for additional 3 years.
+    @desc4 = ""
 
-Prior to Dipharma, Bareket worked in Teva Pharmaceuticals for 17 years, in different positions."
+    @desc5 = ""
 
-    @member4_name = "Ronit Duanis"
-    @member4_pos = ""
-    @member4_linkedin = ""
-    @member4_desc = ""
-
-    @member5_name = "Haim Shoshan"
-    @member5_pos = ""
-    @member5_linkedin = ""
-    @member5_desc = ""
+    @members = [
+      ["Ariel Ikan", "", "https://www.linkedin.com/in/ariel-ikan/", @desc1],
+      ["Tal Rabinovich", "General Manager", "https://www.linkedin.com/in/tal-rabinovich-659a54/", @desc2],
+      ["Bareket Gelbhart", "International Business Manager", "https://www.linkedin.com/in/bareket-gelbhart-83904a16/", @desc3],
+      ["Ronit Duanis", "", "", @desc4],
+      ["Haim Shoshan", "", "", @desc5]]
   end
 end

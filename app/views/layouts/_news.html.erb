@@ -1,1 +1,154 @@
-<%= yield %>
+<!-- Breadcrumb -->
+<nav class="container pt-4 mt-lg-3" aria-label="breadcrumb">
+  <ol class="breadcrumb mb-0">
+    <li class="breadcrumb-item">
+      <a href="<%= root_path %>"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="<%= news_path %>"><%= controller.controller_name.titleize %></a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @title %></li>
+  </ol> 
+</nav>
+
+
+<!-- Post title + Meta  -->
+<section class="container mt-4 pt-lg-2 pb-3">
+  <h1 class="pb-3" style="max-width: 970px;"><%= @title %></h1>
+  <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
+    <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+      <div class="fs-xs border-end pe-3 me-3 mb-2">
+        <span class="badge bg-faded-primary text-primary fs-base"><%= @category %></span>
+      </div>
+      <div class="fs-sm border-end pe-3 me-3 mb-2"><%= @date_published %></div>
+    </div>
+    <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-5 mb-2">
+      <img src="<%= asset_path("ikan.png") %>" class="rounded-circle" width="60" alt="Avatar">
+      <div class="ps-3">
+        <h6 class="mb-1">Author</h6>
+        <a href="#" class="fw-semibold stretched-link"><%= @author %></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Post image (parallax) -->
+<div class="jarallax mb-lg-5 mb-4" data-jarallax data-speed="0.35" style="height: 18.225vw; min-height: 300px;">
+  <div class="jarallax-img" style="background-image: url(<%= asset_path(@cover_image) %>);"></div>
+</div>
+
+
+<!-- Post content + Sharing -->
+<section class="container mb-5 pt-4 pb-2 py-mg-4">
+  <div class="row gy-4">
+
+    <!-- Content -->
+    <div class="col-lg-9">
+      <%= yield %>
+
+      <!-- Tags -->
+      <hr class="mb-4">
+      <div class="d-flex flex-sm-row flex-column pt-2">
+        <h6 class="mt-sm-1 mb-sm-2 mb-3 me-2 text-nowrap">Related Tags:</h6>
+        <div>
+          <% for i in @tags do %>
+            <a href="#" class="btn btn-sm btn-outline-secondary me-2 mb-2"><%= i %></a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sharing -->
+    <div class="col-lg-3 position-relative">
+      <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
+        <span class="d-block mb-3"> <span id="time"></span> min read</span>
+        <h6>Share this post:</h6>
+        <div class="mb-4 pb-lg-3">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=www.eldanmi.com<%= request.path %>&amp;title=&amp;summary=&amp;source=www.eldanmi.com<%= request.path %>" target="_blank" rel="noopener" aria-label="Share on LinkedIn" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2">
+            <i class="bx bxl-linkedin"></i>
+          </a>
+          <a href="https://facebook.com/sharer/sharer.php?u=www.eldanmi.com<%= request.path %>" target="_blank" rel="noopener" aria-label="Share on Facebook" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2">
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a href="https://twitter.com/intent/tweet/?text=&amp;url=www.eldanmi.com<%= request.path %>" target="_blank" rel="noopener" aria-label="Share on Twitter" class="btn btn-icon btn-secondary btn-twitter me-2 mb-2">
+            <i class="bx bxl-twitter"></i>
+          </a>
+          <a href="mailto:?subject=&amp;body=www.eldanmi.com<%= request.path %>" target="_self" rel="noopener" aria-label="Share by E-Mail" class="btn btn-icon btn-secondary btn-envelope me-2 mb-2">
+            <i class='bx bxs-envelope'></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related articles (Slider below lg breakpoint) -->
+<section class="container mb-5 pt-md-4">
+  <div class="d-flex flex-sm-row flex-column align-items-center justify-content-between mb-4 pb-1 pb-md-3">
+    <h2 class="h1 mb-sm-0">Related Articles</h2>
+    <a href="<%= news_path %>" class="btn btn-lg btn-outline-primary ms-4">
+      All articles
+      <i class="bx bx-right-arrow-alt ms-1 me-n1 lh-1 lead"></i>
+    </a>
+  </div>
+
+  <div class="swiper mx-n2" data-swiper-options='{
+    "slidesPerView": 1,
+    "spaceBetween": 8,
+    "pagination": {
+      "el": ".swiper-pagination",
+      "clickable": true
+    },
+    "breakpoints": {
+      "500": {
+        "slidesPerView": 2
+      },
+      "1000": {
+        "slidesPerView": 3
+      }
+    }
+  }'>
+    <div class="swiper-wrapper">
+
+      <!-- Items -->
+      <% i = 0 %>
+      <% for j in @related_articles do %>
+        <div class="swiper-slide h-auto pb-3">
+          <article class="card border-0 shadow-sm h-100 mx-2">
+            <div class="position-relative">
+              <a href="<%= @related_articles[i][0] %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+              <img src="<%= asset_path(@related_articles[i][1]) %>" class="card-img-top" alt="Image">
+            </div>
+            <div class="card-body pb-4">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <a class="badge fs-sm text-nav bg-secondary text-decoration-none"><%= @related_articles[i][2] %></a>
+                <span class="fs-sm text-muted"><%= @related_articles[i][3] %></span>
+              </div>
+              <h3 class="h5 mb-0"><%= @related_articles[i][4] %></h3>
+            </div>
+            <div class="card-footer py-4">
+              <a href="" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                <img src="<%= asset_path(@related_articles[i][5]) %>" class="rounded-circle me-3" width="48" alt="Avatar">
+                <%= @related_articles[i][6] %>
+              </a>
+            </div>
+          </article>
+        </div>
+        <% i += 1 %>
+      <% end %>
+
+    <!-- Pagination (bullets) -->
+    <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
+  </div>
+</section>
+
+<script>
+  function readingTime() {
+    const text = document.getElementById("article").innerText;
+    const wpm = 225;
+    const words = text.trim().split(/\s+/).length;
+    const time = Math.ceil(words / wpm);
+    document.getElementById("time").innerText = time;
+  }
+  readingTime();
+</script>
