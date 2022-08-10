@@ -26,6 +26,7 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "image
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "parents")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "products")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "team")
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "contacts")
 
 Rails.application.config.assets.compile = true
 
