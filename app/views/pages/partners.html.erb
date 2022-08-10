@@ -41,9 +41,9 @@
     <div class="swiper-wrapper">
 
       <!-- Item -->
-      <div class="swiper-slide py-3" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover" title="Isorad" data-bs-content="<%= @partner1_desc %>">
+      <div class="swiper-slide py-3" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover" title="<%= @partner1_name %>" data-bs-content="<%= @partner1_desc %>">
         <a href="#" class="card card-body card-hover px-2 mx-2">
-          <img src="<%= asset_path("isorad_logo.png") %>" class="d-block mx-auto my-2" width="154" alt="Brand">
+          <img src="<%= asset_path(@partner1_name.downcase + ".png") %>" class="d-block mx-auto my-2" width="154" alt="Brand">
         </a>
       </div>
 
