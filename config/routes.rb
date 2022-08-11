@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'products', to: redirect('products/mo99')
   get 'products/mo99'
   get 'products/ga67'
-  get 'products/tl201'
+  get 'products/ti201'
 
   get 'about', to: redirect('about/molecular_imaging')
   get 'about/molecular_imaging'

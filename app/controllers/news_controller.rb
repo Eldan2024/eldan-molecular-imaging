@@ -17,6 +17,6 @@ class NewsController < ApplicationController
       [news_path, "06.jpg", "Aute consequat in amet cillum in", "Jun 25, 2018", "Ad ullamco adipisicing aliqua culpa", "ikan.png", "Ariel Ikan"]]
 
     @page_desc = "Eldan Molecular Imaging"
-    @page_title =  @title + " / News"
+    @page_title =  @title + " / " + controller_name.capitalize
   end
 end

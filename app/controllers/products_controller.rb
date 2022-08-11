@@ -50,7 +50,7 @@ class ProductsController < ApplicationController
       ["SPC", "N/A"]]
   end
 
-  def tl201
+  def ti201
     @page_desc = "Eldan Molecular Imaging"
     @breadcrumb = "<sup>201</sup>TI".html_safe
     @page_title =  @breadcrumb.gsub("<sup>","").gsub("</sup>","") + " / " + controller_name.capitalize

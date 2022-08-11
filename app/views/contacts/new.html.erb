@@ -1,8 +1,16 @@
+<style>
+  @media only screen and (max-width: 480px) {
+    .contact-info {
+      text-align: center;
+    }
+  }
+</style>
+
 <!-- Page content -->
-<section class="bg-size-cover bg-position-bottom-center bg-repeat-0 pb-5" style="background-image: url(<%= asset_path("bg.svg") %>);">
+<section class="bg-size-cover bg-position-bottom-center bg-repeat-0 pb-5 pt-5" style="background-image: url(<%= asset_path("bg.svg") %>);">
 
   <!-- Contact form alert -->
-  <div class="px-5 pt-3 text-center">
+  <div class="px-5 pt-5 text-center">
     <% flash.each do |key, message| %>
       <p class="alert alert-<%= key %>"><%= message %></p>
     <% end %>
@@ -11,7 +19,7 @@
   <div class="container pb-lg-4 pb-xl-5">
 
     <!-- Breadcrumb -->
-    <nav class="pt-lg-4" aria-label="breadcrumb">
+    <nav class="pt-4" aria-label="breadcrumb">
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item">
           <a href="index.html"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
@@ -21,14 +29,14 @@
     </nav>
 
     <div class="row pt-md-2 pb-2 pb-md-4">
-      <div class="col-xxl-4 col-xl-5 col-lg-6 pt-3 mt-3">
+      <div class="contact-info col-xxl-4 col-xl-5 col-lg-6 pt-3 mt-3">
         <h1 class="h3 mb-2">Want to work with us?</h1>
         <h2 class="display-1 text-gradient-primary pb-sm-2 pb-md-3 mb-3">Let's talk!</h2>
         <div class="nav d-block lead">
           <div class="text-nav">Bareket Gelbhart</div>
-          <div class="text-nav">International Business Manager</div>
-          <a href="#" class="nav-link fw-normal text-decoration-underline p-0 mb-2">bareketg@eldan.biz</a>
-          <div class="text-nav">+41 797 995 117</div>
+          <div class="text-nav" style="font-size: 15px;">International Business Manager</div>
+          <a href="mailto:bareketg@eldan.biz" class="fw-normal text-muted text-decoration-underline p-0 mb-2">bareketg@eldan.biz</a>
+          <a href="tel:+41797995117" class="text-decoration-none"><div class="text-nav">+41 797 995 117</div></a>
         </div>
       </div>
       <div class="col-lg-6 offset-xl-1 offset-xxl-2 pt-3 pt-md-4 pt-lg-3 mt-3">
@@ -59,7 +67,8 @@
                   <i class='bx bx-book' ></i>
                 </span>
                 <%= f.text_field  :subject, required: true, class: "contact-form-text-area form-control form-control-lg", id:"subject", placeholder:"Write your subject here...", value:@via %>
-                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">Choose a subject</button>
+                <button class="btn btn-primary dropdown-toggle d-none d-md-block" type="button" data-bs-toggle="dropdown">Choose a subject</button>
+                <button class="btn btn-primary dropdown-toggle d-md-none" type="button" data-bs-toggle="dropdown"></button>
                 <div class="invalid-feedback">Please provide a valid subject!</div>
                 <div class="dropdown-menu my-1">
                   <div class="d-lg-flex pt-lg-3">
@@ -110,6 +119,16 @@
         <% end %>
       </div>
     </div>
+  </div>
+  <!--Map (Disabled)-->
+  <div class="d-none row py-5">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 mb-5 mb-lg-0">
+      <div class="d-flex flex-column h-450 shadow-sm rounded-3 overflow-hidden">
+        <iframe height="450" class="d-block h-450" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJEfdMFnMphEcRwpVfHY25kS0&key=AIzaSyAdn-UTZM2qhMN4H0cAgOE8GJ5OXyuPk8A" style="border: 0; min-height: 300px;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+    <div class="col-lg-3"></div>
   </div>
 </section>
 

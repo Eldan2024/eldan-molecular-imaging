@@ -11,8 +11,8 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get tl201" do
-    get products_tl201_url
+  test "should get ti201" do
+    get products_ti201_url
     assert_response :success
   end
 end

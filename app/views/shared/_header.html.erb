@@ -1,6 +1,6 @@
 <!-- Navbar -->
 <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
-<header class="header navbar navbar-expand-lg navbar-sticky <%= 'position-absolute' if current_page?(root_path) %>">
+<header class="header navbar navbar-expand-lg navbar-sticky <%= 'position-absolute' if current_page?(root_path) || controller.controller_name == "errors" || controller.controller_name == "contacts" %>">
   <div class="container px-3">
     <a href="<%= root_path %>" class="navbar-brand pe-3">
       <img src="<%= asset_path("human_spinning.gif") %>" width="47" alt="Eldan Molecular Imaging">
@@ -35,7 +35,7 @@
                 <div class="mega-dropdown-column pt-lg-3 pb-lg-4">
                   <ul class="list-unstyled mb-0">
                     <li><a href="<%= products_mo99_path %>" class="dropdown-item <%= is_active(products_mo99_path) %>"><sup>99</sup>Mo/<sup>99m</sup>Tc Generator</a></li>
-                    <li><a href="<%= products_tl201_path %>" class="dropdown-item <%= is_active(products_tl201_path) %>">Thallium Chloride (<sup>201</sup>TI)</a></li>
+                    <li><a href="<%= products_ti201_path %>" class="dropdown-item <%= is_active(products_ti201_path) %>">Thallium Chloride (<sup>201</sup>TI)</a></li>
                     <li><a href="<%= products_ga67_path %>" class="dropdown-item <%= is_active(products_ga67_path) %>">Gallium citrate (Ga-67)</a></li>
                   </ul>
                 </div>
