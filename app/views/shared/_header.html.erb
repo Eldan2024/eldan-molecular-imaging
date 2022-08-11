@@ -1,10 +1,10 @@
 <!-- Navbar -->
 <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
-<header class="header navbar navbar-expand-lg navbar-sticky <%= 'position-absolute' if current_page?(root_path) || controller.controller_name == "errors" || controller.controller_name == "contacts" %>">
+<header class="header navbar navbar-expand-lg navbar-sticky d-flex flex-column shadow-sm <%= 'position-absolute' if current_page?(root_path) || controller.controller_name == "errors" || controller.controller_name == "contacts" %>">
   <div class="container px-3">
     <a href="<%= root_path %>" class="navbar-brand pe-3">
       <img src="<%= asset_path("human_spinning.gif") %>" width="47" alt="Eldan Molecular Imaging">
-      <div class="d-none d-md-block">Eldan Molecular Imaging</div>
+      <div class="d-none d-md-block" media="(min-width: 1200px)">Eldan Molecular Imaging</div>
       <div class="d-md-none">EldanMI</div>
     </a>
     <div id="navbarNav" class="offcanvas offcanvas-end">
