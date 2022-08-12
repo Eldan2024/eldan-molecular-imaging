@@ -1,6 +1,27 @@
-<section class="position-relative bg-secondary pt-5">
-  <div class="container position-relative zindex-2 pt-5">
-    <img src="<%= asset_path("human.gif") + "?a=" + rand().to_s %>" width="500" alt="Eldan Molecular Imaging">
-    <img src="<%= asset_path("logo.png") %>" width="500" alt="Eldan Molecular Imaging">
+<!-- Hero -->
+<section class="jarallax position-relative d-flex align-items-center min-vh-100 bg-light mb-5 py-lg-5 pt-md-5" style="background-image: url(<%= asset_path("hero-bg.svg") %>);" data-jarallax data-img-position="0% 100%" data-speed="0.5">
+  <div class="container position-relative zindex-5 py-5">
+    <div class="row justify-content-md-start justify-content-center">
+      <div class="col-md-6 col-sm-8 order-md-1 order-2 d-flex flex-column justify-content-between mt-4 pt-2 text-md-start text-center">
+        <div class="mb-md-5 pb-xl-5">
+
+          <!-- Text -->
+          <h1 class="display-2 mb-md-5 mb-3 pb-3">
+            Looking <span class="text-gradient-primary">Beyond!</span>
+          </h1>
+          <div class="d-md-flex align-items-md-start">
+            <a href="<%= contacts_path %>" class="btn btn-lg btn-primary flex-shrink-0 me-md-4 mb-md-0 mb-sm-4 mb-3">Work with us</a>
+            <p class="d-lg-block mb-0 ps-md-3">To provide you with the best radiopharmaceutical products, best service, and best distribution channels, so you can provide your patients and caregivers, top-quality products as soon as they need them.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated gfx -->
+      <div class="parallax col-sm-6 col-sm-6 col-9 order-md-2 order-1">
+        <div class="parallax-layer" data-depth="0.1">
+          <img src="<%= asset_path("human.gif") + "?a=" + rand().to_s %>" alt="Eldan Molecular Imaging">
+        </div>
+      </div>
+    </div>
   </div>
 </section>
