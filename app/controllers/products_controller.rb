@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
     @breadcrumb = "<sup>99</sup>Mo/<sup>99m</sup>Tc".html_safe
     @page_title =  @breadcrumb.gsub("<sup>","").gsub("</sup>","") + " / " + controller_name.capitalize
     @title = "<sup>99</sup>Mo/<sup>99m</sup>Tc Generator".html_safe
-    @desc = "<div class='row'><div class='col'>A technetium-99m generator is a device used to extract the isotope 99mTc of technetium from a decaying sample of molybdenum-99. Tc99m is used for a variety of nuclear medicine diagnostic in single photon emission computed tomography</div><div class='col'> (SPECT) procedures, where its short half-life is very useful. Sterile Technetium-99m generators are manufactured in Israel since 1976 utilizing dry technology. The generators are ergonomic and recyclable.</div></div>".html_safe
+    @desc = "A technetium-99m generator is a device used to extract the isotope 99mTc of technetium from a decaying sample of molybdenum-99. Tc99m is used for a variety of nuclear medicine diagnostic in single photon emission computed tomography (SPECT) procedures, where its short half-life is very useful. Sterile Technetium-99m generators are manufactured in Israel since 1976 utilizing dry technology. The generators are ergonomic and recyclable.".html_safe
 
     @questions = [
       ["Example Question 1", "Quis veniam sunt nisi ut proident officia aliqua irure aliqua."]]
@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
     @breadcrumb = "<sup>201</sup>TI".html_safe
     @page_title =  @breadcrumb.gsub("<sup>","").gsub("</sup>","") + " / " + controller_name.capitalize
     @title = "Thallium Chloride (<sup>201</sup>TI) injection".html_safe
-    @desc = "<div class='row'><div class='col'>Thallium-201 (201Tl) is a radioactive potassium analog used in the diagnosis of coronary artery disease and parathyroid hyperactivity using single photon emission computed tomography (SPECT). Other useful applications for a thallium-201 scan,</div><div class='col'> like tumor diagnosis and olfacto-scintigraphy, are being explored and have shown promising results in various studies. It is produced in a cyclotron by bombarding thallium-203 with protons. Sterile TI-201 has been manufactured in Israel since 1987.".html_safe
+    @desc = "Thallium-201 (201Tl) is a radioactive potassium analog used in the diagnosis of coronary artery disease and parathyroid hyperactivity using single photon emission computed tomography (SPECT). Other useful applications for a thallium-201 scan, like tumor diagnosis and olfacto-scintigraphy, are being explored and have shown promising results in various studies. It is produced in a cyclotron by bombarding thallium-203 with protons. Sterile TI-201 has been manufactured in Israel since 1987.".html_safe
 
     @questions = [
       ["Example Question 1", "Quis veniam sunt nisi ut proident officia aliqua irure aliqua."]]
