@@ -1,13 +1,40 @@
+<style>
+  @media (max-width: 1230px) {
+    .long {
+      display: none;
+    }
+
+    .short {
+      display: inline;
+    }
+  }
+
+  @media (min-width: 1230px) {
+    .long {
+      display: inline;
+    }
+
+    .short {
+      display: none;
+    }
+  }
+
+  #navbarNav {
+    text-wrap: nowrap;
+    white-space: nowrap;
+  }
+</style>
+
 <!-- Navbar -->
 <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
 <header class="header navbar navbar-expand-lg navbar-sticky d-flex flex-column shadow-sm <%= 'position-absolute' if current_page?(root_path) || controller.controller_name == "errors" || controller.controller_name == "contacts" %>">
-  <div class="container px-3">
+  <div class="container ps-md-3 ps-sm-0">
     <a href="<%= root_path %>" class="navbar-brand pe-3">
       <img src="<%= asset_path("human_spinning.gif") %>" width="47" alt="Eldan Molecular Imaging">
-      <div class="d-none d-md-block" media="(min-width: 1200px)">Eldan Molecular Imaging</div>
-      <div class="d-md-none">EldanMI</div>
+      <div class="long">Eldan Molecular Imaging</div>
+      <div class="short">EldanMI</div>
     </a>
-    <div id="navbarNav" class="offcanvas offcanvas-end">
+    <div id="navbarNav" class="offcanvas offcanvas-end ps-sm-0 ps-md-5">
       <div class="offcanvas-header border-bottom">
         <h5 class="offcanvas-title">Menu</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -57,12 +84,12 @@
         </ul>
       </div>
     </div>
-    <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
+    <div class="form-check form-switch mode-switch ms-auto ps-md-5 pe-sm-5 pe-md-0" data-bs-toggle="mode">
       <input type="checkbox" class="form-check-input" id="theme-mode">
-      <label class="form-check-label d-none d-sm-block" for="theme-mode">Light</label>
-      <label class="form-check-label d-none d-sm-block" for="theme-mode">Dark</label>
+      <label class="form-check-label d-none d-sm-block" for="theme-mode"><i class='short bx bx-bulb'></i><div class="long">Light</div></label>
+      <label class="form-check-label d-none d-sm-block" for="theme-mode"><i class='short bx bxs-bulb' ></i><div class="long">Dark</div></label>
     </div>
-    <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button type="button" class="navbar-toggler ps-5 ps-sm-0 ps-md-5 ps-lg-0 pe-5 pe-sm-0" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
