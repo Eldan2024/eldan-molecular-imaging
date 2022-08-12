@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#index'
 
-  get 'partners', controller: 'pages'
+  get 'distribution', controller: 'pages'
   get 'team', controller: 'pages'
 
   get 'news', to: 'news#index'

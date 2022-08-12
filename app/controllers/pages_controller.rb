@@ -4,12 +4,17 @@ class PagesController < ApplicationController
     @page_title =  "Home"
   end
 
-  def partners
+  def distribution
     @page_desc = "Eldan Molecular Imaging"
-    @page_title =  "Partners"
+    @page_title =  "Distribution"
 
     @partners = [
       ["Isorad" , "Established more than 40 years ago, Isorad Radiopharmaceuticals is a leading manufacturer of SPECT, PET, MRI contrast agents, and nuclear products, located in the SOREQ Nuclear Research Center (Soreq NRC) near Yavne, Israel."]]
+
+    @distribution = [
+      ["Bareket Gelbhart", "+41 797 995 117", "bareketg@eldan.biz", "Via Giuseppe Motta 9, 6826 Riva San Vitale", "45.90162203709794", "8.971096270527374"],
+      ["Isorad Radiopharmaceutical", "", "", "", "31.89814693730076", "34.70073643328131"],
+      ["Eldan", "", "", "HaShiloah St 6, Petah Tikva, Israel", "32.0912614028465", "34.855602910534785"]]
   end
 
   def team

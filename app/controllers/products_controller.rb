@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
       ["Example Question 1", "Quis veniam sunt nisi ut proident officia aliqua irure aliqua."]]
 
     @data = [
-      ["Indication", "Localization of malignant growths and inflammatory lesions"],
       ["Manufacturer", "<a class='text-decoration-none' href='http://www.isorad.co.il/en/' target='_blank'>Isorad Radiopharmaceuticals, Israel</a>".html_safe],
       ["Activity Reference Time", "ART 14.00 hr CET"],
       ["Storage", "Room Temperature"],
@@ -61,7 +60,6 @@ class ProductsController < ApplicationController
       ["Example Question 1", "Quis veniam sunt nisi ut proident officia aliqua irure aliqua."]]
 
     @data = [
-      ["Indication", "Myocardial scintigraphy<br>Tumour detection<br>Parathyroid scintigraph".html_safe],
       ["Manufacturer", "<a class='text-decoration-none' href='http://www.isorad.co.il/en/' target='_blank'>Isorad Radiopharmaceuticals, Israel</a>".html_safe],
       ["Activity Reference Time", "ART 18.00 hr CET"],
       ["Storage", "Room Temperature"],

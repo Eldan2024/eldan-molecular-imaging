@@ -1,0 +1,194 @@
+<style>
+  #map {
+    height: 400px;
+    width: 100%;
+  }
+</style>
+
+<!-- Breadcrumb -->
+<nav class="container py-4 my-lg-3" aria-label="breadcrumb">
+  <ol class="breadcrumb mb-0">
+    <li class="breadcrumb-item">
+      <a href="<%= root_path %>"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @page_title %></li>
+  </ol>
+</nav>
+
+<!-- How we work (Steps) -->
+<section class="pb-5 px-5">
+  <h2 class="h1 pb-2 pb-md-0 mb-4 mb-md-5 text-center">Product Distribution</h2>
+  <div class="steps steps-sm steps-horizontal-md pb-2 pb-sm-3 steps-center">
+    <div class="step">
+      <div class="step-number">
+        <div class="step-number-inner">1</div>
+      </div>
+      <div class="step-body">
+        <h3 class="h4 mb-3">Consectetur ut proident nostrud magna aliqua in.</h3>
+        <p class="mb-0">Massa enim libero dictumst consectetur in convallis lobortis cursus mi a magna ullamcorper consectetur commodo fermentum.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">
+        <div class="step-number-inner">2</div>
+      </div>
+      <div class="step-body">
+        <h3 class="h4 mb-3">Consectetur ut proident nostrud magna aliqua in.</h3>
+        <p class="mb-0">At ultricies id non quisque integer eget velit. Facilisis enim malesuada metus, risus amet ultricies magna aliquam bibendum convallis.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">
+        <div class="step-number-inner">3</div>
+      </div>
+      <div class="step-body">
+        <h3 class="h4 mb-3">Consectetur ut proident nostrud magna aliqua in.</h3>
+        <p class="mb-0">Pellentesque rhoncus viverra vestibulum, purus purus quisque quisque vestibulum facilisis dictumst consequat enim libero.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">
+        <div class="step-number-inner">4</div>
+      </div>
+      <div class="step-body">
+        <h3 class="h4 mb-3">Consectetur ut proident nostrud magna aliqua in.</h3>
+        <p class="mb-0">Quam dolor commodo fermentum bibendum dictumst. Risus pretium eget at viverra eget neque adipiscing lobortis cursus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div id="map"></div>
+</section>
+
+<!-- Partners -->
+<section class="container pb-3 pb-lg-5 mt-5">
+  <div class="swiper mx-n2" data-swiper-options='{
+    "centerInsufficientSlides": true,
+    "slidesPerView": 2,
+    "pagination": {
+      "el": ".swiper-pagination",
+      "clickable": true
+    },
+    "breakpoints": {
+      "500": {
+        "slidesPerView": 3,
+        "spaceBetween": 8
+      },
+      "650": {
+        "slidesPerView": 4,
+        "spaceBetween": 8
+      },
+      "900": {
+        "slidesPerView": 5,
+        "spaceBetween": 8
+      },
+      "1100": {
+        "slidesPerView": 6,
+        "spaceBetween": 8
+      }
+    }
+  }'>
+    <div class="swiper-wrapper">
+
+      <!-- Partners -->
+      <% i = 0 %>
+      <% for j in @partners do %>
+        <div class="swiper-slide py-3" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover" title="<%= @partners[i][0] %>" data-bs-content="<%= @partners[i][1] %>">
+          <a href="#" class="card card-body card-hover px-2 mx-2">
+            <img src="<%= asset_path(@partners[i][0].downcase + ".png") %>" class="d-block mx-auto my-2" width="154" alt="Brand">
+          </a>
+        </div>
+        <% i += 1 %>
+      <% end %>
+
+    </div>
+
+    <!-- Pagination (bullets) -->
+    <div class="swiper-pagination position-relative pt-2 mt-4"></div>
+  </div>
+</section>
+
+<script>
+  function initMap() {
+    var center = {lat: 40, lng: 22};
+    var locations = [
+      <% i = 0 %>
+      <% for j in @distribution do %>
+        ['<h3 class="mb-lg-2"><%= @distribution[i][0] %></h3>'+
+          '<ul class="list-unstyled ps-2">'+
+            <% if @distribution[i][1] != "" %>
+              '<li class="mb-2">'+
+                '<a href="tel:<%= @distribution[i][1].gsub(" ", "") %>" class="nav-link d-flex align-items-center p-0">'+
+                  '<i class="bx bx-phone-call fs-xl text-primary me-2"></i>'+
+                  '<%= @distribution[i][1] %>'+
+                '</a>'+
+              '</li>'+
+            <% end %>
+            <% if @distribution[i][2] != "" %>
+            '<li class="mb-2">'+
+              '<a href="mailto:<%= @distribution[i][2] %>" class="nav-link d-flex align-items-center p-0">'+
+                '<i class="bx bx-envelope fs-xl text-primary me-2"></i>'+
+                '<%= @distribution[i][2] %>'+
+              '</a>'+
+            '</li>'+
+            <% end %>
+            <% if @distribution[i][3] != "" %>
+            '<li class="mb-2">'+
+              '<a class="nav-link d-flex align-items-center p-0">'+
+                '<i class="bx bx-map fs-xl text-primary me-2"></i>'+
+                '<%= @distribution[i][3] %>'+
+              '</a>'+
+            '</li>'+
+            <% end %>
+          '</ul>',
+        <%= @distribution[i][4] %>, <%= @distribution[i][5] %>],
+        <% i += 1 %>
+      <% end %>
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: center
+    });
+
+    var infowindow =  new google.maps.InfoWindow({});
+
+    var marker, count;
+    
+    const icons = {
+      closed: {
+        icon: "<%= asset_path("marker-closed.png") %>",
+      },
+
+      open: {
+        icon: "<%= asset_path("marker-open.png") %>",
+      }
+    };
+
+    for (count = 0; count < locations.length; count++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[count][1], locations[count][2]),
+        icon: icons["closed"].icon,
+        map: map,
+        animation: google.maps.Animation.Drop,
+        title: locations[count][0]
+      });
+
+      google.maps.event.addListener(marker, 'click', (function (marker, count) {
+        return function () {
+          infowindow.setContent(locations[count][0]);
+          infowindow.open(map, marker);
+          marker.setIcon(icons["open"].icon);
+        }
+      })(marker, count));
+
+      google.maps.event.addListener(infowindow, 'closeclick', (function (marker, count) {
+        return function () {
+          marker.setIcon(icons["closed"].icon);
+        }
+      })(marker, count));
+    }
+  }
+</script>
