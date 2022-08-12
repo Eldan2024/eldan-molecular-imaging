@@ -1,5 +1,5 @@
 <!-- Hero -->
-<section class="jarallax position-relative d-flex align-items-center min-vh-100 bg-light mb-5 py-lg-5 pt-md-5" style="background-image: url(<%= asset_path("hero-bg.svg") %>);" data-jarallax data-img-position="0% 100%" data-speed="0.5">
+<section class="jarallax position-relative d-flex align-items-center min-vh-100 bg-light py-lg-5 pt-md-5" style="background-image: url(<%= asset_path("hero-bg.svg") %>);" data-jarallax data-img-position="0% 100%" data-speed="0.5">
   <div class="container position-relative zindex-5 py-5">
     <div class="row justify-content-md-start justify-content-center">
       <div class="col-md-6 col-sm-8 order-md-1 order-2 d-flex flex-column justify-content-between mt-4 pt-2 text-md-start text-center">
@@ -17,10 +17,13 @@
       </div>
 
       <!-- Animated gfx -->
-      <div class="parallax col-sm-6 col-sm-6 col-9 order-md-2 order-1">
+      <div class="d-none d-md-block parallax col-md-6 order-md-2">
         <div class="parallax-layer" data-depth="0.1">
           <img src="<%= asset_path("human.gif") + "?a=" + rand().to_s %>" alt="Eldan Molecular Imaging">
         </div>
+      </div>
+      <div class="d-md-none">
+        <img src="<%= asset_path("human.gif") + "?a=" + rand().to_s %>" alt="Eldan Molecular Imaging">
       </div>
     </div>
   </div>
