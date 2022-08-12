@@ -2,6 +2,28 @@
   .mobile-col {
     font-size: 14px;
   }
+
+  #desc {
+    width: 500px;
+  }
+
+  #desc a.collapsed:after {
+    content: '+ Show More';
+  }
+
+  #desc a:not(.collapsed):after {
+    content: '- Show Less';
+  }
+
+  #desc #collapseExample.collapse:not(.show) {
+    display: block;
+    height: 4.5em;
+    overflow: hidden;
+  }
+
+  #desc #collapseExample.collapsing {
+    height: 4.5em;
+  }
 </style>
 
 <!-- Hero -->
@@ -22,8 +44,15 @@
     </nav>
     <h1 class="text-center mb-5"><%= @title %></h1>
     <div class="row text-center">
-      <div class="col-lg-3"></div>
-      <div class="mb-md-0 col-lg-6"><%= @desc %></div>
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <div class="container" id="desc">
+          <p class="collapse" id="collapseExample" aria-expanded="false">
+            <%= @desc %>
+          </p>
+          <a role="button" class="collapsed" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
