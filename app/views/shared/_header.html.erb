@@ -9,7 +9,7 @@
 
 <!-- Navbar -->
 <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
-<header class="header navbar navbar-expand-lg navbar-sticky d-flex flex-column shadow-sm <%= 'position-absolute' if current_page?(root_path) || controller.controller_name == "errors" %>">
+<header class="header navbar navbar-expand-lg navbar-sticky d-flex flex-column shadow-sm <%= 'position-absolute' if current_page?(root_path) || controller.controller_name == "errors" || controller.controller_name == "contacts" %>">
   <div class="container">
     <a class="d-block navbar-brand me-lg-5" href="<%= root_path %>" >
       <img src="<%= asset_path("human-spinning.gif") %>" width="47" alt="Eldan Molecular Imaging">
