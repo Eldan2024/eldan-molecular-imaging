@@ -95,7 +95,7 @@
       <!-- Partners -->
       <% i = 0 %>
       <% for j in @partners do %>
-        <div class="swiper-slide py-3" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover" title="<%= @partners[i][0] %>" data-bs-content="<%= @partners[i][1] %>">
+        <div class="swiper-slide py-3" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" title="<%= @partners[i][0] %>" data-bs-content="<%= @partners[i][1] %>">
           <a href="#" class="card card-body card-hover px-2 mx-2">
             <img src="<%= asset_path(@partners[i][0].downcase + ".png") %>" class="d-block mx-auto my-2" width="154" alt="Brand">
           </a>
