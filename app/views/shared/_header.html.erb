@@ -1,52 +1,25 @@
-<style>
-  @media (max-width: 1230px) {
-    .long {
-      display: none;
-    }
-
-    .short {
-      display: inline;
-    }
-  }
-
-  @media (min-width: 1230px) {
-    .long {
-      display: inline;
-    }
-
-    .short {
-      display: none;
-    }
-  }
-
-  #navbarNav {
-    text-wrap: nowrap;
-    white-space: nowrap;
-  }
-</style>
-
 <!-- Navbar -->
 <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
 <header class="header navbar navbar-expand-lg navbar-sticky d-flex flex-column shadow-sm <%= 'position-absolute' if current_page?(root_path) || controller.controller_name == "errors" || controller.controller_name == "contacts" %>">
-  <div class="container ps-md-3 ps-sm-0">
-    <a href="<%= root_path %>" class="navbar-brand pe-3">
+  <div class="container">
+    <a class="d-block navbar-brand me-lg-5" href="<%= root_path %>" >
       <img src="<%= asset_path("human_spinning.gif") %>" width="47" alt="Eldan Molecular Imaging">
-      <div class="long">Eldan Molecular Imaging</div>
-      <div class="short">EldanMI</div>
+      <span class="d-none d-md-inline d-lg-none d-xl-inline">Eldan Molecular Imaging</span>
+      <span class="d-md-none d-lg-inline d-xl-none">EldanMI</span>
     </a>
-    <div id="navbarNav" class="offcanvas offcanvas-end ps-sm-0 ps-md-5">
+    <div id="navbarNav" class="offcanvas offcanvas-end">
       <div class="offcanvas-header border-bottom">
         <h5 class="offcanvas-title">Menu</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle <%= "active" if controller.controller_name == 'about' %>" data-bs-toggle="dropdown">About Us</a>
-            <div class="dropdown-menu p-0">
-              <div class="d-lg-flex">
-                <div class="mega-dropdown-column pt-lg-3 pb-lg-4">
-                  <ul class="list-unstyled mb-0">
+            <div class="dropdown-menu">
+              <div class="d-flex">
+                <div class="mega-dropdown-column">
+                  <ul class="list-unstyled">
                     <li><a href="<%= about_molecular_imaging_path %>" class="dropdown-item <%= is_active(about_molecular_imaging_path) %>">Molecular Imaging</a></li>
                     <li><a href="<%= about_eldan_path %>" class="dropdown-item <%= is_active(about_eldan_path) %>">Eldan</a></li>
                     <li><a href="<%= about_neopharm_path %>" class="dropdown-item <%= is_active(about_neopharm_path) %>">Neopharm</a></li>
@@ -57,10 +30,10 @@
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle <%= "active" if controller.controller_name == 'products' %>" data-bs-toggle="dropdown">Products</a>
-            <div class="dropdown-menu p-0">
-              <div class="d-lg-flex">
-                <div class="mega-dropdown-column pt-lg-3 pb-lg-4">
-                  <ul class="list-unstyled mb-0">
+            <div class="dropdown-menu">
+              <div class="d-flex">
+                <div class="mega-dropdown-column">
+                  <ul class="list-unstyled">
                     <li><a href="<%= products_mo99_path %>" class="dropdown-item <%= is_active(products_mo99_path) %>"><sup>99</sup>Mo/<sup>99m</sup>Tc Generator</a></li>
                     <li><a href="<%= products_ti201_path %>" class="dropdown-item <%= is_active(products_ti201_path) %>">Thallium Chloride (<sup>201</sup>TI)</a></li>
                     <li><a href="<%= products_ga67_path %>" class="dropdown-item <%= is_active(products_ga67_path) %>">Gallium citrate (Ga-67)</a></li>
@@ -84,12 +57,12 @@
         </ul>
       </div>
     </div>
-    <div class="form-check form-switch mode-switch ms-auto ps-md-5 pe-sm-5 pe-md-0" data-bs-toggle="mode">
+    <div class="form-check form-switch mode-switch ms-auto" data-bs-toggle="mode">
       <input type="checkbox" class="form-check-input" id="theme-mode">
-      <label class="form-check-label d-none d-sm-block" for="theme-mode"><i class='short bx bx-bulb'></i><div class="long">Light</div></label>
-      <label class="form-check-label d-none d-sm-block" for="theme-mode"><i class='short bx bxs-bulb' ></i><div class="long">Dark</div></label>
+      <label class="form-check-label" for="theme-mode"><i class='bx bx-bulb'></i></label>
+      <label class="form-check-label" for="theme-mode"><i class='bx bxs-bulb'></i></label>
     </div>
-    <button type="button" class="navbar-toggler ps-5 ps-sm-0 ps-md-5 ps-lg-0 pe-5 pe-sm-0" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button type="button" class="navbar-toggler ms-4" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
