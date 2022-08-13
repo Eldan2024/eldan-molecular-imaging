@@ -1,8 +1,24 @@
+<style>
+  section {
+    background: url("<%= asset_path("hero-bg.svg") %>") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  @media screen and (min-width: 1200px) {
+    h1 {
+      white-space: nowrap;
+    }
+  }
+</style>
+
 <!-- Hero -->
-<section class="jarallax position-relative d-flex align-items-center min-vh-100 bg-light" style="background-image: url(<%= asset_path("hero-bg.svg") %>);" data-jarallax data-img-position="0% 100%" data-speed="0.5">
+<section class="jarallax position-relative d-flex align-items-center min-vh-100 bg-light" data-jarallax data-img-position="0% 100%" data-speed="0.5">
   <div class="container position-relative mt-5 mt-sm-0">
     <div class="row justify-content-center justify-content-lg-start">
-      <div class="col-sm-6 col-md-7 order-2 order-sm-1 d-flex flex-column text-center text-lg-start">
+      <div class="col-sm-6 col-md-7 col-lg-6 col-xl-5 order-2 order-sm-1 d-flex flex-column text-center text-lg-start pt-xl-5">
 
         <!-- Text -->
         <h1 class="display-2 pb-3">
@@ -15,7 +31,7 @@
       </div>
 
       <!-- Animated gfx -->
-      <div class="col-sm-6 col-md-5 parallax order-1 order-sm-2 pt-2 pt-sm-0">
+      <div class="col-sm-6 col-md-5 col-lg-6 col-xl-7 parallax order-1 order-sm-2 pt-2 pt-sm-0 flex-lg-grow-2">
         <div class="parallax-layer" data-depth="0.1">
           <img src="<%= asset_path("human.gif") + "?a=" + rand().to_s %>" alt="Eldan Molecular Imaging">
         </div>
