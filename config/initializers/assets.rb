@@ -22,7 +22,7 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "vendo
 
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "logos")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "news")
-Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "partners")
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "distribution")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "parents")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "products")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "images", "team")

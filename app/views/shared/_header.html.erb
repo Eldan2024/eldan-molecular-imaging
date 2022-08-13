@@ -1,9 +1,18 @@
+<style>
+  /* Galaxy Fold */
+  @media (min-width: 280px) and (max-width: 320px) {
+    header .form-check {
+      display: none !important;
+    }
+  }
+</style>
+
 <!-- Navbar -->
 <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
 <header class="header navbar navbar-expand-lg navbar-sticky d-flex flex-column shadow-sm <%= 'position-absolute' if current_page?(root_path) || controller.controller_name == "errors" || controller.controller_name == "contacts" %>">
   <div class="container">
     <a class="d-block navbar-brand me-lg-5" href="<%= root_path %>" >
-      <img src="<%= asset_path("human_spinning.gif") %>" width="47" alt="Eldan Molecular Imaging">
+      <img src="<%= asset_path("human-spinning.gif") %>" width="47" alt="Eldan Molecular Imaging">
       <span class="d-none d-md-inline d-lg-none d-xl-inline">Eldan Molecular Imaging</span>
       <span class="d-md-none d-lg-inline d-xl-none">EldanMI</span>
     </a>

@@ -1,33 +1,51 @@
+<style>
+  /* Galaxy Fold */
+  @media (min-width: 280px) and (max-width: 320px) {
+    #human {
+      display: none;
+    }
+
+    .navbar-brand {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+</style>
+
 <!-- Footer -->
-<footer class="footer bg-dark dark-mode pb-4 pb-lg-5">
-  <div class="container text-center pt-lg-3">
-    <div class="navbar-brand justify-content-center text-dark mb-2 mb-lg-4">
-      <img src="<%= asset_path("human_spinning.gif") %>" width="150" alt="Eldan Molecular Imaging">
-      <img src="<%= asset_path("logo.png") %>" width="150" alt="Eldan Molecular Imaging">
+<footer class="footer bg-dark dark-mode">
+  <div class="container text-center pb-4">
+    <div class="navbar-brand justify-content-center text-dark">
+      <img src="<%= asset_path("human-spinning.gif") %>" id="human" width="150">
+      <img src="<%= asset_path("logo.png") %>" id="logo" width="150">
     </div>
-    <ul class="nav justify-content-center pt-3 pb-4 pb-lg-3">
-      <li class="nav-item"><a href="<%= root_path %>" class="nav-link">Home</a></li>
-      <li class="nav-item"><a href="<%= about_path %>" class="nav-link">About</a></li>
-      <li class="nav-item"><a href="<%= products_path %>" class="nav-link">Products</a></li>
-      <li class="nav-item"><a href="<%= team_path %>" class="nav-link">Team</a></li>
-      <li class="nav-item"><a href="<%= distribution_path %>" class="nav-link">distribution</a></li>
-      <li class="nav-item"><a href="<%= news_path %>" class="nav-link">News</a></li>
-      <li class="nav-item"><a href="<%= contacts_path %>" class="nav-link">Contact</a></li>
-    </ul>
-    <div class="d-flex flex-column flex-sm-row justify-content-center">
-      <form class="needs-validation" novalidate>
-        <label for="subscr-email" class="form-label">Subscribe to our newsletter</label>
-        <div class="input-group">
-          <input autocomplete="email" type="email" id="subscr-email" class="form-control rounded-start ps-5" placeholder="Your email" required>
-          <i class="bx bx-envelope fs-lg text-muted position-absolute top-50 start-0 translate-middle-y ms-3 zindex-5"></i>
-          <div class="invalid-tooltip position-absolute top-100 start-0">Please provide a valid email address.</div>
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </div>
-      </form>
+    <div class="d-none d-sm-block pb-sm-3">
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a href="<%= root_path %>" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="<%= about_path %>" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="<%= products_path %>" class="nav-link">Products</a></li>
+        <li class="nav-item"><a href="<%= team_path %>" class="nav-link">Team</a></li>
+        <li class="nav-item"><a href="<%= distribution_path %>" class="nav-link">distribution</a></li>
+        <li class="nav-item"><a href="<%= news_path %>" class="nav-link">News</a></li>
+        <li class="nav-item"><a href="<%= contacts_path %>" class="nav-link">Contact</a></li>
+      </ul>
     </div>
-    <p class="nav d-block fs-sm text-center pt-5 mt-lg-4">
-      <span class="text-light opacity-60">&copy; All rights reserved. Made by </span>
-      <a class="nav-link d-inline-block p-0" href="http://www.gelbhart.com/" target="_blank" rel="noopener">Gelbhart Innovations</a>
+    <div class="d-none d-sm-block">
+      <div class="d-flex flex-sm-row justify-content-center pb-sm-3">
+        <form class="needs-validation" novalidate>
+          <label for="subscr-email" class="form-label">Subscribe to our newsletter</label>
+          <div class="input-group">
+            <input autocomplete="email" type="email" id="subscr-email" class="form-control rounded-start ps-sm-5" placeholder="email@example.com" required>
+            <i class="bx bx-envelope fs-lg text-muted position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+            <div class="invalid-tooltip position-absolute top-100 start-0">Please provide a valid email address.</div>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <p class="nav d-block fs-xs text-center">
+      <span class="text-light opacity-50">&copy; All rights reserved. Made by </span>
+      <a class="nav-link d-inline-block p-0" href="www.gelbhart.com" target="_blank" rel="noopener">Gelbhart Innovations</a>
     </p>
   </div>
 </footer>
