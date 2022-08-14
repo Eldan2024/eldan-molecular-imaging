@@ -1,12 +1,4 @@
 <style>
-  .mobile-col {
-    font-size: 14px;
-  }
-
-  #desc {
-    width: 500px;
-  }
-
   #desc a.collapsed:after {
     content: '+ Show More';
   }
@@ -15,26 +7,26 @@
     content: '- Show Less';
   }
 
-  #desc #collapseExample.collapse:not(.show) {
+  #desc #collapse.collapse:not(.show) {
     display: block;
     height: 4.5em;
     overflow: hidden;
   }
 
-  #desc #collapseExample.collapsing {
+  #desc #collapse.collapsing {
     height: 4.5em;
   }
 </style>
 
 <!-- Hero -->
-<section class="bg-dark dark-mode py-4">
-  <div class="container pb-2 py-lg-3">
+<section class="bg-dark dark-mode">
+  <div class="row justify-content-center align-items-center py-4">
 
     <!-- Breadcrumb -->
-    <nav class="pb-4 mb-lg-3" aria-label="breadcrumb">
-      <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+    <nav class="d-none d-sm-block ps-4 ps-md-5" aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-start">
         <li class="breadcrumb-item">
-          <a href="<%= root_path %>"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+          <a href="<%= root_path %>"><i class="bx bx-home-alt fs-lg"></i>Home</a>
         </li>
         <li class="breadcrumb-item">
           <a href="">Products</a>
@@ -42,44 +34,28 @@
         <li class="breadcrumb-item active" aria-current="page"><%= @breadcrumb %></li>
       </ol>
     </nav>
-    <h1 class="text-center mb-5"><%= @title %></h1>
-    <div class="row text-center">
-      <div class="col-sm-3"></div>
-      <div class="col-sm-6">
-        <div class="container" id="desc">
-          <p class="collapse" id="collapseExample" aria-expanded="false">
-            <%= @desc %>
-          </p>
-          <a role="button" class="collapsed text-decoration-none" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
-        </div>
-      </div>
+    <div class="col-10 col-sm-8 col-md-6 col-lg-4 text-center" id="desc">
+      <h1 class="pb-1"><%= @title %></h1>
+      <p class="collapse" id="collapse" aria-expanded="false">
+        <%= @desc %>
+      </p>
+      <a role="button" class="collapsed text-decoration-none" data-bs-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse"></a>
     </div>
   </div>
 </section>
 
-<section class="container my-md-3 my-lg-3">
-  <div class="d-md-none my-3 mx-3">
+<!-- Product Description -->
+<section class="my-3">
+  <div class="">
     <% i = 0 %>
     <% for j in @data do %>
-      <div class="row align-items-center px-2 py-2 <%= "bg-secondary" if i.even? %>">
-        <div class="mobile-col col text-dark fw-semibold">
+      <div class="row align-items-center justify-content-center px-4 px-sm-2 py-4 <%= "bg-secondary" if i.even? %>">
+        <div class="col-6 col-sm-4 col-lg-3 col-xl-2 text-dark fw-semibold">
           <%= @data[i][0] %>
         </div>
-        <div class="mobile-col col">
+        <div class="col-6 col-sm-4 col-lg-3 col-xl-2 text-center">
           <%= @data[i][1] %>
         </div>
-      </div>
-      <% i += 1 %>
-    <% end %>
-  </div>
-  <div class="d-none d-md-block mt-2 pb-4">
-    <% i = 0 %>
-    <% for j in @data do %>
-      <div class="row g-0 <%= "bg-secondary" if i.even? %> rounded-3">
-        <div class="col-md-3"></div>
-        <div class="col-md-3 text-dark fw-semibold ps-4 pe-2 py-4"><%= @data[i][0] %></div>
-        <div class="col-md-3 px-2 py-4 text-center"><%= @data[i][1] %></div>
-        <div class="col-md-3"></div>
       </div>
       <% i += 1 %>
     <% end %>
@@ -87,34 +63,32 @@
 </section>
 
 <!-- FAQ -->
-<section class="bg-secondary py-5">
-  <div class="container my-2 py-md-2 py-lg-5">
-    <div class="row">
-      <div class="col-xl-4 col-md-5 text-center text-md-start pb-2 pb-md-0 mb-4 mb-md-0">
-        <h2 class="pb-3 mb-1 mb-lg-2">Any questions? <br class="d-none d-md-inline">Check out the FAQs</h2>
-        <p class="fs-lg pb-3 mb-2 mb-lg-3">Still have unanswered questions and need to get in touch?</p>
-        <a href="../contacts/new?via=<%= @title.gsub("<sup>","").gsub("</sup>","") %>" class="btn btn-primary">Contact support</a>
-      </div>
-      <div class="col-md-7 offset-xl-1">
-        <div class="accordion" id="faq">
+<section class="bg-secondary pt-5 pb-3">
+  <div class="row justify-content-center align-items-center align-items-sm-start">
+    <div class="col-10 col-sm-5 col-lg-4 text-center text-sm-start ps-sm-5 pb-5">
+      <h2 class="">Any questions? <br>Check out the FAQs</h2>
+      <p class="fs-lg d-none d-sm-block">Still have unanswered questions and need to get in touch?</p>
+      <a href="../contacts/new?via=<%= @title.gsub("<sup>","").gsub("</sup>","") %>" class="btn btn-primary">Contact support</a>
+    </div>
+    <div class="col-10 col-sm-5 offset-sm-1">
+      <div class="accordion" id="faq">
 
-          <!-- Questions -->
-          <% i = 0 %>
-          <% for j in @questions do %>
-            <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
-              <h2 class="accordion-header" id="q<%= i %>-heading">
-                <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q<%= i %>" aria-expanded="false" aria-controls="q<%= i %>">
-                  <%= @questions[i][0] %>
-                </button>
-              </h2>
-              <div id="q<%= i %>" class="accordion-collapse collapse" aria-labelledby="q<%= i %>-heading" data-bs-parent="#faq">
-                <div class="accordion-body fs-sm pt-0"><%= @questions[i][1] %> </div>
-              </div>
+        <!-- Questions -->
+        <% i = 0 %>
+        <% for j in @questions do %>
+          <div class="accordion-item border-0 rounded-3 shadow-sm">
+            <h2 class="accordion-header" id="q<%= i %>-heading">
+              <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q<%= i %>" aria-expanded="false" aria-controls="q<%= i %>">
+                <%= @questions[i][0] %>
+              </button>
+            </h2>
+            <div id="q<%= i %>" class="accordion-collapse collapse" aria-labelledby="q<%= i %>-heading" data-bs-parent="#faq">
+              <div class="accordion-body fs-sm pt-0"><%= @questions[i][1] %> </div>
             </div>
-            <% i += 1 %>
-          <% end %>
+          </div>
+          <% i += 1 %>
+        <% end %>
 
-        </div>
       </div>
     </div>
   </div>

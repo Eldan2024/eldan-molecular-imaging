@@ -1,21 +1,56 @@
 <style>
   p {
     text-align: justify;
+    text-justify: distribute;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    word-spacing: -0.05em;
+    line-break: auto;
+  }
+
+  #description #show.collapsed:after {
+    content: '+ Show More';
+  }
+
+  #description #show:not(.collapsed):after {
+    content: '- Show Less';
+  }
+
+  #description #collapse.collapse:not(.show) {
+    display: block;
+    height: 40vh;
+    overflow: hidden;
+  }
+
+  #description #collapse.collapsing {
+    height: 40vh;
+  }
+
+  @media screen and (min-width: 500px) {
+    #description #collapse.collapse:not(.show) {
+      display: block;
+      height: auto;
+      overflow: hidden;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    p {
+    }
   }
 </style>
 
-<div class="jarallax d-none d-md-block" data-jarallax data-speed="0.35">
+<div class="jarallax d-none d-sm-block" data-jarallax data-speed="0.35">
   <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary-translucent"></span>
   <div class="jarallax-img" style="background-image: url(<%= asset_path(@page_image) %>);"></div>
-  <div class="d-none d-xxl-block" style="height: 200px;"></div>
-  <div class="d-none d-md-block d-xxl-none" style="height: 200px;"></div>
+  <div style="height: 200px;"></div>
 </div>
 
 <!-- Breadcrumb -->
-<nav class="container py-4 mb-2 my-lg-3" aria-label="breadcrumb">
+<nav class="container py-3" aria-label="breadcrumb">
   <ol class="breadcrumb mb-0">
     <li class="breadcrumb-item">
-      <a href="<%= root_path %>"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+      <a href="<%= root_path %>"><i class="bx bx-home-alt fs-md me-2"></i>Home</a>
     </li>
     <li class="breadcrumb-item">
       <a href=""><%= controller.controller_name.capitalize %></a>
@@ -26,9 +61,10 @@
 
 
 <!-- About -->
-<section class="container pb-5 mb-md-2 mb-lg-4">
-  <h1 class="border-bottom pb-4"><%= @page_title.split(' / ').first %></h1>
-  <div class="row pt-2 pt-md-3">
+<section class="container text-center text-sm-start" id="description">
+  <h1 class="d-inline border-bottom"><%= @page_title.split(' / ').first %></h1>
+  <p class="collapse mt-3 mx-3 d-block col-md-9 col-lg-7" id="collapse" aria-expanded="false">
     <%= yield %>
-  </div>
+  </p>
+  <a id="show" role="button" class="collapsed text-decoration-none d-block d-sm-none text-center mb-3" data-bs-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse"></a>
 </section>

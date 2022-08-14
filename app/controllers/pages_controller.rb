@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   def distribution
     @page_desc = "Eldan Molecular Imaging"
     @page_title =  "Distribution"
+    @page_image = "distribution-cover.jpg"
 
     @partners = [
       ["Isorad" , "Established more than 40 years ago, Isorad Radiopharmaceuticals is a leading manufacturer of SPECT, PET, MRI contrast agents, and nuclear products, located in the SOREQ Nuclear Research Center (Soreq NRC) near Yavne, Israel."]]
