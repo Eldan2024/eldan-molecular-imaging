@@ -1,4 +1,22 @@
 <style>
+  #collapseDiv #show.collapsed:after {
+    content: '+ Show More';
+  }
+
+  #collapseDiv #show:not(.collapsed):after {
+    content: '- Show Less';
+  }
+
+  #collapseDiv #collapse.collapse:not(.show) {
+    display: block;
+    height: 8em;
+    overflow: hidden;
+  }
+
+  #collapseDiv #collapse.collapsing {
+    height: 8em;
+  }
+
   #map {
     height: 400px;
     width: 100%;
@@ -8,8 +26,8 @@
 <div class="jarallax d-none d-md-block" data-jarallax data-speed="0.1">
   <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary-translucent"></span>
   <div class="jarallax-img" style="background-image: url(<%= asset_path(@page_image) %>);"></div>
-  <div class="d-none d-xxl-block" style="height: 400px;"></div>
-  <div class="d-none d-md-block d-xxl-none" style="height: 400px;"></div>
+  <div class="d-none d-lg-block" style="height: 400px;"></div>
+  <div class="d-none d-md-block d-lg-none" style="height: 200px;"></div>
 </div>
 
 <!-- Breadcrumb -->
@@ -24,15 +42,22 @@
 
 <!-- How we work (Steps) -->
 <section class="pb-5 px-5">
-  <h2 class="h1 pb-2 pb-md-0 mb-4 mb-md-5 text-center">Product Distribution</h2>
+  <div class="row justify-content-center align-items-center text-center mb-5">
+    <div class="col-12 col-sm-12 col-md-10 col-lg-6">
+      <h2 class="h1 pb-2 pb-md-0 mb-4 mb-md-5 text-center">Product Distribution</h2>
+      <p>
+        Around 30-40 million medical diagnostic imaging techniques using technetium-99m (99mTc) and other radiopharmaceuticals are performed worldwide every year. Disruptions in the supply chain of these medical isotopes – which have a very short half-life can lead to cancellations or delays in important medical testing services. Eldan Molecular Imaging is therefore looking beyond the common practice to provide a better and more reliable service in its distribution of radiopharmaceuticals.
+      </p>
+    </div>
+  </div>
   <div class="steps steps-sm steps-horizontal-md pb-2 pb-sm-3 steps-center">
     <div class="step">
       <div class="step-number">
         <div class="step-number-inner">1</div>
       </div>
       <div class="step-body">
-        <h3 class="h4 mb-3">Consectetur ut proident nostrud magna aliqua in.</h3>
-        <p class="mb-0">Massa enim libero dictumst consectetur in convallis lobortis cursus mi a magna ullamcorper consectetur commodo fermentum.</p>
+        <h3 class="h4 mb-3">Production and Release</h3>
+        <p class="mb-0">The radiopharmaceutical products are manufactured on Saturday evening, tested, and packed.</p>
       </div>
     </div>
     <div class="step">
@@ -40,17 +65,30 @@
         <div class="step-number-inner">2</div>
       </div>
       <div class="step-body">
-        <h3 class="h4 mb-3">Consectetur ut proident nostrud magna aliqua in.</h3>
-        <p class="mb-0">At ultricies id non quisque integer eget velit. Facilisis enim malesuada metus, risus amet ultricies magna aliquam bibendum convallis.</p>
+        <h3 class="h4 mb-3">Transfer of Product from the manufacturing facility to the Airport</h3>
+        <p class="mb-0">On Sunday early morning, the products are transferred to Tel-Aviv Ben Gurion airport, a 30min drive from the manufacturing facility.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-number">
         <div class="step-number-inner">3</div>
       </div>
-      <div class="step-body">
-        <h3 class="h4 mb-3">Consectetur ut proident nostrud magna aliqua in.</h3>
-        <p class="mb-0">Pellentesque rhoncus viverra vestibulum, purus purus quisque quisque vestibulum facilisis dictumst consequat enim libero.</p>
+      <div class="step-body" id="collapseDiv">
+        <h3 class="h4 mb-3">Shipment</h3>
+        <p class="mb-0 collapse" id="collapse" aria-expanded="false">
+          The products are shipped from the Tel-Aviv Ben Gurion airport, which shares many connections to major European and middle eastern transportation hubs:
+            <br><br><i class='bx bx-chevron-right pe-2'></i>28 weekly flights to Frankfurt, Lufthansa Hub
+            <br><i class='bx bx-chevron-right  pe-2'></i>21 weekly flights to Paris, Air France Hub
+            <br><i class='bx bx-chevron-right pe-2'></i>32 weekly flights to London, British Airways Hub
+            <br><i class='bx bx-chevron-right pe-2'></i>38 weekly flights to Dubai, Emirates Hub
+            <br><i class='bx bx-chevron-right pe-2'></i>56 weekly flights to Istanbul, Turkish Airlines Hub
+          <br><br>And with numerous direct flights to other world centers:
+            <br><br><i class='bx bx-chevron-right pe-2'></i>New York, 30 weekly flights
+            <br><i class='bx bx-chevron-right pe-2'></i>Bangkok, 7 weekly flights 
+            <br><i class='bx bx-chevron-right pe-2'></i>Addis Ababa, 7 weekly flights 
+            <br>And many more…
+        </p>
+        <a id="show" role="button" class="collapsed text-decoration-none d-block text-center mt-3" data-bs-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse"></a>
       </div>
     </div>
     <div class="step">
@@ -58,8 +96,8 @@
         <div class="step-number-inner">4</div>
       </div>
       <div class="step-body">
-        <h3 class="h4 mb-3">Consectetur ut proident nostrud magna aliqua in.</h3>
-        <p class="mb-0">Quam dolor commodo fermentum bibendum dictumst. Risus pretium eget at viverra eget neque adipiscing lobortis cursus.</p>
+        <h3 class="h4 mb-3">Products arrival and patients’ doses preparation</h3>
+        <p class="mb-0">The products arrive at the local distributor/radiopharmacy or hospitals where patients’ doses are prepared.</p>
       </div>
     </div>
   </div>
