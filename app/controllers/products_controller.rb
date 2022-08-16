@@ -7,8 +7,7 @@ class ProductsController < ApplicationController
     @title = "Gallium citrate (Ga-67) injection"
     @desc = "Gallium-67 (67Ga) is a cyclotron-produced radiometal used by single photon emission computed tomography (SPECT) imaging for localization of inflammatory lesions (infections). With Ga67 you can obtain images of a specific type of tissue, or disease state of tissue. Sterile Ga-67 manufactured in Israel since 1987."
 
-    @questions = [
-      ["Example Question 1", "Quis veniam sunt nisi ut proident officia aliqua irure aliqua."]]
+    @questions = []
 
     @data = [
       ["Manufacturer", "<a class='text-decoration-none' href='http://www.isorad.co.il/en/' target='_blank'>Isorad Radiopharmaceuticals, Israel</a>".html_safe],
@@ -33,8 +32,7 @@ class ProductsController < ApplicationController
     @title = "<sup>99</sup>Mo/<sup>99m</sup>Tc Generator".html_safe
     @desc = "A technetium-99m generator is a device used to extract the isotope 99mTc of technetium from a decaying sample of molybdenum-99. Tc99m is used for a variety of nuclear medicine diagnostic in single photon emission computed tomography (SPECT) procedures, where its short half-life is very useful. Sterile Technetium-99m generators are manufactured in Israel since 1976 utilizing dry technology. The generators are ergonomic and recyclable.".html_safe
 
-    @questions = [
-      ["Example Question 1", "Quis veniam sunt nisi ut proident officia aliqua irure aliqua."]]
+    @questions = []
 
     @data = [
       ["Manufacturer", "<a class='text-decoration-none' href='http://www.isorad.co.il/en/' target='_blank'>Isorad Radiopharmaceuticals, Israel</a>".html_safe],
@@ -56,8 +54,7 @@ class ProductsController < ApplicationController
     @title = "Thallium Chloride (<sup>201</sup>TI) injection".html_safe
     @desc = "Thallium-201 (201Tl) is a radioactive potassium analog used in the diagnosis of coronary artery disease and parathyroid hyperactivity using single photon emission computed tomography (SPECT). Other useful applications for a thallium-201 scan, like tumor diagnosis and olfacto-scintigraphy, are being explored and have shown promising results in various studies. It is produced in a cyclotron by bombarding thallium-203 with protons. Sterile TI-201 has been manufactured in Israel since 1987.".html_safe
 
-    @questions = [
-      ["Example Question 1", "Quis veniam sunt nisi ut proident officia aliqua irure aliqua."]]
+    @questions = []
 
     @data = [
       ["Manufacturer", "<a class='text-decoration-none' href='http://www.isorad.co.il/en/' target='_blank'>Isorad Radiopharmaceuticals, Israel</a>".html_safe],

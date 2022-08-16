@@ -7,7 +7,7 @@ class AboutController < ApplicationController
 
   def molecular_imaging
     @page_desc = "Eldan Molecular Imaging"
-    @page_title = "Molecular Imaging / About"
+    @page_title = "Eldan Molecular Imaging / About"
     @page_image = "cover.jpg"
   end
 
