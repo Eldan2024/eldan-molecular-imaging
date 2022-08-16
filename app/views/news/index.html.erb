@@ -17,17 +17,6 @@
     <div class="col-lg-5 col-md-4">
       <h1 class="mb-2 mb-md-0">News</h1>
     </div>
-    <div class="col-lg-7 col-md-8">
-      <div class="row gy-2">
-        <div class="col-lg-5 col-sm-6"></div>
-        <div class="col-lg-7 col-sm-6">
-          <div class="input-group">
-            <input type="search" id="query" name="q" class="form-control pe-5 rounded" placeholder="Search the news..." aria-label="Search through site content">
-            <i class="bx bx-search position-absolute top-50 end-0 translate-middle-y me-3 zindex-5 fs-lg"></i>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- Pagination: Pager -->
@@ -42,71 +31,47 @@
   }'>
     <div class="swiper-wrapper">
 
-      <!-- Swiper Slide -->
-      <div class="swiper-slide">
-        <!-- Item -->
-        <article class="card border-0 shadow-sm overflow-hidden mb-4">
-          <div class="row g-0">
-            <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url(<%= asset_path("10.jpg") %>); min-height: 15rem;">
-              <a href="<%= news_example_path %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-            </div>
-            <div class="col-sm-8">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Radiopharmaceuticals</a>
-                  <span class="fs-sm text-muted border-start ps-3 ms-3">Feb 5, 2021</span>
+      <% i = 0 %>
+      <% for x in 0..(@articles.count).fdiv(@articles_per_page).ceil-1 do [i] %>
+        <!-- Swiper Slides -->
+        <div class="swiper-slide">
+          <!-- Items -->
+          <% for j in @articles do %>
+            <article class="card border-0 shadow-sm overflow-hidden mb-4">
+              <div class="row g-0">
+                <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url(<%= asset_path(@articles[i][6]) %>); min-height: 15rem;">
+                  <a href="<%= @articles[i][2] %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
                 </div>
-                <h3 class="h4">
-                  <a href="<%= news_example_path %>">Solutions for Emerging Nitrosamine Contamination of Pharmaceuticals</a>
-                </h3>
-                <p>Nitrosamines are chemical compounds classified as probable human carcinogens on the basis of animal studies.</p>
-                <hr class="my-4">
-                <div class="d-flex align-items-center justify-content-between">
-                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
-                    <img src="<%= asset_path("ikan.png") %>" class="rounded-circle me-3" width="48" alt="Avatar">
-                    Ariel Ikan
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-        <!-- Item Ends -->
-      </div>
-      <!-- Swiper Slide Ends -->
-
-      <!-- Swiper Slide -->
-      <div class="swiper-slide">
-        <!-- Item -->
-        <article class="card border-0 shadow-sm overflow-hidden mb-4">
-          <div class="row g-0">
-            <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url(<%= asset_path("09.jpg") %>); min-height: 15rem;">
-              <a href="<%= news_example_path %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-            </div>
-            <div class="col-sm-8">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Radiopharmaceuticals</a>
-                  <span class="fs-sm text-muted border-start ps-3 ms-3">June 2, 2021</span>
-                </div>
-                <h3 class="h4">
-                  <a href="<%= news_example_path %>">Eldan is proud to announce the launch of the first Analytics Demo Lab in Israel</a>
-                </h3>
-                <p>Eldan, in collaboration with Agilent, a global leader in Life Science Solutions, is proud to announce the launch of our first Demo lab in Israel for analytical chemistry. The first instrument installed in the lab, …</p>
-                <hr class="my-4">
-                <div class="d-flex align-items-center justify-content-between">
-                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
-                    <img src="<%= asset_path("rabinovich.png") %>" class="rounded-circle me-3" width="48" alt="Avatar">
-                    Tal Rabinovich
-                  </a>
+                <div class="col-sm-8">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none"><%= @articles[i][3] %></a>
+                      <span class="fs-sm text-muted border-start ps-3 ms-3"><%= @articles[i][4] %></span>
+                    </div>
+                    <h3 class="h4">
+                      <a href="<%= @articles[i][2] %>"><%= @articles[i][0] %></a>
+                    </h3>
+                    <p><%= @articles[i][1] %></p>
+                    <hr class="my-4">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="<%= asset_path(@articles[i][5].split[1].downcase) %>" class="rounded-circle me-3" width="48" alt="Avatar">
+                        <%= @articles[i][5] %>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </article>
-        <!-- Item Ends -->
-      </div>
-      <!-- Swiper Slide Ends -->
+            </article>
+            <% i += 1 %>
+            <% if i % @articles_per_page == 0 || i == @articles.count %>
+              <% break %>
+            <% end %>
+          <% end %>
+          <!-- Items Ends -->
+        </div>
+        <!-- Swiper Slides Ends -->
+      <% end %>
 
     </div>
     <!-- Pagination -->
