@@ -16,7 +16,9 @@
 <footer class="footer bg-dark dark-mode">
   <div class="container text-center pb-4">
     <div class="navbar-brand justify-content-center text-dark">
-      <img src="<%= asset_path("human-spinning.gif") %>" id="human" width="150">
+      <video autoplay muted loop id="human" width="150">
+        <source src="<%= asset_path("human-spinning.webm") %>" type="video/webm">
+      </video>
       <img src="<%= asset_path("logo.png") %>" id="logo" width="150">
     </div>
     <div class="d-none d-sm-block pb-sm-3">
