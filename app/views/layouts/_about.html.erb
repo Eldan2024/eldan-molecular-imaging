@@ -62,6 +62,7 @@
 
 <!-- About -->
 <section class="container text-center text-sm-start" id="description">
+  <img class="d-block py-3" src="<%= asset_path(@page_logo) %>" width="200">
   <h1 class="d-inline border-bottom"><%= @page_title.split(' / ').first %></h1>
   <p class="collapse mt-3 mx-3 d-block col-md-9 col-lg-7" id="collapse" aria-expanded="false">
     <%= yield %>

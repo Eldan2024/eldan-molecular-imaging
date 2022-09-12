@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'about', to: redirect('about/molecular_imaging')
   get 'about/molecular_imaging'
   get 'about/eldan'
-  get 'about/neopharm'
+  get 'about/neopharm_group'
 
   resources :contacts, only: [:new, :create]
   get 'contacts', to: 'contacts#new'
