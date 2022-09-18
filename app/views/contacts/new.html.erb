@@ -22,7 +22,7 @@
     <nav class="pt-4" aria-label="breadcrumb">
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item">
-          <a href="index.html"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+          <a href="index.html"><i class="bx bx-home-alt fs-lg me-1" role="none"></i>Home</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Contact</li>
       </ol>
@@ -101,7 +101,7 @@
               <label for="message" class="form-label fs-base">Message</label>
               <div class="input-group">
                 <span class="input-group-text">
-                  <i class="bx bx-message fs-lg"></i>
+                  <i class="bx bx-message fs-lg" role="none"></i>
                 </span>
                 <%= f.text_area  :message, rows: 3, required: true, class: "contact-form-text-area form-control form-control-lg", placeholder:"Write your message here..." %>
                 <div class="invalid-feedback">Please provide a valid message!</div>

@@ -56,9 +56,9 @@ Instead of installing you may use the remote version
 2. To use an icon on your page, add a class 'bx' and seperate class with the icons name with a prefix 'bx-' for regular icons , 'bxs-' for solid icons and 'bxl-' for logos:
 
 ```html
-<i class="bx bx-hot"></i>
-<i class="bx bxs-hot"></i>
-<i class="bx bxl-facebook-square"></i>
+<i class="bx bx-hot" role="none"></i>
+<i class="bx bxs-hot" role="none"></i>
+<i class="bx bxl-facebook-square" role="none"></i>
 ```
 ### Using via Web Component
 

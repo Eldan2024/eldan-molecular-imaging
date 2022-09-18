@@ -37,8 +37,8 @@
         <form class="needs-validation" novalidate>
           <label for="subscr-email" class="form-label">Subscribe to our newsletter</label>
           <div class="input-group">
-            <input autocomplete="email" type="email" id="subscr-email" class="form-control rounded-start ps-sm-5" placeholder="email@example.com" required>
-            <i class="bx bx-envelope fs-lg text-muted position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+            <input autocomplete="email" type="email" id="subscr-email" class="form-control rounded-start ps-sm-5" placeholder="email@example.com" required="false">
+            <i class="bx bx-envelope fs-lg text-muted position-absolute top-50 start-0 translate-middle-y ms-3" role="none" role="none"></i>
             <div class="invalid-tooltip position-absolute top-100 start-0">Please provide a valid email address.</div>
             <button type="submit" class="btn btn-primary">Subscribe</button>
           </div>
@@ -47,7 +47,7 @@
     </div>
     <div class="fs-xs text-center">
       <span class="text-light opacity-50">&copy; All rights reserved. Made by </span>
-      <a class="nav-link d-inline p-0" href="https://eldan.biz/" target="_blank" rel="noopener">Eldan</a>
+      <a class="nav-link d-inline p-0" href="https://eldan.biz/" target="_blank" rel="noopener" aria-label="Eldan Website">Eldan</a>
     </div>
   </div>
 </footer>

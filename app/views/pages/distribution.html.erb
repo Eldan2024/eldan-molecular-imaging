@@ -34,7 +34,7 @@
 <nav class="container py-4 my-lg-3" aria-label="breadcrumb">
   <ol class="breadcrumb mb-0">
     <li class="breadcrumb-item">
-      <a href="<%= root_path %>"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+      <a href="<%= root_path %>"><i class="bx bx-home-alt fs-lg me-1" role="none"></i>Home</a>
     </li>
     <li class="breadcrumb-item active" aria-current="page"><%= @page_title %></li>
   </ol>
@@ -166,7 +166,7 @@
             <% if @distribution[i][1] != "" %>
               '<li class="mb-2">'+
                 '<a href="tel:<%= @distribution[i][1].gsub(" ", "") %>" class="nav-link d-flex align-items-center p-0">'+
-                  '<i class="bx bx-phone-call fs-xl text-primary me-2"></i>'+
+                  '<i class="bx bx-phone-call fs-xl text-primary me-2" role="none"></i>'+
                   '<%= @distribution[i][1] %>'+
                 '</a>'+
               '</li>'+
@@ -174,7 +174,7 @@
             <% if @distribution[i][2] != "" %>
             '<li class="mb-2">'+
               '<a href="mailto:<%= @distribution[i][2] %>" class="nav-link d-flex align-items-center p-0">'+
-                '<i class="bx bx-envelope fs-xl text-primary me-2"></i>'+
+                '<i class="bx bx-envelope fs-xl text-primary me-2" role="none"></i>'+
                 '<%= @distribution[i][2] %>'+
               '</a>'+
             '</li>'+
@@ -182,7 +182,7 @@
             <% if @distribution[i][3] != "" %>
             '<li class="mb-2">'+
               '<a class="nav-link d-flex align-items-center p-0">'+
-                '<i class="bx bx-map fs-xl text-primary me-2"></i>'+
+                '<i class="bx bx-map fs-xl text-primary me-2" role="none"></i>'+
                 '<%= @distribution[i][3] %>'+
               '</a>'+
             '</li>'+
