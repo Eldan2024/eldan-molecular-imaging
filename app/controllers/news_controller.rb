@@ -5,6 +5,11 @@ class NewsController < ApplicationController
 
     @articles_per_page = 4
     @articles = [
+      ["Solutions for Emerging Nitrosamine Contamination of Pharmaceuticals", "Nitrosamines are chemical compounds classified as probable human carcinogens on the basis of animal studies.","news/example", "Radiopharmaceuticals", "Feb 5, 2021", "Ariel Ikan", "10.jpg"],
+      ["Solutions for Emerging Nitrosamine Contamination of Pharmaceuticals", "Nitrosamines are chemical compounds classified as probable human carcinogens on the basis of animal studies.","news/example", "Radiopharmaceuticals", "Feb 5, 2021", "Ariel Ikan", "10.jpg"],
+      ["Solutions for Emerging Nitrosamine Contamination of Pharmaceuticals", "Nitrosamines are chemical compounds classified as probable human carcinogens on the basis of animal studies.","news/example", "Radiopharmaceuticals", "Feb 5, 2021", "Ariel Ikan", "10.jpg"],
+      ["Solutions for Emerging Nitrosamine Contamination of Pharmaceuticals", "Nitrosamines are chemical compounds classified as probable human carcinogens on the basis of animal studies.","news/example", "Radiopharmaceuticals", "Feb 5, 2021", "Ariel Ikan", "10.jpg"],
+      ["Solutions for Emerging Nitrosamine Contamination of Pharmaceuticals", "Nitrosamines are chemical compounds classified as probable human carcinogens on the basis of animal studies.","news/example", "Radiopharmaceuticals", "Feb 5, 2021", "Ariel Ikan", "10.jpg"],
       ["Solutions for Emerging Nitrosamine Contamination of Pharmaceuticals", "Nitrosamines are chemical compounds classified as probable human carcinogens on the basis of animal studies.","news/example", "Radiopharmaceuticals", "Feb 5, 2021", "Ariel Ikan", "10.jpg"]]
   end
 
