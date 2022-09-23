@@ -40,32 +40,35 @@
   }
 </style>
 
-<div class="jarallax d-none d-sm-block" data-jarallax data-speed="0.35">
-  <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary-translucent"></span>
-  <div class="jarallax-img" style="background-image: url(<%= asset_path(@page_image) %>);"></div>
-  <div style="height: 200px;"></div>
+<div class="min-vh-100">
+
+  <div class="jarallax d-none d-sm-block" data-jarallax data-speed="0.35">
+    <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary-translucent"></span>
+    <div class="jarallax-img" style="background-image: url(<%= asset_path(@page_image) %>);"></div>
+    <div style="height: 200px;"></div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <nav class="container py-3" aria-label="breadcrumb">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item">
+        <a href="<%= root_path %>"><i class="bx bx-home-alt fs-md me-2" role="none"></i>Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href=""><%= controller.controller_name.capitalize %></a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page"><%= @page_title.split(' / ').first %></li>
+    </ol>
+  </nav>
+
+
+  <!-- About -->
+  <section class="container text-center text-sm-start" id="description">
+    <h1 class="d-inline border-bottom"><%= @page_title.split(' / ').first %></h1>
+    <p class="collapse mt-3 mx-3 d-block col-md-9 col-lg-7" id="collapse" aria-expanded="false">
+      <%= yield %>
+    </p>
+    <a id="show" role="button" class="collapsed text-decoration-none d-block d-sm-none text-center mb-3" data-bs-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse"></a>
+  </section>
+
 </div>
-
-<!-- Breadcrumb -->
-<nav class="container py-3" aria-label="breadcrumb">
-  <ol class="breadcrumb mb-0">
-    <li class="breadcrumb-item">
-      <a href="<%= root_path %>"><i class="bx bx-home-alt fs-md me-2" role="none"></i>Home</a>
-    </li>
-    <li class="breadcrumb-item">
-      <a href=""><%= controller.controller_name.capitalize %></a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page"><%= @page_title.split(' / ').first %></li>
-  </ol>
-</nav>
-
-
-<!-- About -->
-<section class="container text-center text-sm-start" id="description">
-  <img class="d-block py-3" src="<%= asset_path(@page_logo) %>" width="200">
-  <h1 class="d-inline border-bottom"><%= @page_title.split(' / ').first %></h1>
-  <p class="collapse mt-3 mx-3 d-block col-md-9 col-lg-7" id="collapse" aria-expanded="false">
-    <%= yield %>
-  </p>
-  <a id="show" role="button" class="collapsed text-decoration-none d-block d-sm-none text-center mb-3" data-bs-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse"></a>
-</section>
