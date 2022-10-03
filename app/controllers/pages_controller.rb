@@ -32,14 +32,11 @@ class PagesController < ApplicationController
 
     @desc5 = ""
 
-    @desc6 = ""
-
     @members = [
       ["Tal Rabinovich", "General Manager", "https://www.linkedin.com/in/tal-rabinovich-659a54/", @desc1],
       ["Bareket Gelbhart", "International Business Manager", "https://www.linkedin.com/in/bareket-gelbhart-83904a16/", @desc2],
       ["Ariel Ikan", "VP Business Development", "https://www.linkedin.com/in/ariel-ikan/", @desc3],
       ["Ronit Duanis", "Operation Coordinator", "", @desc4],
-      ["Haim Shoshan", "Vice President of Finance and Logistics", "", @desc5],
-      ["Asaf Asaf", "", "", @desc6]]
+      ["Haim Shoshan", "Vice President of Finance and Logistics", "", @desc5]]
   end
 end
