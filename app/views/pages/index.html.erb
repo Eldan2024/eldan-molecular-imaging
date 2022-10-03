@@ -1,7 +1,7 @@
 <style>
   section {
     min-height: 100vh;
-    background: url("<%= asset_path("bg.svg") %>") no-repeat center center fixed; 
+    background: url("<%= asset_path("") %>") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -51,17 +51,11 @@
 
         <!-- Text -->
         <h1 class="display-2 pb-3">
-          Looking <span class="text-gradient-primary">Beyond!</span>
+          <span class="text-gradient-beyond"> Looking Beyond!</span>
         </h1>
         <p class="d-block">To provide you with the best radiopharmaceutical products, best service, and best distribution channels, so you can provide your patients and caregivers, top-quality products as soon as they need them.</p>
       </div>
 
-      <!-- Animated gfx -->
-      <div class="col-sm-6 col-md-5 col-lg-6 col-xl-7 parallax order-1 order-sm-2 pt-5 pt-sm-0 flex-lg-grow-2">
-        <div class="parallax-layer" data-depth="0.1">
-          <img src="<%= asset_path("human-syringe.gif") + "?a=" + rand().to_s %>" alt="Eldan Molecular Imaging">
-        </div>
-      </div>
     </div>
   </div>
 </section>

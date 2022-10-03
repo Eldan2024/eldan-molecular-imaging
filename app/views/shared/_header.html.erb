@@ -12,9 +12,7 @@
 <header class="header navbar navbar-expand-lg navbar-sticky d-flex flex-column shadow-sm <%= 'position-absolute' if current_page?(root_path) || controller.controller_name == "errors" || controller.controller_name == "contacts" %>">
   <div class="container">
     <a class="d-block d-flex align-items-center navbar-brand me-lg-5" href="<%= root_path %>" >
-      <video autoplay muted loop width="47">
-        <source src="<%= asset_path("human-spinning.webm") %>" type="video/webm">
-      </video>
+      <img src="<%= asset_path("design.png") %>" alt="Eldan Logo" width="50">
       <span class="d-none d-md-inline d-lg-none d-xl-inline">Eldan Molecular Imaging</span>
       <span class="d-md-none d-lg-inline d-xl-none">EldanMI</span>
     </a>
