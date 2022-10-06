@@ -1,13 +1,13 @@
 class PagesController < ApplicationController
   def index
-    @page_desc = "Eldan Molecular Imaging"
-    @page_title =  "Home"
+    @title =  "Home"
+    @desc = "Eldan Molecular Imaging"
   end
 
   def distribution
-    @page_desc = "Eldan Molecular Imaging"
-    @page_title =  "Distribution"
-    @page_image = "distribution-cover.jpg"
+    @title =  "Distribution"
+    @desc = "Eldan Molecular Imaging"
+    @jarallax = "distribution-cover.jpg"
 
     @partners = [
       ["Isorad" , "Established more than 40 years ago, Isorad Radiopharmaceuticals is a leading manufacturer of SPECT, PET, MRI contrast agents, and nuclear products, located in the SOREQ Nuclear Research Center (Soreq NRC) near Yavne, Israel."]]
@@ -19,8 +19,8 @@ class PagesController < ApplicationController
   end
 
   def team
-    @page_desc = "Eldan Molecular Imaging"
-    @page_title =  "Team"
+    @title =  "Team"
+    @desc = "Eldan Molecular Imaging"
 
     @desc1 = "Tal Rabinovitch joined the Neopharm Group in 2007 and was appointed as Eldan’s GM in 2013. Previously he served as VP for Business Development and Operations in LDD Advanced Technologies for 5 years. In 2012 he joined Eldan and was appointed VP for Strategic Development.<br><br>Prior to joining the group Mr. Rabinovich gained experience in business development and strategic planning while working in Shaldor, a strategy and management consulting firm. Mr. Rabinovitch holds an MBA degree as well as M.Sc. and B.Sc. degrees in Electrical Engineering.".html_safe
 

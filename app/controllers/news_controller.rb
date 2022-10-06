@@ -1,7 +1,7 @@
 class NewsController < ApplicationController
   def index
-    @page_desc = "Eldan Molecular Imaging"
-    @page_title =  "News"
+    @title =  "News"
+    @desc = "Eldan Molecular Imaging"
 
     @articles_per_page = 4
     @articles = [
@@ -9,7 +9,7 @@ class NewsController < ApplicationController
   end
 
   def example
-    @title = "Example"
+    @article_title = "Example"
     @category = "Category"
     @date_published = "Feb 5, 2021"
     @author = "Ariel Ikan"
@@ -20,7 +20,7 @@ class NewsController < ApplicationController
       [news_path, "05.jpg", "Eiusmod id duis", "Mar 13, 2019", "Aliquip ea esse labore voluptate fugiat pariatur ea", "gelbhart.png", "Bareket Gelbhart"], 
       [news_path, "06.jpg", "Aute consequat in amet cillum in", "Jun 25, 2018", "Ad ullamco adipisicing aliqua culpa", "ikan.png", "Ariel Ikan"]]
 
-    @page_desc = "Eldan Molecular Imaging"
-    @page_title =  @title + " / " + controller_name.capitalize
+    @desc = "Eldan Molecular Imaging"
+    @title =  @article_title + " / " + controller_name.capitalize
   end
 end

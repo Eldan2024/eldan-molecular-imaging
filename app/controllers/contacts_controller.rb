@@ -1,7 +1,8 @@
 class ContactsController < ApplicationController
   def new
-    @page_desc = "Eldan Molecular Imaging"
-    @page_title =  "Contact"
+    @title =  "Contact"
+    @desc = "Eldan Molecular Imaging"
+    @jarallax = "cover3.jpg"
     @via = params[:via]
     
     @contact = Contact.new

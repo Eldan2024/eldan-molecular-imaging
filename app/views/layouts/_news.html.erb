@@ -7,14 +7,14 @@
     <li class="breadcrumb-item">
       <a href="<%= news_path %>"><%= controller.controller_name.titleize %></a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><%= @title %></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @article_title %></li>
   </ol> 
 </nav>
 
 
 <!-- Post title + Meta  -->
 <section class="container mt-4 pt-lg-2 pb-3">
-  <h1 class="pb-3" style="max-width: 970px;"><%= @title %></h1>
+  <h1 class="pb-3" style="max-width: 970px;"><%= @article_title %></h1>
   <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
     <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
       <div class="fs-xs border-end pe-3 me-3 mb-2">
@@ -64,7 +64,7 @@
         <span class="d-block mb-3"> <span id="time"></span> min read</span>
         <h6>Share this post:</h6>
         <div class="mb-4 pb-lg-3">
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url=www.eldanmi.com<%= request.path %>&title=<%= @title %>&summary=<%= @page_desc %>&source=eldanmi.com" target="_blank" aria-label="Share on LinkedIn" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=www.eldanmi.com<%= request.path %>&title=<%= @article_title %>&summary=<%= @desc %>&source=eldanmi.com" target="_blank" aria-label="Share on LinkedIn" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2">
             <i class="bx bxl-linkedin" role="none"></i>
           </a>
           <a href="https://facebook.com/sharer/sharer.php?u=www.eldanmi.com<%= request.path %>" target="_blank" aria-label="Share on Facebook" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2">

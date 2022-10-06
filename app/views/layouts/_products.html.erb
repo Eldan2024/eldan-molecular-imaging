@@ -15,8 +15,8 @@
       </ol>
     </nav>
     <div class="col-10 col-sm-8 col-md-6 col-lg-4 text-center" id="desc">
-      <h1 class="pb-1"><%= @title %></h1>
-      <p><%= @desc %></p>
+      <h1 class="pb-1"><%= @product_title %></h1>
+      <p><%= @product_desc %></p>
     </div>
     <div class="col-8 col-sm-6 col-lg-4">
       <img src="<%= asset_path(@image) %>" alt="Product Image">
@@ -48,7 +48,7 @@
     <div class="col-10 col-sm-5 col-lg-4 text-center text-sm-start ps-sm-5 pb-5">
       <h2 class="">Any questions? <br>Check out the FAQs</h2>
       <p class="fs-lg d-none d-sm-block">Still have unanswered questions and need to get in touch?</p>
-      <a href="../contacts/new?via=<%= @title.gsub("<sup>","").gsub("</sup>","") %>" class="btn btn-primary">Contact support</a>
+      <a href="../contacts/new?via=<%= @product_title.gsub("<sup>","").gsub("</sup>","") %>" class="btn btn-primary">Contact support</a>
     </div>
     <div class="col-10 col-sm-5 offset-sm-1">
       <div class="accordion" id="faq">
