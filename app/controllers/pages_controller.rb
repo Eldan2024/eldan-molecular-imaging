@@ -38,7 +38,7 @@ class PagesController < ApplicationController
       ["Tal Rabinovich", "General Manager", "https://www.linkedin.com/in/tal-rabinovich-659a54/", @desc1],
       ["Bareket Gelbhart", "International Business Manager", "https://www.linkedin.com/in/bareket-gelbhart-83904a16/", @desc2],
       ["Ariel Ikan", "VP Business Development", "https://www.linkedin.com/in/ariel-ikan/", @desc3],
-      ["Orit Hillel", "", "", @desc4],
+      ["Orit Hillel", "Finance Coordinator", "", @desc4],
       ["Haim Shoshan", "Vice President of Finance and Logistics", "", @desc5],
       ["Ronit Duanis ", "Operation Coordinator", "", @desc6]]
   end

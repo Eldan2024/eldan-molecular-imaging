@@ -9,20 +9,6 @@
 <!-- Page content -->
 <div class="pb-5 pt-5 min-vh-100">
 
-  <!-- Contact form alert -->
-  <div class="px-5 pt-5 text-center">
-    <% flash.each do |key, message| %>
-      <p class="alert alert-<%= key %>"><%= message %></p>
-    <% end %>
-  </div>
-
-  <!-- Jarallax Image -->
-  <div class="jarallax d-none d-sm-block" data-jarallax data-speed="0.8">
-    <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary-translucent"></span>
-    <div class="jarallax-img" style="background-image: url(<%= asset_path(@jarallax) %>);"></div>
-    <div style="height: 200px;"></div>
-  </div>
-
   <div class="container pb-lg-4 pb-xl-5">
 
     <!-- Breadcrumb -->
@@ -34,6 +20,13 @@
         <li class="breadcrumb-item active" aria-current="page">Contact</li>
       </ol>
     </nav>
+
+    <!-- Contact form alert -->
+    <div class="px-5 pt-5 text-center">
+      <% flash.each do |key, message| %>
+        <p class="alert alert-<%= key %>"><%= message %></p>
+      <% end %>
+    </div>
 
     <div class="row pt-md-2 pb-2 pb-md-4">
       <div class="contact-info col-xxl-4 col-xl-5 col-lg-6 pt-3 mt-3">
