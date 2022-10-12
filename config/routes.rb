@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'team', controller: 'pages'
 
   get 'news', to: 'news#index'
-  get 'news/example'
+  get 'news/eldan_mi_website_online'
 
   get 'products', to: redirect('products/mo99')
   get 'products/mo99'

@@ -4,8 +4,7 @@ class NewsController < ApplicationController
     @desc = "Eldan Molecular Imaging"
 
     @articles_per_page = 4
-    @articles = [
-      ["Solutions for Emerging Nitrosamine Contamination of Pharmaceuticals", "Nitrosamines are chemical compounds classified as probable human carcinogens on the basis of animal studies.","news/example", "Radiopharmaceuticals", "Feb 5, 2021", "Ariel Ikan", "10.jpg"]]
+    @articles = [["Eldan Molecular Imaging Website is online", "With the growth of our worldwide presence we are happy to launch a new and updated website. Here, clients and other stakeholders can find all the information about our products as well as our growing international network of partners and clients.","news/eldan_mi_website_online", "News", "Oct 12, 2022", "Bareket Gelbhart", "logo.png"]]
   end
 
   def example
@@ -19,6 +18,18 @@ class NewsController < ApplicationController
       [news_path, "04.jpg", "Lorem Ipsum", "May 19, 2021", "Reprehenderit minim est id occaecat", "rabinovich.png", "Tal Rabinovich"], 
       [news_path, "05.jpg", "Eiusmod id duis", "Mar 13, 2019", "Aliquip ea esse labore voluptate fugiat pariatur ea", "gelbhart.png", "Bareket Gelbhart"], 
       [news_path, "06.jpg", "Aute consequat in amet cillum in", "Jun 25, 2018", "Ad ullamco adipisicing aliqua culpa", "ikan.png", "Ariel Ikan"]]
+
+    @desc = "Eldan Molecular Imaging"
+    @title =  @article_title + " / " + controller_name.capitalize
+  end
+
+  def eldan_mi_website_online
+    @article_title = "Eldan Molecular Imaging Website is online"
+    @category = "News"
+    @date_published = "Oct 12, 2022"
+    @author = "Bareket Gelbhart"
+    @tags = []
+    @related_articles = []
 
     @desc = "Eldan Molecular Imaging"
     @title =  @article_title + " / " + controller_name.capitalize
