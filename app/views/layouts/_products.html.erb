@@ -1,5 +1,5 @@
 <style>
-  @media (min-width: 500px) {
+  @media (min-width: 1200px) {
     h1 {
       font-size: 60px;
       white-space:nowrap;
@@ -25,11 +25,11 @@
     </nav>
 
     <!-- Title + Desc + Image -->
-    <div class="col-10 col-sm-8 col-md-6 col-lg-6 text-center" id="desc">
+    <div class="col-10 col-sm-8 col-md-6 col-lg-12 col-xl-6 text-center" id="desc">
       <h1 class="pb-4"><%= @product_title %></h1>
       <div class="row justify-content-center align-items-center">
-        <p class="col-sm-5"><%= @product_desc %></p>
-        <img class="col-sm-5" src="<%= asset_path(@image) %>" alt="Product Image">
+        <p class="col-lg-4 col-xl-5"><%= @product_desc %></p>
+        <img class="col-lg-4 col-xl-5" src="<%= asset_path(@image) %>" alt="Product Image">
       </div>
     </div>
 
