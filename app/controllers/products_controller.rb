@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     @data = [
       ["Manufacturer", "<a class='text-decoration-none' href='http://www.isorad.co.il/en/' target='_blank'>Isorad Radiopharmaceuticals, Israel</a>".html_safe],
       ["Storage", "Room Temperature"],
-      ["Expiration", "24 days after ART"],
+      ["Expiration", "24 days from production day"],
       ["Half Life", "66 hours"],
       ["Radiochemical purity", "99mTcO4>95%"],
       ["Maximum size", "4.25 Ci, 5 days calibration"],
