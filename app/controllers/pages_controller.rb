@@ -28,11 +28,11 @@ class PagesController < ApplicationController
     
     @desc3 = "Ariel joined Eldan Molecular Imaging in May 2022. Previously Ariel worked as General Manager at Fresenius Medical Care, Israel for 4 years. Prior to that Ariel was the General Manager of Philips Healthcare ,Israel for over 10 years and Developed loan market business for medical device in China and Africa. <br><br>Prior to this position Ariel served as Business unit manager at Schering Plough for 5 years and before this position Ariel held different managerial positions in Teva Medical Israel.".html_safe
 
-    @desc4 = "I joined Promedico in 2003 and Eldan in 2006 after a merge with Neopharm Group. I've been working as a Sales Operation Coordinator since 2006 in the Medical Division"
+    @desc4 = "Joined Eldan in 2008 as an Analyst. In 2015 was appointed to the position : Analyst, Sales & Technical Administrators Manager"
 
     @desc5 = "Haim Shoshan joined Eldan in 2001 as CFO. Among his previous positions Mr. Shoshan was CFO of Delta Quality Products Ltd. (Intergamma Group) and CFO of Autolux Tires Group.".html_safe
 
-    @desc6 = "Joined Eldan in 2008 as an Analyst. In 2015 was appointed to the position : Analyst, Sales & Technical Administrators Manager"
+    @desc6 = "I joined Promedico in 2003 and Eldan in 2006 after a merge with Neopharm Group. I've been working as a Sales Operation Coordinator since 2006 in the Medical Division"
 
     @members = [
       ["Tal Rabinovich", "General Manager", "https://www.linkedin.com/in/tal-rabinovich-659a54/", @desc1],
