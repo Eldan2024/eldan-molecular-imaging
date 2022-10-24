@@ -32,7 +32,7 @@ class PagesController < ApplicationController
 
     @desc5 = "Haim Shoshan joined Eldan in 2001 as CFO. Among his previous positions Mr. Shoshan was CFO of Delta Quality Products Ltd. (Intergamma Group) and CFO of Autolux Tires Group.".html_safe
 
-    @desc6 = ""
+    @desc6 = "Joined Eldan in 2008 as an Analyst. In 2015 was appointed to the position : Analyst, Sales & Technical Administrators Manager"
 
     @members = [
       ["Tal Rabinovich", "General Manager", "https://www.linkedin.com/in/tal-rabinovich-659a54/", @desc1],
