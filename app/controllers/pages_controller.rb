@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   def distribution
     @title =  "Distribution"
     @desc = "Eldan Molecular Imaging"
-    @jarallax = "distribution-cover.jpg"
+    @jarallax = "distribution_cover"
 
     @partners = [
       ["Isorad" , "Established more than 40 years ago, Isorad Radiopharmaceuticals is a leading manufacturer of SPECT, PET, MRI contrast agents, and nuclear products, located in the SOREQ Nuclear Research Center (Soreq NRC) near Yavne, Israel."]]
@@ -21,6 +21,7 @@ class PagesController < ApplicationController
   def team
     @title =  "Team"
     @desc = "Eldan Molecular Imaging"
+    @jarallax = "team_cover"
 
     @desc1 = "Tal Rabinovich joined Eldan in 2012, was appointed as General Manager in 2013 and is heading an extensive operation in molecular diagnostics and radiopharmaceuticals. <br><br>Prior to joining Eldan Tal served as VP for business development and operations at LDD Advanced Technologies.".html_safe
 

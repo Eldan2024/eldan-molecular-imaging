@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get 'news', to: 'news#index'
   get 'news/eldan_mi_website_online'
 
-  get 'products', to: redirect('products/mo99')
-  get 'products/mo99'
+  get 'products', to: redirect('products/tc99')
+  get 'products/tc99'
   get 'products/ga67'
   get 'products/ti201'
 
