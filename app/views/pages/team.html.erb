@@ -63,7 +63,7 @@
       <% for j in @members do %>
         <div class="swiper-slide py-3 card border-0 bg-transparent">
           <div class="position-relative card-hover" data-bs-toggle="modal" data-bs-target="#<%= @members[i][0].split(' ').second %>">
-            <img src="<%= asset_path(@members[i][0].split(' ').second.downcase + ".png") %>" class="rounded-3" alt="<%= @members[i][0] %>">
+            <img src="<%= asset_path(@members[i][0].split[1].downcase) %>" class="rounded-3" alt="<%= @members[i][0] %>">
             <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Click me for more info!">
               <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50 rounded-3"></span>
               <% if @members[i][2].length() > 0 %>
@@ -100,7 +100,7 @@
               <p class="fs-sm mb-0"><%= @members[i][1] %></p>
             </div>
             <div class="col-6 text-end">
-              <img src="<%= asset_path(@members[i][0].split(' ').second.downcase + ".png") %>" class="rounded-3" width="100" alt="<%= @members[i][0] %>">
+              <img src="<%= asset_path(@members[i][0].split[1].downcase) %>" class="rounded-3" width="100" alt="<%= @members[i][0] %>">
             </div>
           </div>
           <div class="modal-body"><p><%= @members[i][3] %></p></div>

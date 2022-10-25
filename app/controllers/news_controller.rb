@@ -4,7 +4,7 @@ class NewsController < ApplicationController
     @desc = "Eldan Molecular Imaging"
 
     @articles_per_page = 4
-    @articles = [["Eldan Molecular Imaging Website is online", "With the growth of our worldwide presence we are happy to launch a new and updated website. Here, clients and other stakeholders can find all the information about our products as well as our growing international network of partners and clients.","news/eldan_mi_website_online", "News", "Oct 12, 2022", "Bareket Gelbhart", "logo.png"]]
+    @articles = [["Eldan Molecular Imaging Website is online", "With the growth of our worldwide presence we are happy to launch a new and updated website. Here, clients and other stakeholders can find all the information about our products as well as our growing international network of partners and clients.","news/eldan_mi_website_online", "News", "Oct 12, 2022", "Bareket Gelbhart", "logo_dark.png"]]
   end
 
   def example
