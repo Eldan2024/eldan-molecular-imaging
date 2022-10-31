@@ -142,7 +142,7 @@
       <% for j in @partners do %>
         <div class="swiper-slide py-3" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" title="<%= @partners[i][0] %>" data-bs-content="<%= @partners[i][1] %>">
           <a class="card card-body card-hover px-2 mx-2">
-            <img src="<%= asset_path(@partners[i][0].downcase + ".png") %>" class="d-block mx-auto my-2" width="154" alt="Brand">
+            <img src="<%= asset_path(@partners[i][0].downcase + ".png") %>" class="d-block mx-auto my-2" width="154" alt="<%= @partners[i][0] + " logo" %>">
           </a>
         </div>
         <% i += 1 %>
