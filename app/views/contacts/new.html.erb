@@ -68,8 +68,7 @@
                   <i class='bx bx-book' ></i>
                 </span>
                 <%= f.text_field  :subject, required: true, class: "contact-form-text-area form-control form-control-lg", id:"subject", placeholder:"Write your subject here...", id:"subject", value:@via %>
-                <button class="btn btn-primary dropdown-toggle d-none d-md-block" type="button" data-bs-toggle="dropdown">Choose a subject</button>
-                <button class="btn btn-primary dropdown-toggle d-md-none" type="button" data-bs-toggle="dropdown"></button>
+                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"><span class="d-none d-md-block">Choose a subject</span></button>
                 <div class="invalid-feedback">Please provide a valid subject!</div>
                 <div class="dropdown-menu my-1">
                   <div class="d-lg-flex pt-lg-3">
