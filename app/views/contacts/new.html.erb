@@ -42,15 +42,14 @@
         <%= form_for @contact, html: { class:"needs-validation", novalidate:true } do |f| %>
           <div class="row g-4">
             <div class="col-sm-6">
-              <label for="fn" class="form-label fs-base">Full name
-                <div class="input-group">
-                  <span class="input-group-text">
-                    <i class='bx bx-rename' ></i>
-                  </span>
-                  <%= f.text_field  :name, required: true, class: "contact-form-text-area form-control form-control-lg", autocomplete:"name", placeholder:"John Doe" %>
-                  <div class="invalid-feedback">Please enter your full name!</div>
-                </div>
-              </label>
+              <label for="fn" class="form-label fs-base" id="fn">Full name</label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class='bx bx-rename' ></i>
+                </span>
+                <%= f.text_field  :name, required: true, class: "contact-form-text-area form-control form-control-lg", autocomplete:"name", placeholder:"John Doe", for:"fn"%>
+                <div class="invalid-feedback">Please enter your full name!</div>
+              </div>
             </div>
             <div class="col-sm-6">
               <label for="email" class="form-label fs-base">Email</label>
