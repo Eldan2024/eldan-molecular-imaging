@@ -36,11 +36,11 @@ class PagesController < ApplicationController
     @desc6 = "I joined Promedico in 2003 and Eldan in 2006 after a merge with Neopharm Group. I've been working as a Sales Operation Coordinator since 2006 in the Medical Division"
 
     @members = [
-      ["Tal Rabinovich", "General Manager", "https://www.linkedin.com/in/tal-rabinovich-659a54/", @desc1],
-      ["Bareket Gelbhart", "International Business Manager", "https://www.linkedin.com/in/bareket-gelbhart-83904a16/", @desc2],
-      ["Ariel Ikan", "VP Business Development", "https://www.linkedin.com/in/ariel-ikan/", @desc3],
-      ["Orit Hillel", "Finance Coordinator", "", @desc4],
-      ["Haim Shoshan", "VP of Finance and Logistics", "", @desc5],
-      ["Ronit Duanis ", "Operation Coordinator", "", @desc6]]
+      ["Tal Rabinovich", "General Manager", @desc1],
+      ["Bareket Gelbhart", "International Business Manager", @desc2],
+      ["Ariel Ikan", "VP Business Development", @desc3],
+      ["Orit Hillel", "Finance Coordinator", @desc4],
+      ["Haim Shoshan", "VP of Finance and Logistics", @desc5],
+      ["Ronit Duanis ", "Operation Coordinator", @desc6]]
   end
 end
