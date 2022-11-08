@@ -31,6 +31,7 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "image
 
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "favicon")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "json")
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "documents")
 
 Rails.application.config.assets.compile = true
 
