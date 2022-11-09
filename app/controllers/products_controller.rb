@@ -19,12 +19,12 @@ class ProductsController < ApplicationController
       ["SPC", "N/A"]]
   end
 
-  def ti201
-    @breadcrumb = "<sup>201</sup>TI".html_safe
+  def tl201
+    @breadcrumb = "<sup>201</sup>Tl".html_safe
     @title =  @breadcrumb.gsub("<sup>","").gsub("</sup>","") + " / " + controller_name.capitalize
     @desc = "Eldan Molecular Imaging"
-    @product_title = "Thallium Chloride (<sup>201</sup>TI) injection".html_safe
-    @product_desc = "Thallium-201 (201Tl) is a radioactive potassium analog used in the diagnosis of coronary artery disease and parathyroid hyperactivity using single photon emission computed tomography (SPECT). Sterile TI-201 has been manufactured in Israel since 1987.".html_safe
+    @product_title = "Thallium Chloride (<sup>201</sup>Tl) injection".html_safe
+    @product_desc = "Thallium-201 (<sup>201</sup>Tl) is a radioactive potassium analog used in the diagnosis of coronary artery disease and parathyroid hyperactivity using single photon emission computed tomography (SPECT). Sterile <sup>201</sup>Tl has been manufactured in Israel since 1987.".html_safe
 
     @questions = []
 
@@ -41,11 +41,11 @@ class ProductsController < ApplicationController
   end
   
   def ga67
-    @breadcrumb = "Ga-67"
+    @breadcrumb = "<sup>67</sup>Ga".html_safe
     @title =  @breadcrumb + " / " + controller_name.capitalize
     @desc = "Eldan Molecular Imaging"
-    @product_title = "Gallium citrate (Ga-67) injection"
-    @product_desc = "Gallium-67 (67Ga) is a cyclotron-produced radiometal used by single photon emission computed tomography (SPECT) imaging for localization of inflammatory lesions (infections). With Ga67 you can obtain images of a specific type of tissue, or disease state of tissue. Sterile Ga-67 manufactured in Israel since 1987."
+    @product_title = "Gallium citrate (<sup>67</sup>Ga) injection".html_safe
+    @product_desc = "Gallium-67 (<sup>67</sup>Ga) is a cyclotron-produced radiometal used by single photon emission computed tomography (SPECT) imaging for localization of inflammatory lesions (infections). With <sup>67</sup>Ga you can obtain images of a specific type of tissue, or disease state of tissue. Sterile <sup>67</sup>Ga manufactured in Israel since 1987.".html_safe
 
     @questions = []
 
