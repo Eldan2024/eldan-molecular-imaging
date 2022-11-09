@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
       ["Storage", "Room Temperature"],
       ["Expiration", "24 days from production day"],
       ["Half Life", "66 hours"],
-      ["Radiochemical purity", "<sup>99m</sup>TcO4>95%"],
+      ["Radiochemical purity", "<sup>99m</sup>TcO4>95%".html_safe],
       ["Maximum size", "4.25 Ci, 5 days calibration"],
       ["SPC", "N/A"]]
   end
