@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
     @title =  @breadcrumb.gsub("<sup>","").gsub("</sup>","") + " / " + controller_name.capitalize
     @desc = "Eldan Molecular Imaging"
     @product_title = "<sup>99</sup>Mo/<sup>99m</sup>Tc Generator".html_safe
-    @product_desc = "A technetium-99m generator is a device used to extract the isotope <sup>99m</sup>Tc of technetium from a decaying sample of molybdenum-99. <sup>99m</sup>Tc is used for a variety of nuclear medicine diagnostic in single photon emission computed tomography (SPECT) procedures, where its short half-life is very useful. Sterile Technetium-99m generators are manufactured in Israel since 1976 utilizing dry technology. The generators are ergonomic and recyclable.".html_safe
+    @product_desc = "A technetium-99m generator is a device used to extract the isotope <sup>99m</sup>Tc of technetium from a decaying molybdenum-99. <sup>99m</sup>Tc is used for a variety of nuclear medicine diagnostic in single photon emission computed tomography (SPECT) procedures, where its short half-life is very useful. Sterile Technetium-99m generators are manufactured in Israel since 1976 utilizing dry technology. The generators are ergonomic and recyclable.".html_safe
 
     @questions = []
 
