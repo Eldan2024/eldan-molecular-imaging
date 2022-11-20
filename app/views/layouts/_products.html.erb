@@ -55,33 +55,35 @@
 </section>
 
 <!-- FAQ -->
-<section class="bg-secondary pt-5 pb-3">
-  <div class="row justify-content-center align-items-center align-items-sm-start">
-    <div class="col-10 col-sm-5 col-lg-4 text-center text-sm-start ps-sm-5 pb-5">
-      <h2 class="">Any questions? <br>Check out the FAQs</h2>
-      <p class="fs-lg d-none d-sm-block">Still have unanswered questions and need to get in touch?</p>
-      <a href="../contacts/new?via=<%= @product_title.gsub("<sup>","").gsub("</sup>","") %>" class="btn btn-primary">Contact support</a>
-    </div>
-    <div class="col-10 col-sm-5 offset-sm-1">
-      <div class="accordion" id="faq">
+<% if @questions.length > 0 %>
+  <section class="bg-secondary pt-5 pb-3">
+    <div class="row justify-content-center align-items-center align-items-sm-start">
+      <div class="col-10 col-sm-5 col-lg-4 text-center text-sm-start ps-sm-5 pb-5">
+        <h2 class="">Any questions? <br>Check out the FAQs</h2>
+        <p class="fs-lg d-none d-sm-block">Still have unanswered questions and need to get in touch?</p>
+        <a href="../contacts/new?via=<%= @product_title.gsub("<sup>","").gsub("</sup>","") %>" class="btn btn-primary">Contact support</a>
+      </div>
+      <div class="col-10 col-sm-5 offset-sm-1">
+        <div class="accordion" id="faq">
 
-        <!-- Questions -->
-        <% i = 0 %>
-        <% for j in @questions do %>
-          <div class="accordion-item border-0 rounded-3 shadow-sm">
-            <h2 class="accordion-header" id="q<%= i %>-heading">
-              <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q<%= i %>" aria-expanded="false" aria-controls="q<%= i %>">
-                <%= @questions[i][0] %>
-              </button>
-            </h2>
-            <div id="q<%= i %>" class="accordion-collapse collapse" aria-labelledby="q<%= i %>-heading" data-bs-parent="#faq">
-              <div class="accordion-body fs-sm pt-0"><%= @questions[i][1] %> </div>
+          <!-- Questions -->
+          <% i = 0 %>
+          <% for j in @questions do %>
+            <div class="accordion-item border-0 rounded-3 shadow-sm">
+              <h2 class="accordion-header" id="q<%= i %>-heading">
+                <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q<%= i %>" aria-expanded="false" aria-controls="q<%= i %>">
+                  <%= @questions[i][0] %>
+                </button>
+              </h2>
+              <div id="q<%= i %>" class="accordion-collapse collapse" aria-labelledby="q<%= i %>-heading" data-bs-parent="#faq">
+                <div class="accordion-body fs-sm pt-0"><%= @questions[i][1] %> </div>
+              </div>
             </div>
-          </div>
-          <% i += 1 %>
-        <% end %>
+            <% i += 1 %>
+          <% end %>
 
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+<% end %>
