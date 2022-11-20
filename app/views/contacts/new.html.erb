@@ -7,9 +7,16 @@
 </style>
 
 <!-- Page content -->
-<div class="pb-5 pt-5 bg-faded-primary">
+<div class="pb-5 pt-3 bg-faded-primary">
 
   <div class="container pb-lg-4 pb-xl-5">
+
+    <!-- Contact form alert -->
+    <div class="px-5 text-center">
+      <% flash.each do |key, message| %>
+        <p class="alert alert-<%= key %>"><%= message %></p>
+      <% end %>
+    </div>
 
     <!-- Breadcrumb -->
     <nav class="pt-4" aria-label="breadcrumb">
@@ -20,13 +27,6 @@
         <li class="breadcrumb-item active" aria-current="page">Contact</li>
       </ol>
     </nav>
-
-    <!-- Contact form alert -->
-    <div class="px-5 pt-5 text-center">
-      <% flash.each do |key, message| %>
-        <p class="alert alert-<%= key %>"><%= message %></p>
-      <% end %>
-    </div>
 
     <div class="row pt-md-2 pb-2 pb-md-4">
       <div class="contact-info col-xxl-4 col-xl-5 col-lg-6 pt-3 mt-3">
@@ -112,6 +112,7 @@
               <%= f.label :nickname %>
               <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
             </div>
+            <%= recaptcha_tags %>
             <div class="col-12">
               <%= f.submit 'Send Message', class: 'btn btn-lg btn-primary w-100 w-sm-auto' %>
             </div>
