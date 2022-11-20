@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
   
   def ga67
     @breadcrumb = "<sup>67</sup>Ga".html_safe
-    @title =  @breadcrumb + " / " + controller_name.capitalize
+    @title =  @breadcrumb.gsub("<sup>","").gsub("</sup>","") + " / " + controller_name.capitalize
     @desc = "Eldan Molecular Imaging"
     @product_title = "Gallium citrate (<sup>67</sup>Ga) injection".html_safe
     @product_desc = "Gallium-67 (<sup>67</sup>Ga) is a cyclotron-produced radiometal used by single photon emission computed tomography (SPECT) imaging for localization of inflammatory lesions (infections). With <sup>67</sup>Ga you can obtain images of a specific type of tissue, or disease state of tissue. Sterile <sup>67</sup>Ga manufactured in Israel since 1987.".html_safe
