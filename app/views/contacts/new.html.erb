@@ -104,11 +104,11 @@
                 <span class="input-group-text">
                   <i class="bx bx-message fs-lg" role="none"></i>
                 </span>
-                <%= f.text_area  :message, rows: 3, required: true, class: "contact-form-text-area form-control form-control-lg", placeholder:"Write your message here...", id:"message" %>
+                <%= f.text_area :message, rows: 3, required: true, class: "contact-form-text-area form-control form-control-lg", placeholder:"Write your message here...", id:"message" %>
                 <div class="invalid-feedback">Please provide a valid message!</div>
               </div>
             </div>
-            <div class= "d-none">
+            <div class="d-none">
               <%= f.label :nickname %>
               <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
             </div>
