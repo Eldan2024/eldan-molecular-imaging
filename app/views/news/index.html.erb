@@ -39,7 +39,10 @@
           <% for j in @articles do %>
             <article class="card border-0 shadow-sm overflow-hidden mb-4">
               <div class="row g-0">
-                <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-contain" style="background-image: url(<%= asset_path(@articles[i][6]) %>); min-height: 15rem;">
+                <div class="light-mode-img col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-contain" style="background-image: url(<%= asset_path(@articles[i][6]) %>); min-height: 15rem;">
+                  <a href="<%= @articles[i][2] %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                </div>
+                <div class="dark-mode-img col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-contain" style="background-image: url(<%= asset_path(@articles[i][7]) %>); min-height: 15rem;">
                   <a href="<%= @articles[i][2] %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
                 </div>
                 <div class="col-sm-8">
@@ -95,9 +98,8 @@
   </div>
 </section>
 
-<%
-=begin%>
- <div class="d-none">
+<!-- DISABLED -->
+<div class="d-none">
   <!-- Subscription CTA -->
   <section class="py-5 bg-secondary">
     <div class="container py-md-3 py-lg-5">
@@ -126,6 +128,4 @@
       </div>
     </div>
   </section>
-</div> 
-<%
-=end%>
+</div>

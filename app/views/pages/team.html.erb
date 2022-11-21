@@ -93,7 +93,7 @@
               <p class="fs-sm mb-0"><%= @members[i][1] %></p>
             </div>
             <div class="col-6 text-end">
-              <img src="<%= asset_path(@members[i][0].split[1].downcase) %>" class="rounded-3" width="100">
+              <img src="<%= asset_path(@members[i][0].split[1].downcase) %>" class="rounded-3" alt="<%= @members[i][0] %>" width="100">
             </div>
           </div>
           <div class="modal-body"><p><%= @members[i][2] %></p></div>
