@@ -161,8 +161,9 @@
     var locations = [
       <% i = 0 %>
       <% for j in @distribution do %>
-        ['<h3 class="mb-lg-2"><%= @distribution[i][0] %></h3>'+
-          '<ul class="list-unstyled ps-2 bg-white">'+
+        ['<div class="bg-white">'+
+          '<h3 class="mb-lg-2"><%= @distribution[i][0] %></h3>'+
+          '<ul class="list-unstyled ps-2">'+
             <% if @distribution[i][1] != "" %>
               '<li class="mb-2">'+
                 '<a href="tel:<%= @distribution[i][1].gsub(" ", "") %>" class="nav-link d-flex align-items-center p-0">'+
@@ -187,7 +188,8 @@
               '</a>'+
             '</li>'+
             <% end %>
-          '</ul>',
+          '</ul>'+
+            '</div>',
         <%= @distribution[i][4] %>, <%= @distribution[i][5] %>],
         <% i += 1 %>
       <% end %>
