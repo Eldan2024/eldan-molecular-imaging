@@ -1,13 +1,6 @@
-<style>
-   { 
-    outline: 1px solid red;
-    outline-offset: -1px;
-  }
-</style>
-
 <!-- Hero -->
 <section class="bg-dark dark-mode">
-  <div class="row justify-content-center align-items-center py-4">
+  <div class="row justify-content-center align-items-center py-4 w-100">
 
     <!-- Breadcrumb -->
     <nav class="d-none d-sm-block ps-4 ps-md-5" aria-label="breadcrumb">
@@ -24,7 +17,7 @@
 
     <!-- Title + Desc + Image -->
     <div class="col-10 col-sm-8 col-md-6 col-lg-6 col-xl-8 col-xxl-6 text-center">
-      <h1 class="display-3"><%= @product_title %></h1>
+      <h1 class="display-3 text-nowrap"><%= @product_title %></h1>
       <div class="row justify-content-center align-items-center">
         <p class="col-xl-5"><%= @product_desc %></p>
         <img class="col-xl-6" src="<%= asset_path(File.basename(request.path, ".*")) %>" alt="<%= @breadcrumb %>">
@@ -35,21 +28,19 @@
 </section>
 
 <!-- Product Properties -->
-<section class="my-3">
-  <div>
-    <% i = 0 %>
-    <% for j in @data do %>
-      <div class="row align-items-center justify-content-center px-4 px-sm-2 py-4 <%= "bg-secondary" if i.even? %>">
-        <div class="col-6 col-sm-4 col-lg-3 col-xl-2 text-dark fw-semibold">
-          <%= @data[i][0] %>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 col-xl-2 text-center">
-          <%= @data[i][1] %>
-        </div>
+<section class="container-fluid my-3">
+  <% i = 0 %>
+  <% for j in @data do %>
+    <div class="row align-items-center justify-content-center px-4 px-sm-2 py-4 <%= "bg-secondary" if i.even? %>">
+      <div class="col-6 col-sm-4 col-lg-3 col-xl-2 text-dark fw-semibold">
+        <%= @data[i][0] %>
       </div>
-      <% i += 1 %>
-    <% end %>
-  </div>
+      <div class="col-6 col-sm-4 col-lg-3 col-xl-2 text-center">
+        <%= @data[i][1] %>
+      </div>
+    </div>
+    <% i += 1 %>
+  <% end %>
 </section>
 
 <!-- FAQ -->
