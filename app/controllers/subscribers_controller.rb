@@ -1,6 +1,7 @@
 class SubscribersController < ApplicationController
   def new
     @subscriber = Subscriber.new
+    redirect_to '/news'
   end
 
   def create
