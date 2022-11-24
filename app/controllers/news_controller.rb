@@ -1,5 +1,7 @@
 class NewsController < ApplicationController
   def index
+    @subscriber = Subscriber.new
+    
     @title =  "News"
     @desc = "Eldan Molecular Imaging"
 
