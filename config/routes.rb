@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'distribution', controller: 'pages'
   get 'team', controller: 'pages'
 
-  resources :subscribers
+  resource :subscribers
   get 'news', to: 'news#index'
   get 'news/eldan_mi_website_online'
 
