@@ -14,21 +14,41 @@
     <div class="navbar-brand justify-content-center">
       <img src="<%= asset_path("logo_light.png") %>" alt="EldanMI Logo" width="150">
     </div>
-    <div class="d-none d-sm-block pb-sm-3">
-      <ul class="nav justify-content-center">
-        <li class="nav-item"><a href="<%= root_path %>" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="<%= about_path %>" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="<%= products_path %>" class="nav-link">Products</a></li>
-        <li class="nav-item"><a href="<%= team_path %>" class="nav-link">Team</a></li>
-        <li class="nav-item"><a href="<%= distribution_path %>" class="nav-link">Distribution</a></li>
-        <li class="nav-item"><a href="<%= news_path %>" class="nav-link">News</a></li>
-        <li class="nav-item"><a href="<%= contacts_path %>" class="nav-link">Contact</a></li>
-      </ul>
+
+    <!-- Nav -->
+    <div class="d-none d-sm-block">
+      <div class="pb-sm-3">
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a href="<%= root_path %>" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="<%= about_path %>" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="<%= products_path %>" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="<%= team_path %>" class="nav-link">Team</a></li>
+          <li class="nav-item"><a href="<%= distribution_path %>" class="nav-link">Distribution</a></li>
+          <li class="nav-item"><a href="<%= news_path %>" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="<%= contacts_path %>" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Subscription form -->
+      <div class="row justify-content-center py-5">
+        <div class="col-xl-6 col-lg-7 col-md-9 col-sm-11">
+          <h2 class="pb-3 mb-3 fs-3">Subscribe to Our Newsletter</h2>
+          <%= form_for Subscriber.new, html: { class:"d-flex flex-sm-row flex-column mb-3 needs-validation", novalidate:true } do |f| %>
+            <div class="input-group me-sm-3 mb-sm-0 mb-3">
+              <i class="bx bx-envelope position-absolute start-0 top-50 translate-middle-y ms-3 zindex-5 fs-5 text-muted" role="none"></i>
+              <%= f.email_field :email, required: true, class: "form-control form-control-lg rounded-3 ps-5", autocomplete:"email", placeholder:"john.doe@gmail.com" %>
+              <div class="invalid-tooltip position-absolute start-0 top-0 mt-n4">Please provide a valid email address!</div>
+            </div>
+            <%= f.submit 'Subscribe *', class: 'btn btn-lg btn-primary' %>
+          <% end %>
+        </div>
+      </div>
+      
     </div>
     <div class="fs-xs text-center">
       <span class="text-light opacity-50">&copy; All rights reserved. Made by </span>
       <a class="nav-link d-inline p-0" href="https://eldan.biz/" target="_blank" rel="noopener" aria-label="Eldan Website">Eldan</a>
-      <a class="nav-link d-block pt-2" href="<%= asset_path("accessibility_declaration.pdf") %>" target="_blank" rel="noopener" aria-label="Accessibility Declaration">Accessibility Declaration</a>
+      <a class="nav-link d-block pt-2" href="<%= accessability_declaration_path %>" aria-label="Accessibility Declaration">Accessibility Declaration</a>
     </div>
   </div>
 </footer>

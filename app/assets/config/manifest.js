@@ -25,4 +25,3 @@
 //= link_tree ../favicon
 //= link_tree ../json
 //= link_tree ../images
-//= link_tree ../documents

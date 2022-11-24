@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
   get 'contacts', to: 'contacts#new'
 
+  get 'accessability_declaration', to: 'documents#accessability_declaration'
+  get 'privacy_policy', to: 'documents#privacy_policy'
+
   match '/404', to: 'errors#not_found', via: :all
   match '/500', to: 'errors#internal_server_error', via: :all
 end
