@@ -29,7 +29,9 @@
     </nav>
 
     <div class="row pt-md-2 pb-2 pb-md-4">
-      <div class="contact-info col-xxl-4 col-xl-5 col-lg-6 pt-3 mt-3">
+
+      <!-- Contact Info -->
+      <div class="contact-info col-xxl-4 col-xl-5 col-lg-6 pt-3 mt-3 text-center text-lg-start">
         <h2 class="display-1 text-gradient-primary pb-sm-2 pb-md-3 mb-3">Let's talk!</h2>
         <div class="nav d-block lead">
           <div class="text-nav">Bareket Gelbhart</div>
@@ -38,6 +40,8 @@
           <a href="tel:+41797995117" class="text-decoration-none"><div class="text-nav">+41 797 995 117</div></a>
         </div>
       </div>
+
+      <!-- Contact Form -->
       <div class="col-lg-6 offset-xl-1 offset-xxl-2 pt-3 pt-md-4 pt-lg-3 mt-3">
         <%= form_for @contact, html: { class:"needs-validation", novalidate:true } do |f| %>
           <div class="row g-4">
@@ -121,6 +125,7 @@
           </div>
         <% end %>
       </div>
+
     </div>
   </div>
 </div>
