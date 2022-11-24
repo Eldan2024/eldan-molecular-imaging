@@ -15,6 +15,7 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 gem "mail_form"
 gem "recaptcha", require: "recaptcha/rails"
+gem "faraday"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

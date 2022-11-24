@@ -57,7 +57,7 @@
                 <span class="input-group-text">
                   <i class='bx bx-envelope'></i>
                 </span>
-                <%= f.text_field  :email, required: true, class: "contact-form-text-area form-control form-control-lg", autocomplete:"email", placeholder:"john.doe@gmail.com", id:"email" %>
+                <%= f.email_field :email, required: true, class: "contact-form-text-area form-control form-control-lg", autocomplete:"email", placeholder:"john.doe@gmail.com", id:"email" %>
                 <div class="invalid-feedback">Please provide a valid email address!</div>
               </div>
             </div>

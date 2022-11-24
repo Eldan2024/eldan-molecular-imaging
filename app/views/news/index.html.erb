@@ -99,7 +99,7 @@
 </section>
 
 <!-- DISABLED -->
-<div class="d-none">
+<div class="d-block">
   <!-- Subscription CTA -->
   <section class="py-5 bg-secondary">
     <div class="container py-md-3 py-lg-5">
@@ -113,14 +113,14 @@
           </h2>
 
           <!-- Email field -->
-          <form class="d-flex flex-sm-row flex-column mb-3 needs-validation" novalidate>
+          <%= form_for @subscriber, html: { class:"d-flex flex-sm-row flex-column mb-3 needs-validation", novalidate:true } do |f| %>
             <div class="input-group me-sm-3 mb-sm-0 mb-3">
               <i class="bx bx-envelope position-absolute start-0 top-50 translate-middle-y ms-3 zindex-5 fs-5 text-muted" role="none"></i>
-              <input type="email" class="form-control form-control-lg rounded-3 ps-5" placeholder="Your email" required>
+              <%= f.email_field :email, required: true, class: "form-control form-control-lg rounded-3 ps-5", autocomplete:"email", placeholder:"john.doe@gmail.com" %>
               <div class="invalid-tooltip position-absolute start-0 top-0 mt-n4">Please provide a valid email address!</div>
             </div>
-            <button class="btn btn-lg btn-primary">Subscribe *</button>
-          </form>
+            <%= f.submit 'Subscribe *', class: 'btn btn-lg btn-primary' %>
+          <% end %>
           <div class="form-text fs-sm text-sm-start text-center">
             * Yes, I agree to the <a href="#">terms</a> and <a href="#">privacy policy</a>.
           </div>
