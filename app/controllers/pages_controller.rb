@@ -45,6 +45,9 @@ class PagesController < ApplicationController
   end
 
   def sitemap
+    @title =  "Sitemap"
+    @desc = "Eldan Molecular Imaging"
+
     @posts = BlogPost.published.where(canonical_link: [nil, ''])
   end
 end
