@@ -18,6 +18,7 @@ gem "recaptcha", require: "recaptcha/rails"
 gem 'MailchimpMarketing', '~> 3.0.80'
 gem 'sitemap_generator'
 gem 'aws-sdk', '~> 3'
+gem 'whenever', require: false
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
