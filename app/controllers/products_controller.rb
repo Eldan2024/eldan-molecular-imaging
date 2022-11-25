@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   def tc99
     @breadcrumb = "<sup>99</sup>Mo/<sup>99m</sup>Tc".html_safe
     @title =  @breadcrumb.gsub("<sup>","").gsub("</sup>","") + " / " + controller_name.capitalize
-    @desc = "Eldan Molecular Imaging"
+    @desc = "99Mo/99mTc Generator is an instrument that is used to extract the isotope 99mTc of technetium from a decaying molybdenum-99"
     @product_title = "<sup>99</sup>Mo/<sup>99m</sup>Tc Generator".html_safe
     @product_desc = "A technetium-99m generator is a device used to extract the isotope <sup>99m</sup>Tc of technetium from a decaying molybdenum-99. <sup>99m</sup>Tc is used for a variety of nuclear medicine diagnostic in single photon emission computed tomography (SPECT) procedures, where its short half-life is very useful. Sterile Technetium-99m generators are manufactured in Israel since 1976 utilizing dry technology. The generators are ergonomic and recyclable.".html_safe
 
@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
   def tl201
     @breadcrumb = "<sup>201</sup>Tl".html_safe
     @title =  @breadcrumb.gsub("<sup>","").gsub("</sup>","") + " / " + controller_name.capitalize
-    @desc = "Eldan Molecular Imaging"
+    @desc = "Thallium-201 (201Tl) is a radioactive potassium analog used in the diagnosis of coronary artery disease and parathyroid hyperactivity"
     @product_title = "Thallium Chloride (<sup>201</sup>Tl) injection".html_safe
     @product_desc = "Thallium-201 (<sup>201</sup>Tl) is a radioactive potassium analog used in the diagnosis of coronary artery disease and parathyroid hyperactivity using single photon emission computed tomography (SPECT). Sterile <sup>201</sup>Tl has been manufactured in Israel since 1987.".html_safe
 
@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
   def ga67
     @breadcrumb = "<sup>67</sup>Ga".html_safe
     @title =  @breadcrumb.gsub("<sup>","").gsub("</sup>","") + " / " + controller_name.capitalize
-    @desc = "Eldan Molecular Imaging"
+    @desc = "Gallium-67 (67Ga) is a cyclotron-produced radiometal used by single photon emission computed tomography (SPECT) imaging for localization of inflammatory lesions (infections)"
     @product_title = "Gallium citrate (<sup>67</sup>Ga) injection".html_safe
     @product_desc = "Gallium-67 (<sup>67</sup>Ga) is a cyclotron-produced radiometal used by single photon emission computed tomography (SPECT) imaging for localization of inflammatory lesions (infections). With <sup>67</sup>Ga you can obtain images of a specific type of tissue, or disease state of tissue. Sterile <sup>67</sup>Ga manufactured in Israel since 1987.".html_safe
 
