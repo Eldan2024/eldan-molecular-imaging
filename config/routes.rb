@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   get 'distribution', controller: 'pages'
   get 'team', controller: 'pages'
-  get 'sitemap', controller: 'pages'
 
   resource :subscribers
   get 'news', to: 'news#index'

@@ -16,6 +16,7 @@ gem "sassc-rails"
 gem "mail_form"
 gem "recaptcha", require: "recaptcha/rails"
 gem 'MailchimpMarketing', '~> 3.0.80'
+gem 'sitemap_generator'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

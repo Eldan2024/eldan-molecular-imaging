@@ -43,11 +43,4 @@ class PagesController < ApplicationController
       ["Haim Shoshan", "VP of Finance and Logistics", @desc5],
       ["Ronit Duanis ", "Operation Coordinator", @desc6]]
   end
-
-  def sitemap
-    @title =  "Sitemap"
-    @desc = "Eldan Molecular Imaging"
-
-    @posts = BlogPost.published.where(canonical_link: [nil, ''])
-  end
 end
