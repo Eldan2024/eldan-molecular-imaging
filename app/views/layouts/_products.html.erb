@@ -3,17 +3,9 @@
   <div class="row justify-content-center align-items-center py-4 w-100">
 
     <!-- Breadcrumb -->
-    <nav class="d-none d-sm-block ps-4 ps-md-5" aria-label="breadcrumb">
-      <ol class="breadcrumb justify-content-start">
-        <li class="breadcrumb-item">
-          <a href="<%= root_path %>"><i class="bx bx-home-alt fs-lg" role="none"></i>Home</a>
-        </li>
-        <li class="breadcrumb-item">
-          <a href="">Products</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page"><%= @breadcrumb %></li>
-      </ol>
-    </nav>
+    <div>
+      <%= render 'shared/breadcrumb' %>
+    </div>
 
     <!-- Title + Desc + Image -->
     <div class="col-10 col-sm-8 col-md-6 col-lg-6 col-xl-8 col-xxl-6 text-center">

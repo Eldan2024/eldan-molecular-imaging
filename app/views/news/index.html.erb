@@ -1,13 +1,7 @@
 <!-- Breadcrumb -->
-<nav class="container" aria-label="breadcrumb">
-  <ol class="breadcrumb mb-0 pt-5">
-    <li class="breadcrumb-item">
-      <a href="<%= root_path %>"><i class="bx bx-home-alt fs-lg me-1" role="none"></i>Home</a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">News</li>
-  </ol>
-</nav>
-
+<div class="mt-4">
+  <%= render 'shared/breadcrumb' %>
+</div>
 
 <!-- Page content -->
 <section class="container mt-4 mb-lg-5 pt-lg-2 pb-5">
@@ -39,9 +33,11 @@
           <% for j in @articles do %>
             <article class="card border-0 shadow overflow-hidden mb-4">
               <div class="row g-0">
+                <!-- Light Mode Image -->
                 <div class="light-mode-img col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-contain" style="background-image: url(<%= asset_path(@articles[i][6]) %>); min-height: 15rem;">
                   <a href="<%= @articles[i][2] %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
                 </div>
+                <!-- Dark Mode Image -->
                 <div class="dark-mode-img col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-contain" style="background-image: url(<%= asset_path(@articles[i][7]) %>); min-height: 15rem;">
                   <a href="<%= @articles[i][2] %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
                 </div>

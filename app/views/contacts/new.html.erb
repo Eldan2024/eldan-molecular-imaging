@@ -1,11 +1,3 @@
-<style>
-  @media only screen and (max-width: 480px) {
-    .contact-info {
-      text-align: center;
-    }
-  }
-</style>
-
 <!-- Page content -->
 <div class="pb-5 pt-3">
 
@@ -19,19 +11,12 @@
     </div>
 
     <!-- Breadcrumb -->
-    <nav class="pt-4" aria-label="breadcrumb">
-      <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item">
-          <a href="index.html"><i class="bx bx-home-alt fs-lg me-1" role="none"></i>Home</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">Contact</li>
-      </ol>
-    </nav>
+    <%= render 'shared/breadcrumb' %>
 
     <div class="row pt-md-2 pb-2 pb-md-4">
 
       <!-- Contact Info -->
-      <div class="contact-info col-xxl-4 col-xl-5 col-lg-6 pt-3 mt-3 text-center text-lg-start">
+      <div class="col-xxl-4 col-xl-5 col-lg-6 pt-3 mt-3 text-center text-lg-start">
         <h2 class="display-1 text-gradient-primary pb-sm-2 pb-md-3 mb-3">Let's talk!</h2>
         <div class="nav d-block lead">
           <div class="text-nav">Bareket Gelbhart</div>
