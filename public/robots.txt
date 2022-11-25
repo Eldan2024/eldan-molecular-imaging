@@ -1,4 +1,4 @@
 # robots.txt for http://www.eldanmi.com/
 
 User-agent: *
-Disallow: /contacts/
+Sitemap: https://eldanmi.com/sitemap.xml.gz
