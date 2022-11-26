@@ -3,7 +3,7 @@
     <li class="breadcrumb-item">
       <a href="<%= root_path %>"><i class="bx bx-home-alt fs-md me-2" role="none"></i>Home</a>
     </li>
-    <% if !['pages','contacts', 'news'].include?(controller.controller_name) %>
+    <% if !['pages','contacts', 'news', 'documents'].include?(controller.controller_name) %>
       <li class="breadcrumb-item">
         <%= controller.controller_name.capitalize %>
       </li>
