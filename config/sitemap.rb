@@ -1,4 +1,4 @@
-SitemapGenerator::Sitemap.default_host = "http://www.eldanmi.com"
+SitemapGenerator::Sitemap.default_host = "http://eldanmi.com"
 SitemapGenerator::Sitemap.create do
   add distribution_path, :changefreq => 'monthly'
   add team_path, :changefreq => 'monthly'
