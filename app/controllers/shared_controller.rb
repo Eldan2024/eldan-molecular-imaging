@@ -4,4 +4,7 @@ class SharedController < ApplicationController
 
   def _footer
   end
+
+  def _breadcrumb
+  end
 end

@@ -1,7 +1,6 @@
 class ContactsController < ApplicationController
   def new
     @title =  "Contact Us"
-    @desc = "Eldan Molecular Imaging"
     @via = params[:via]
     @contact = Contact.new
   end

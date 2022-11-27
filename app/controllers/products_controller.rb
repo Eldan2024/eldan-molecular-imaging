@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-
   def tc99
     @breadcrumb = "<sup>99</sup>Mo/<sup>99m</sup>Tc".html_safe
     @title =  @breadcrumb.gsub("<sup>","").gsub("</sup>","") + " / " + controller_name.capitalize
