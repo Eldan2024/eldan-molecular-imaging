@@ -19,6 +19,7 @@ gem 'MailchimpMarketing', '~> 3.0.80'
 gem 'sitemap_generator'
 gem 'aws-sdk', '~> 3'
 gem 'whenever', require: false
+gem "capistrano", "~> 3.17", require: false
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
