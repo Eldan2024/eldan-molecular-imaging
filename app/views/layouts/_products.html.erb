@@ -9,7 +9,7 @@
 
     <!-- Title + Desc + Image -->
     <div class="col-10 col-sm-8 col-md-6 col-lg-6 col-xl-8 col-xxl-6 text-center">
-      <h1 class="display-3 text-nowrap"><%= @product_title %></h1>
+      <h1 class="display-3"><%= @product_title %></h1>
       <div class="row justify-content-center align-items-center">
         <p class="col-xl-5"><%= @product_desc %></p>
         <img class="col-xl-6" src="<%= asset_path(File.basename(request.path, ".*")) %>" alt="<%= @breadcrumb %>">
