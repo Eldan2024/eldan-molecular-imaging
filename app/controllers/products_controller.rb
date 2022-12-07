@@ -14,8 +14,7 @@ class ProductsController < ApplicationController
       ["Expiration", "24 days from production day"],
       ["Half Life", "66 hours"],
       ["Radiochemical purity", "<sup>99m</sup>TcO4>95%".html_safe],
-      ["Maximum size", "4.25 Ci, 5 days calibration"],
-      ["SPC", "N/A"]]
+      ["Maximum size", "4.25 Ci, 5 days calibration"]]
   end
 
   def tl201
@@ -35,8 +34,7 @@ class ProductsController < ApplicationController
       ["Half Life", "73 hours"],
       ["Radioactive concentration", "37 MBq/ml on the calibration date"],
       ["Composition", "<sup>201</sup>Tl as Thallium chloride<br>1-12 ml sterile, isotonic sodium chloride solution".html_safe],
-      ["pH", "4.5 - 7.5"],
-      ["SPC", "N/A"]]
+      ["pH", "4.5 - 7.5"]]
   end
   
   def ga67
@@ -56,7 +54,6 @@ class ProductsController < ApplicationController
       ["Half Life", "78.2 hours"],
       ["Radioactive concentration", "74 MBq/ml on the calibration date"],
       ["Composition", "<sup>67</sup>Gallium (as gallium citrate)<br>Sodium chloride<br>Sodium citrate<br>Water for injections q.s.p.".html_safe],
-      ["pH", "4.5 - 8.0"],
-      ["SPC", "N/A"]]
+      ["pH", "4.5 - 8.0"]]
   end
 end

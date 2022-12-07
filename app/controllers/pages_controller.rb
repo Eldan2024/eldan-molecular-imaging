@@ -40,6 +40,6 @@ class PagesController < ApplicationController
       ["Ariel Ikan", "VP Business Development", @desc3],
       ["Orit Hillel", "Finance Coordinator", @desc4],
       ["Haim Shoshan", "VP of Finance and Logistics", @desc5],
-      ["Ronit Duanis ", "Operation Coordinator", @desc6]]
+      ["Ronit Duanias ", "Operation Coordinator", @desc6]]
   end
 end
