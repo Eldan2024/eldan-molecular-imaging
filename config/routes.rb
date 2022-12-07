@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'contacts', to: 'contacts#new'
 
   get 'accessability_declaration', to: 'documents#accessability_declaration'
-  get 'privacy_policy', to: 'documents#privacy_policy'
+  get 'tos', to: 'documents#tos'
 
   match '/404', to: 'errors#not_found', via: :all
   match '/500', to: 'errors#internal_server_error', via: :all

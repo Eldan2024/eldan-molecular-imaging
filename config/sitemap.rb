@@ -5,7 +5,7 @@ SitemapGenerator::Sitemap.create do
   add '/news', :changefreq => 'monthly'
   add '/contacts', :changefreq => 'monthly'
 
-  add '/privacy_policy', :changefreq => 'yearly'
+  add '/tos', :changefreq => 'yearly'
   add '/accessability_declaration', :changefreq => 'yearly'
 
   add '/products/tc99', :changefreq => 'monthly'
