@@ -29,8 +29,9 @@
         </ul>
       </div>
 
+      <!-- DISABLED -->
       <!-- Newsletter Subscription form -->
-      <div class="row justify-content-center py-5">
+      <div class="d-none row justify-content-center py-5">
         <div class="col-xl-6 col-lg-7 col-md-9 col-sm-11">
           <h2 class="pb-3 mb-3 fs-3">Subscribe to Our Newsletter</h2>
           <%= form_for Subscriber.new, html: { class:"d-flex flex-sm-row flex-column mb-3 needs-validation", novalidate:true } do |f| %>

@@ -94,8 +94,9 @@
   </div>
 </section>
 
+<!-- DISABLED -->
 <!-- Subscription CTA -->
-<section class="py-5 bg-secondary">
+<section class="d-none py-5 bg-secondary">
   <div class="container py-md-3 py-lg-5">
     <div class="row justify-content-center">
       <div class="col-xl-8 col-lg-9 col-md-11">
@@ -116,7 +117,7 @@
           <%= f.submit 'Subscribe *', class: 'btn btn-lg btn-primary' %>
         <% end %>
         <div class="form-text fs-sm text-sm-start text-center">
-          * Yes, I agree to the <a href="<%= privacy_policy_path %>" aria-label="Data Privacy Policy">privacy policy</a>.
+          * Yes, I agree to the <a href="<%= tos_path %>" aria-label="Terms of Service">terms of service</a>.
         </div>
       </div>
     </div>
