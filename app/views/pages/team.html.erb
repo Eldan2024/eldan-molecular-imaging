@@ -14,7 +14,7 @@
 <%= render 'shared/breadcrumb' %>
 
 <!-- Brands (Carousel) -->
-<section class="container pb-3 pb-lg-5 mb-3 px-5">
+<section class="container py-3 pb-lg-5 mb-3 px-5">
   <h2 class="text-center pb-md-2">Our leadership</h2>
   <div class="swiper mx-n2" data-swiper-options='{
     "centerInsufficientSlides": true,
@@ -46,21 +46,19 @@
     <div class="swiper-wrapper">
 
       <!-- Team Members -->
-      <% i = 0 %>
-      <% for j in @members do %>
+      <% for member in @members do %>
         <div class="swiper-slide py-3 card border-0 bg-transparent">
-          <div class="position-relative card-hover" data-bs-toggle="modal" data-bs-target="#<%= @members[i][0].split(' ').second %>">
-            <img src="<%= asset_path(@members[i][0].split[1].downcase) %>" class="rounded-3" alt="<%= @members[i][0] %>">
+          <div class="position-relative card-hover" data-bs-toggle="modal" data-bs-target="#<%= member[0].split(' ').second %>">
+            <img src="<%= asset_path(member[0].split[1].downcase) %>" class="rounded-3" alt="<%= member[0] %>">
             <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Click me for more info!">
               <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50 rounded-3"></span>
             </div>
           </div>
           <div class="card-body text-center p-3">
-            <h3 class="fs-lg fw-semibold pt-1 mb-2 text-nowrap"><%= @members[i][0] %></h3>
-            <p class="fs-sm mb-0"><%= @members[i][1] %></p>
+            <h3 class="fs-lg fw-semibold pt-1 mb-2 text-nowrap"><%= member[0] %></h3>
+            <p class="fs-sm mb-0"><%= member[1] %></p>
           </div>
         </div>
-        <% i += 1 %>
       <% end %>
 
     </div>
@@ -69,25 +67,23 @@
   </div>
 
   <!-- Team Modals -->
-  <% i = 0 %>
-  <% for j in @members do %>
-    <div class="modal fade" id="<%= @members[i][0].split(' ').second %>" tabindex="-1" role="dialog">
+  <% for member in @members do %>
+    <div class="modal fade" id="<%= member[0].split(' ').second %>" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header row">
             <div class="col-6 text-start">
-              <h5 class="modal-title"><%= @members[i][0] %></h5>
-              <p class="fs-sm mb-0"><%= @members[i][1] %></p>
+              <h5 class="modal-title"><%= member[0] %></h5>
+              <p class="fs-sm mb-0"><%= member[1] %></p>
             </div>
             <div class="col-6 text-end">
-              <img src="<%= asset_path(@members[i][0].split[1].downcase) %>" class="rounded-3" alt="<%= @members[i][0] %>" width="100">
+              <img src="<%= asset_path(member[0].split[1].downcase) %>" class="rounded-3" alt="<%= member[0] %>" width="100">
             </div>
           </div>
-          <div class="modal-body"><p><%= @members[i][2] %></p></div>
+          <div class="modal-body"><p><%= member[2] %></p></div>
         </div>
       </div>
     </div>
-    <% i += 1 %>
   <% end %>
 
 </section>
