@@ -50,7 +50,7 @@
       </div>
       <div class="step-body">
         <h3 class="h4 mb-3">Production and Release</h3>
-        <p class="mb-0">The radiopharmaceutical products are manufactured on Saturday evening, tested, and packed.</p>
+        <p class="mb-0">The radiopharmaceutical products are manufactured on Saturday evening, tested, and packed. The products are manufactured by Isorad which holds the required approvals.</p>
       </div>
     </div>
     <div class="step">
@@ -152,11 +152,9 @@
   var latitude = 0,
       longitude = 0;
 
-  <% i = 0 %>
-  <% for j in @distribution do %>
-    longitude += <%= @distribution[i][5] %>;
-    latitude += <%= @distribution[i][4] %>;
-  <% i += 1 %>
+  <% for element in @distribution do %>
+    longitude += <%= element[5] %>;
+    latitude += <%= element[4] %>;
   <% end %>
     
   latitude = latitude / <%= @distribution.length %>;
@@ -165,39 +163,37 @@
   function initMap() {
     var center = {lat: latitude, lng: longitude};
     var locations = [
-      <% i = 0 %>
-      <% for j in @distribution do %>
+      <% for element in @distribution do %>
         ['<div class="bg-white">'+
-            '<h3 class="mb-lg-2"><%= @distribution[i][0] %></h3>'+
+            '<h3 class="mb-lg-2"><%= element[0] %></h3>'+
             '<ul class="list-unstyled ps-2">'+
-            <% if @distribution[i][1] != "" %>
+            <% if element[1] != "" %>
               '<li class="mb-2">'+
-                '<a href="tel:<%= @distribution[i][1].gsub(" ", "") %>" class="nav-link d-flex align-items-center p-0">'+
+                '<a href="tel:<%= element[1].gsub(" ", "") %>" class="nav-link d-flex align-items-center p-0">'+
                   '<i class="bx bx-phone-call fs-xl text-primary me-2" role="none"></i>'+
-                  '<%= @distribution[i][1] %>'+
+                  '<%= element[1] %>'+
                 '</a>'+
               '</li>'+
             <% end %>
-            <% if @distribution[i][2] != "" %>
+            <% if element[2] != "" %>
             '<li class="mb-2">'+
-              '<a href="mailto:<%= @distribution[i][2] %>" class="nav-link d-flex align-items-center p-0">'+
+              '<a href="mailto:<%= element[2] %>" class="nav-link d-flex align-items-center p-0">'+
                 '<i class="bx bx-envelope fs-xl text-primary me-2" role="none"></i>'+
-                '<%= @distribution[i][2] %>'+
+                '<%= element[2] %>'+
               '</a>'+
             '</li>'+
             <% end %>
-            <% if @distribution[i][3] != "" %>
+            <% if element[3] != "" %>
             '<li class="mb-2">'+
               '<a class="nav-link d-flex align-items-center p-0">'+
                 '<i class="bx bx-map fs-xl text-primary me-2" role="none"></i>'+
-                '<%= @distribution[i][3] %>'+
+                '<%= element[3] %>'+
               '</a>'+
             '</li>'+
             <% end %>
           '</ul>'+
         '</div>',
-        <%= @distribution[i][4] %>, <%= @distribution[i][5] %>],
-        <% i += 1 %>
+        <%= element[4] %>, <%= element[5] %>],
       <% end %>
     ];
 
