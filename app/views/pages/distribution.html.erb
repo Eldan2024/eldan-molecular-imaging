@@ -33,7 +33,7 @@
 <!-- Breadcrumb -->
 <%= render 'shared/breadcrumb' %>
 
-<!-- How we work (Steps) -->
+<!-- Steps -->
 <section class="py-3 px-5">
   <div class="row justify-content-center align-items-center text-center mb-5">
     <div class="col-12 col-sm-12 col-md-10 col-lg-6 col-xl-4">
@@ -50,14 +50,15 @@
       </div>
       <div class="step-body">
         <h3 class="h4 mb-3">Production and Release</h3>
-        <p class="mb-0">The radiopharmaceutical products are manufactured on Saturday evening, tested, and packed. The products are manufactured by Isorad which holds the required approvals.</p>
-        <div class="d-flex align-items-center justify-content-center">
-          <div class="py-3 w-50" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" title="Isorad" data-bs-content="Established more than 40 years ago, Isorad Radiopharmaceuticals is a leading manufacturer of SPECT, PET, MRI contrast agents, and nuclear products, located in the SOREQ Nuclear Research Center (Soreq NRC) near Yavne, Israel.">
-            <a class="card card-body card-hover px-2 mx-2">
-              <img src="<%= asset_path("isorad") %>" class="d-block mx-auto my-2" width="154" alt="Isorad logo">
-            </a>
+        <p class="mb-0">The radiopharmaceutical products are manufactured on Saturday evening, tested, and packed. The products are manufactured by Isorad which holds the required approvals.
+          <div class="d-flex align-items-center justify-content-center">
+            <div class="py-3 w-50" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" title="Isorad" data-bs-content="Established more than 40 years ago, Isorad Radiopharmaceuticals is a leading manufacturer of SPECT, PET, MRI contrast agents, and nuclear products, located in the SOREQ Nuclear Research Center (Soreq NRC) near Yavne, Israel.">
+              <a class="card card-body card-hover px-2 mx-2">
+                <img src="<%= asset_path("isorad") %>" class="d-block mx-auto my-2" width="154" alt="Isorad logo">
+              </a>
+            </div>
           </div>
-        </div>
+        </p>
       </div>
     </div>
     <div class="step">
@@ -103,42 +104,43 @@
   </div>
 </section>
 
-<section>
+<!-- Map -->
+<section class="py-3">
   <div id="map"></div>
 </section>
 
 <!-- Partners -->
-<section class="container pb-3 pb-lg-5 mt-5">
-  <div class="swiper mx-n2" data-swiper-options='{
-    "centerInsufficientSlides": true,
-    "slidesPerView": 2,
-    "pagination": {
-      "el": ".swiper-pagination",
-      "clickable": true
-    },
-    "breakpoints": {
-      "500": {
-        "slidesPerView": 3,
-        "spaceBetween": 8
+<% if @partners.length > 1 %>
+  <section class="container pb-3 pb-lg-5 mt-5">
+    <div class="swiper mx-n2" data-swiper-options='{
+      "centerInsufficientSlides": true,
+      "slidesPerView": 2,
+      "pagination": {
+        "el": ".swiper-pagination",
+        "clickable": true
       },
-      "650": {
-        "slidesPerView": 4,
-        "spaceBetween": 8
-      },
-      "900": {
-        "slidesPerView": 5,
-        "spaceBetween": 8
-      },
-      "1100": {
-        "slidesPerView": 6,
-        "spaceBetween": 8
+      "breakpoints": {
+        "500": {
+          "slidesPerView": 3,
+          "spaceBetween": 8
+        },
+        "650": {
+          "slidesPerView": 4,
+          "spaceBetween": 8
+        },
+        "900": {
+          "slidesPerView": 5,
+          "spaceBetween": 8
+        },
+        "1100": {
+          "slidesPerView": 6,
+          "spaceBetween": 8
+        }
       }
-    }
-  }'>
-    <div class="swiper-wrapper">
+    }'>
+      <div class="swiper-wrapper">
 
-      <!-- Partners -->
-      <% if @partners.length > 0 %>
+        <!-- Partners -->
         <% for partner in @partners do %>
           <div class="swiper-slide py-3" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" title="<%= partner[0] %>" data-bs-content="<%= partner[1] %>">
             <a class="card card-body card-hover px-2 mx-2">
@@ -146,14 +148,15 @@
             </a>
           </div>
         <% end %>
-      <% end %>
+
+      </div>
+
+      <!-- Pagination (bullets) -->
+      <div class="swiper-pagination position-relative pt-2 mt-4"></div>
 
     </div>
-
-    <!-- Pagination (bullets) -->
-    <div class="swiper-pagination position-relative pt-2 mt-4"></div>
-  </div>
-</section>
+  </section>
+<% end %>
 
 <script>
   var latitude = 0,

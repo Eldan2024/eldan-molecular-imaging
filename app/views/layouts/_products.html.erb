@@ -21,17 +21,15 @@
 
 <!-- Product Properties -->
 <section class="container-fluid my-3">
-  <% i = 0 %>
-  <% for j in @data do %>
-    <div class="row align-items-center justify-content-center px-4 px-sm-2 py-4 <%= "bg-secondary" if i.even? %>">
+  <% for row in @data do %>
+    <div class="row align-items-center justify-content-center px-4 px-sm-2 py-4 <%= "bg-secondary" if @data.find_index(row).even? %>">
       <div class="col-6 col-sm-4 col-lg-3 col-xl-2 text-dark fw-semibold">
-        <%= @data[i][0] %>
+        <%= row[0] %>
       </div>
       <div class="col-6 col-sm-4 col-lg-3 col-xl-2 text-center">
-        <%= @data[i][1] %>
+        <%= row[1] %>
       </div>
     </div>
-    <% i += 1 %>
   <% end %>
 </section>
 
@@ -48,19 +46,17 @@
         <div class="accordion" id="faq">
 
           <!-- Questions -->
-          <% i = 0 %>
-          <% for j in @questions do %>
+          <% for question in @questions do %>
             <div class="accordion-item border-0 rounded-3 shadow-sm">
-              <h2 class="accordion-header" id="q<%= i %>-heading">
-                <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q<%= i %>" aria-expanded="false" aria-controls="q<%= i %>">
+              <h2 class="accordion-header" id="q<%= @question.find_index(question) %>-heading">
+                <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q<%= @question.find_index(question) %>" aria-expanded="false" aria-controls="q<%= @question.find_index(question)i %>">
                   <%= @questions[i][0] %>
                 </button>
               </h2>
-              <div id="q<%= i %>" class="accordion-collapse collapse" aria-labelledby="q<%= i %>-heading" data-bs-parent="#faq">
+              <div id="q<%= i@question.find_index(question) %>" class="accordion-collapse collapse" aria-labelledby="q<%= i@question.find_index(question) %>-heading" data-bs-parent="#faq">
                 <div class="accordion-body fs-sm pt-0"><%= @questions[i][1] %> </div>
               </div>
             </div>
-            <% i += 1 %>
           <% end %>
 
         </div>
