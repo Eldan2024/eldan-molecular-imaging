@@ -49,12 +49,12 @@
           <% for question in @questions do %>
             <div class="accordion-item border-0 rounded-3 shadow-sm">
               <h2 class="accordion-header" id="q<%= @question.find_index(question) %>-heading">
-                <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q<%= @question.find_index(question) %>" aria-expanded="false" aria-controls="q<%= @question.find_index(question)i %>">
-                  <%= @questions[i][0] %>
+                <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q<%= @question.find_index(question) %>" aria-expanded="false" aria-controls="q<%= @question.find_index(question) %>">
+                  <%= question[0] %>
                 </button>
               </h2>
-              <div id="q<%= i@question.find_index(question) %>" class="accordion-collapse collapse" aria-labelledby="q<%= i@question.find_index(question) %>-heading" data-bs-parent="#faq">
-                <div class="accordion-body fs-sm pt-0"><%= @questions[i][1] %> </div>
+              <div id="q<%= i@question.find_index(question) %>" class="accordion-collapse collapse" aria-labelledby="q<%= @question.find_index(question) %>-heading" data-bs-parent="#faq">
+                <div class="accordion-body fs-sm pt-0"><%= question[1] %> </div>
               </div>
             </div>
           <% end %>
