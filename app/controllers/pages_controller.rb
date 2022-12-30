@@ -9,8 +9,7 @@ class PagesController < ApplicationController
     @desc = "Eldan Molecular Imaging is looking beyond the common practice to provide a better and more reliable service in its distribution of radiopharmaceuticals."
     @jarallax = "distribution_cover"
 
-    @partners = [
-      ["Isorad" , "Established more than 40 years ago, Isorad Radiopharmaceuticals is a leading manufacturer of SPECT, PET, MRI contrast agents, and nuclear products, located in the SOREQ Nuclear Research Center (Soreq NRC) near Yavne, Israel."]]
+    @partners = []
 
     @distribution = [
       ["Bareket Gelbhart", "+41 797 995 117", "bareketg@eldan.biz", "Via Giuseppe Motta 9, 6826 Riva San Vitale", "45.90162203709794", "8.971096270527374"],

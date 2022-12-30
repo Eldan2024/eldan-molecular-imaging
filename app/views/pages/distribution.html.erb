@@ -51,6 +51,13 @@
       <div class="step-body">
         <h3 class="h4 mb-3">Production and Release</h3>
         <p class="mb-0">The radiopharmaceutical products are manufactured on Saturday evening, tested, and packed. The products are manufactured by Isorad which holds the required approvals.</p>
+        <div class="d-flex align-items-center justify-content-center">
+          <div class="py-3 w-50" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" title="Isorad" data-bs-content="Established more than 40 years ago, Isorad Radiopharmaceuticals is a leading manufacturer of SPECT, PET, MRI contrast agents, and nuclear products, located in the SOREQ Nuclear Research Center (Soreq NRC) near Yavne, Israel.">
+            <a class="card card-body card-hover px-2 mx-2">
+              <img src="<%= asset_path("isorad") %>" class="d-block mx-auto my-2" width="154" alt="Isorad logo">
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="step">
@@ -131,14 +138,14 @@
     <div class="swiper-wrapper">
 
       <!-- Partners -->
-      <% i = 0 %>
-      <% for j in @partners do %>
-        <div class="swiper-slide py-3" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" title="<%= @partners[i][0] %>" data-bs-content="<%= @partners[i][1] %>">
-          <a class="card card-body card-hover px-2 mx-2">
-            <img src="<%= asset_path(@partners[i][0].downcase + ".png") %>" class="d-block mx-auto my-2" width="154" alt="<%= @partners[i][0] + " logo" %>">
-          </a>
-        </div>
-        <% i += 1 %>
+      <% if @partners.length > 0 %>
+        <% for partner in @partners do %>
+          <div class="swiper-slide py-3" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" title="<%= partner[0] %>" data-bs-content="<%= partner[1] %>">
+            <a class="card card-body card-hover px-2 mx-2">
+              <img src="<%= asset_path(partner[0].downcase) %>" class="d-block mx-auto my-2" width="154" alt="<%= partner[0] + " logo" %>">
+            </a>
+          </div>
+        <% end %>
       <% end %>
 
     </div>
