@@ -12498,7 +12498,7 @@ html:not([dir=rtl]) .range-slider-ui.noUi-horizontal .noUi-handle {
   display: flex;
   align-items: center;
   justify-content: center;
-  right: 1.25rem;
+  left: 1.25rem;
   bottom: -4.125rem;
   width: var(--si-btn-scroll-top-size);
   height: var(--si-btn-scroll-top-size);
