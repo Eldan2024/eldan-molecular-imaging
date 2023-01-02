@@ -1446,7 +1446,6 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.9-x64-mingw-ucrt)
       racc (~> 1.4)
-    pg (1.4.5-x64-mingw-ucrt)
     public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -1515,7 +1514,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.5.4-x64-mingw-ucrt)
     sshkit (1.21.3)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
@@ -1564,7 +1562,6 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   mail_form
-  pg (~> 1.4, >= 1.4.2)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   rails_12factor
@@ -1573,7 +1570,6 @@ DEPENDENCIES
   selenium-webdriver
   sitemap_generator
   sprockets-rails
-  sqlite3 (~> 1.4)
   stimulus-rails
   turbo-rails
   tzinfo-data
