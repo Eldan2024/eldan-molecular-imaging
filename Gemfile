@@ -21,16 +21,17 @@ gem 'aws-sdk', '~> 3'
 gem 'whenever', require: false
 gem "capistrano", "~> 3.17", require: false
 
-group :development, :test do
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-end
-
 group :development do
   gem "web-console"
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :production do
-  gem 'rails_12factor'
+  gem 'sqlite3', '~> 1.4'
+end
+
+group :development, :test do
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
 group :test do
