@@ -2,9 +2,9 @@ class ProductsController < ApplicationController
   def tc99
     @breadcrumb = "<sup>99</sup>Mo/<sup>99m</sup>Tc".html_safe
     @title =  @breadcrumb.gsub("<sup>","").gsub("</sup>","") + " / " + controller_name.capitalize
-    @desc = "99Mo/99mTc Generator is an instrument that is used to extract the isotope 99mTc of technetium from a decaying molybdenum-99"
+    @desc = "99Mo/99mTc Generator is an instrument that is used to extract the isotope 99mTc from a decaying molybdenum-99"
     @product_title = "<sup>99</sup>Mo/<sup>99m</sup>Tc Generator".html_safe
-    @product_desc = "A technetium-99m generator is a device used to extract the isotope <sup>99m</sup>Tc of technetium from a decaying molybdenum-99. <sup>99m</sup>Tc is used for a variety of nuclear medicine diagnostic in single photon emission computed tomography (SPECT) procedures, where its short half-life is very useful. Sterile Technetium-99m generators are manufactured in Israel since 1976 utilizing dry technology. The generators are ergonomic and recyclable.".html_safe
+    @product_desc = "A technetium-99m generator is a device used to extract the isotope <sup>99m</sup>Tc from a decaying molybdenum-99. <sup>99m</sup>Tc is used for a variety of nuclear medicine diagnostic in single photon emission computed tomography (SPECT) procedures, where its short half-life is very useful. Sterile Technetium-99m generators are manufactured in Israel since 1976 utilizing dry technology. The generators are ergonomic and recyclable.".html_safe
 
     @questions = []
 
