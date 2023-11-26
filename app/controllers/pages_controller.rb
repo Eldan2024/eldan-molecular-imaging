@@ -14,10 +14,6 @@ class PagesController < ApplicationController
     @distribution = [
       ["Isorad Radiopharmaceutical", "", "", "", "31.89814693730076", "34.70073643328131"],
       ["Eldan", "", "", "HaShiloah St 6, Petah Tikva, Israel", "32.0912614028465", "34.855602910534785"]]
-
-    @locations = @distribution.map do |element|
-      [element[0], element[4].to_f, element[5].to_f]
-    end
   end
 
   def team
