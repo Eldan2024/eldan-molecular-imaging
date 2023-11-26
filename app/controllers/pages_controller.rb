@@ -12,7 +12,6 @@ class PagesController < ApplicationController
     @partners = []
 
     @distribution = [
-      ["Bareket Gelbhart", "+41 797 995 117", "bareketg@eldan.biz", "Via Giuseppe Motta 9, 6826 Riva San Vitale", "45.90162203709794", "8.971096270527374"],
       ["Isorad Radiopharmaceutical", "", "", "", "31.89814693730076", "34.70073643328131"],
       ["Eldan", "", "", "HaShiloah St 6, Petah Tikva, Israel", "32.0912614028465", "34.855602910534785"]]
   end
