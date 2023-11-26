@@ -23,9 +23,12 @@ class PagesController < ApplicationController
 
     @desc1 = "Tal Rabinovich joined Eldan in 2012, was appointed as General Manager in 2013 and is heading an extensive operation in molecular diagnostics and radiopharmaceuticals. <br><br>Prior to joining Eldan, Tal served as VP for business development and operations at LDD Advanced Technologies.".html_safe
 
-    @desc2 = "Bareket Gelbhart joined Eldan Molecular Imaging in January 2022 as International Business Manager. Previously she worked in Dipharma, serving as Head of Marketing for 6 years and as Chief Business Development Officer for additional 3 years.<br><br>Prior to Dipharma, Bareket worked in Teva Pharmaceuticals for 17 years in different positions.".html_safe
+    @desc2 = "Ziv Gilboa joined Eldan Molecular Imaging in October 2023 as International Business Manager. Previously he worked in Cnoga Medical, serving as Head of Sales and Marketing in Latin America for 8 years, as well as 5 years as general manager of Cnoga Brazil.<br><br>
+    Prior to Cnoga Medical, Ziv worked in Logic Industries for 8 years in different senior positions in different security projects across the UEA.<br><br>
+    Prior to this Position Ziv worked as a director in the Telecommunication Market for 7 Years, supporting entire projects for a number of companies including: Alcatel, Erikson and Siemens".html_safe
     
-    @desc3 = "Ariel joined Eldan Molecular Imaging in May 2022. Previously Ariel worked as General Manager at Fresenius Medical Care, Israel for 4 years. Prior to that Ariel was the General Manager of Philips Healthcare, Israel for over 10 years and Developed loan market business for medical devices in China and Africa. <br><br>Prior to this position Ariel served as Business unit manager at Schering Plough for 5 years and before this position Ariel held different managerial positions in Teva Medical Israel.".html_safe
+    @desc3 = "Ariel joined Eldan Molecular Imaging in May 2022. Previously Ariel worked as General Manager at Fresenius Medical Care, Israel for 4 years. Prior to that Ariel was the General Manager of Philips Healthcare, Israel for over 10 years and Developed loan market business for medical devices in China and Africa. <br><br>
+    Prior to this position Ariel served as Business unit manager at Schering Plough for 5 years and before this position Ariel held different managerial positions in Teva Medical Israel.".html_safe
 
     @desc4 = "Orit Hillel Joined Eldan in 2008 as an Analyst. In 2015 she was appointed to the position Analyst, Sales & Technical Administrators Manager"
 
@@ -35,7 +38,7 @@ class PagesController < ApplicationController
 
     @members = [
       ["Tal Rabinovich", "General Manager", @desc1],
-      ["Bareket Gelbhart", "International Business Manager", @desc2],
+      ["Ziv Gilboa", "International Business Manager", @desc2],
       ["Ariel Ikan", "VP Business Development", @desc3],
       ["Orit Hillel", "Finance Coordinator", @desc4],
       ["Haim Shoshan", "VP of Finance and Logistics", @desc5],
