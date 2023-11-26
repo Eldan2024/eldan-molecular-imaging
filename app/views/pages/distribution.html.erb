@@ -291,9 +291,6 @@
       }
     };
 
-    // Calculate the bounds for the map
-    var bounds = new google.maps.LatLngBounds();
-
     for (count = 0; count < locations.length; count++) {
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[count][1], locations[count][2]),
@@ -317,12 +314,5 @@
         }
       })(marker, count));
     }
-
-    map.fitBounds(bounds);
-
-    var maxZoom = 15;
-    google.maps.event.addListenerOnce(map, 'bounds_changed', function () {
-      if (map.getZoom() > maxZoom) map.setZoom(maxZoom);
-    });
   }
 </script>
