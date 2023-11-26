@@ -40,8 +40,8 @@
         <div class="d-flex flex-sm-row flex-column pt-2">
           <h6 class="mt-sm-1 mb-sm-2 mb-3 me-2 text-nowrap">Related Tags:</h6>
           <div>
-            <% for i in @tags do %>
-              <a href="#" class="btn btn-sm btn-outline-secondary me-2 mb-2"><%= i %></a>
+            <% for tag in @tags do %>
+              <a href="#" class="btn btn-sm btn-outline-secondary me-2 mb-2"><%= tag %></a>
             <% end %>
           </div>
         </div>

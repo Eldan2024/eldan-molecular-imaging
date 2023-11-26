@@ -159,16 +159,80 @@
 <% end %>
 
 <script>
-  var latitude = 0,
-      longitude = 0;
+  var latitudes = [
+    <% for element in @distribution do %>
+      <%= element[4] %>,
+    <% end %>
+  ];
 
-  <% for element in @distribution do %>
-    longitude += <%= element[5] %>;
-    latitude += <%= element[4] %>;
-  <% end %>
-    
-  latitude = latitude / <%= @distribution.length %>;
-  longitude = longitude / <%= @distribution.length %>;
+  var longitudes = [
+    <% for element in @distribution do %>
+      <%= element[5] %>,
+    <% end %>
+  ];
+
+  var latitude = latitudes.reduce((a, b) => a + b, 0) / latitudes.length;
+  var longitude = longitudes.reduce((a, b) => a + b, 0) / longitudes.length;
+
+  var allDistances = calculateAllDistances(<%= locations %>);
+  var averageDistance = allDistances.reduce((a, b) => a + b.distance, 0) / allDistances.length;
+  var zoom = calculateZoom(averageDistance);
+
+  function haversine(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Earth radius in kilometers
+
+    // Convert latitude and longitude from degrees to radians
+    const toRadians = (angle) => (angle * Math.PI) / 180;
+    lat1 = toRadians(lat1);
+    lon1 = toRadians(lon1);
+    lat2 = toRadians(lat2);
+    lon2 = toRadians(lon2);
+
+    // Calculate differences in latitude and longitude
+    const dlat = lat2 - lat1;
+    const dlon = lon2 - lon1;
+
+    // Haversine formula
+    const a = Math.sin(dlat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dlon / 2) ** 2;
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distance = R * c;
+
+    return distance;
+  }
+  
+  function calculateZoom(distance) {
+    // Adjust these constants based on your specific use case
+    const maxDistance = 1000; // Maximum distance in kilometers for maximum zoom
+    const maxZoom = 15; // Maximum zoom level
+    const minZoom = 2; // Minimum zoom level
+
+    // Calculate a zoom level based on the distance
+    const zoomLevel = maxZoom - (distance / maxDistance) * (maxZoom - minZoom);
+
+    // Ensure the zoom level is within the valid range
+    return Math.max(minZoom, Math.min(maxZoom, zoomLevel));
+  }
+
+  function calculateAllDistances(locations) {
+    const distances = [];
+
+    for (let i = 0; i < locations.length; i++) {
+      for (let j = i + 1; j < locations.length; j++) {
+        const distance = haversine(
+          locations[i][1], locations[i][2], // lat and lon of point i
+          locations[j][1], locations[j][2]  // lat and lon of point j
+        );
+
+        distances.push({
+          point1: locations[i][0],
+          point2: locations[j][0],
+          distance: distance,
+        });
+      }
+    }
+
+    return distances;
+  }
 
   function initMap() {
     var center = {lat: latitude, lng: longitude};
@@ -208,7 +272,7 @@
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 3,
+      zoom: zoom,
       center: center,
       styles: [{"featureType":"all","elementType":"geometry","stylers":[{"color":"#202c3e"}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"gamma":0.01},{"lightness":20},{"weight":"1.39"},{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"weight":"0.96"},{"saturation":"9"},{"visibility":"on"},{"color":"#000000"}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"lightness":30},{"saturation":"9"},{"color":"#29446b"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"saturation":20}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"lightness":20},{"saturation":-20}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":10},{"saturation":-30}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#193a55"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"saturation":25},{"lightness":25},{"weight":"0.01"}]},{"featureType":"water","elementType":"all","stylers":[{"lightness":-20}]}]
     });
@@ -226,6 +290,9 @@
         icon: "<%= asset_path("marker-open.png") %>",
       }
     };
+
+    // Calculate the bounds for the map
+    var bounds = new google.maps.LatLngBounds();
 
     for (count = 0; count < locations.length; count++) {
       marker = new google.maps.Marker({
@@ -250,5 +317,12 @@
         }
       })(marker, count));
     }
+
+    map.fitBounds(bounds);
+
+    var maxZoom = 15;
+    google.maps.event.addListenerOnce(map, 'bounds_changed', function () {
+      if (map.getZoom() > maxZoom) map.setZoom(maxZoom);
+    });
   }
 </script>
