@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
 
     @name = "Ziv Gilboa"
     @email = "ZivG@eldan.biz"
-    @title "International Business Manager"
+    @title = "International Business Manager"
   end
 
   def create
