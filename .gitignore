@@ -36,3 +36,6 @@
 
 # Ignore env file
 .env
+
+# Ignore git guardian cache
+.cache_ggshield
