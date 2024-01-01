@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(params[:contact])
+    @contact = Contact.new(params[:contact].permit(:name))
     @contact.request = request
 
     if @contact.deliver
