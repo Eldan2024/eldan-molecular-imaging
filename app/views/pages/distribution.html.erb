@@ -1,0 +1,255 @@
+<style>
+  #collapseDiv #show.collapsed:after {
+    content: '+ Show More';
+  }
+
+  #collapseDiv #show:not(.collapsed):after {
+    content: '- Show Less';
+  }
+
+  #collapseDiv #collapse.collapse:not(.show) {
+    display: block;
+    height: 10em;
+    overflow: hidden;
+  }
+
+  #collapseDiv #collapse.collapsing {
+    height: 10em;
+  }
+
+  #map {
+    height: 400px;
+    width: 100%;
+  }
+</style>
+
+<div class="jarallax d-none d-md-block mb-4" data-jarallax data-speed="0.1">
+  <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary-translucent"></span>
+  <div class="jarallax-img" style="background-image: url(<%= asset_path(@jarallax) %>);"></div>
+  <div class="d-none d-lg-block" style="height: 400px;"></div>
+  <div class="d-none d-md-block d-lg-none" style="height: 200px;"></div>
+</div>
+
+<!-- Breadcrumb -->
+<%= render 'shared/breadcrumb' %>
+
+<!-- Steps -->
+<section class="py-3 px-5">
+  <div class="row justify-content-center align-items-center text-center mb-5">
+    <div class="col-12 col-sm-12 col-md-10 col-lg-6 col-xl-4">
+      <h1 class="pb-2 pb-md-0 mb-4 mb-md-5 text-center">Product Distribution</h2>
+      <p>
+        Around 30-40 million medical diagnostic imaging techniques using technetium-99m (99mTc) and other radiopharmaceuticals are performed worldwide every year. Disruptions in the supply chain of these medical isotopes – which have a very short half-life can lead to cancellations or delays in important medical testing services. <br><br>Eldan Molecular Imaging is therefore looking beyond the common practice to provide a better and more reliable service in its distribution of radiopharmaceuticals.
+      </p>
+    </div>
+  </div>
+  <div class="steps steps-sm steps-horizontal-md pb-2 pb-sm-3 steps-center">
+    <div class="step">
+      <div class="step-number">
+        <div class="step-number-inner">1</div>
+      </div>
+      <div class="step-body">
+        <h3 class="h4 mb-3">Production and Release</h3>
+        <p class="mb-0">The radiopharmaceutical products are manufactured on Saturday evening, tested, and packed. The products are manufactured by Isorad which holds the required approvals.
+          <div class="d-flex align-items-center justify-content-center">
+            <div class="py-3 w-50" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" title="Isorad" data-bs-content="Established more than 40 years ago, Isorad Radiopharmaceuticals is a leading manufacturer of SPECT, PET, MRI contrast agents, and nuclear products, located in the SOREQ Nuclear Research Center (Soreq NRC) near Yavne, Israel.">
+              <a class="card card-body card-hover px-2 mx-2">
+                <img src="<%= asset_path("isorad") %>" class="d-block mx-auto my-2" width="154" alt="Isorad logo">
+              </a>
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">
+        <div class="step-number-inner">2</div>
+      </div>
+      <div class="step-body">
+        <h3 class="h4 mb-3">Transfer of Product from the manufacturing facility to the Airport</h3>
+        <p class="mb-0">On Sunday early morning, the products are transferred to Tel-Aviv Ben Gurion airport, a 30min drive from the manufacturing facility.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">
+        <div class="step-number-inner">3</div>
+      </div>
+      <div class="step-body" id="collapseDiv">
+        <h3 class="h4 mb-3">Shipment</h3>
+        <p class="mb-0 collapse" id="collapse" aria-expanded="false">
+          The products are shipped from the Tel-Aviv Ben Gurion airport, which shares many connections to major European and middle eastern transportation hubs (number of flights are approximated):
+            <br><br>28 weekly flights to Frankfurt, Lufthansa Hub
+            <br>21 weekly flights to Paris, Air France Hub
+            <br>32 weekly flights to London, British Airways Hub
+            <br>38 weekly flights to Dubai, Emirates Hub
+            <br>56 weekly flights to Istanbul, Turkish Airlines Hub
+          <br><br>And with numerous direct flights to other world centers:
+            <br><br>New York, 30 weekly flights
+            <br>Bangkok, 7 weekly flights 
+            <br>Addis Ababa, 7 weekly flights 
+            <br>And many more…
+        </p>
+        <a id="show" role="button" class="collapsed text-decoration-none d-block text-center mt-3" data-bs-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse"><span class="d-none">show more</span></a>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">
+        <div class="step-number-inner">4</div>
+      </div>
+      <div class="step-body">
+        <h3 class="h4 mb-3">Products arrival and patients’ doses preparation</h3>
+        <p class="mb-0">The products arrive at the local distributor/radiopharmacy or hospitals where patients’ doses are prepared.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map -->
+<section class="bg-dark pb-3">
+  <div id="map"></div>
+</section>
+
+<!-- Partners -->
+<% if @partners.length > 1 %>
+  <section class="container pb-3 pb-lg-5 mt-5">
+    <div class="swiper mx-n2" data-swiper-options='{
+      "centerInsufficientSlides": true,
+      "slidesPerView": 2,
+      "pagination": {
+        "el": ".swiper-pagination",
+        "clickable": true
+      },
+      "breakpoints": {
+        "500": {
+          "slidesPerView": 3,
+          "spaceBetween": 8
+        },
+        "650": {
+          "slidesPerView": 4,
+          "spaceBetween": 8
+        },
+        "900": {
+          "slidesPerView": 5,
+          "spaceBetween": 8
+        },
+        "1100": {
+          "slidesPerView": 6,
+          "spaceBetween": 8
+        }
+      }
+    }'>
+      <div class="swiper-wrapper">
+
+        <!-- Partners -->
+        <% for partner in @partners do %>
+          <div class="swiper-slide py-3" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" title="<%= partner[0] %>" data-bs-content="<%= partner[1] %>">
+            <a class="card card-body card-hover px-2 mx-2">
+              <img src="<%= asset_path(partner[0].downcase) %>" class="d-block mx-auto my-2" width="154" alt="<%= partner[0] + " logo" %>">
+            </a>
+          </div>
+        <% end %>
+
+      </div>
+
+      <!-- Pagination (bullets) -->
+      <div class="swiper-pagination position-relative pt-2 mt-4"></div>
+
+    </div>
+  </section>
+<% end %>
+
+<script>
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 3,
+      center: new google.maps.LatLng(0, 0),
+      styles: [{"featureType":"all","elementType":"geometry","stylers":[{"color":"#202c3e"}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"gamma":0.01},{"lightness":20},{"weight":"1.39"},{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"weight":"0.96"},{"saturation":"9"},{"visibility":"on"},{"color":"#000000"}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"lightness":30},{"saturation":"9"},{"color":"#29446b"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"saturation":20}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"lightness":20},{"saturation":-20}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":10},{"saturation":-30}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#193a55"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"saturation":25},{"lightness":25},{"weight":"0.01"}]},{"featureType":"water","elementType":"all","stylers":[{"lightness":-20}]}]
+    });
+    
+    var locations = [
+      <% for element in @distribution do %>
+        ['<div class="bg-white">'+
+            '<h3 class="mb-lg-2"><%= element[0] %></h3>'+
+            '<ul class="list-unstyled ps-2">'+
+            <% if element[1] != "" %>
+              '<li class="mb-2">'+
+                '<a href="tel:<%= element[1].gsub(" ", "") %>" class="nav-link d-flex align-items-center p-0">'+
+                  '<i class="bx bx-phone-call fs-xl text-primary me-2" role="none"></i>'+
+                  '<%= element[1] %>'+
+                '</a>'+
+              '</li>'+
+            <% end %>
+            <% if element[2] != "" %>
+            '<li class="mb-2">'+
+              '<a href="mailto:<%= element[2] %>" class="nav-link d-flex align-items-center p-0">'+
+                '<i class="bx bx-envelope fs-xl text-primary me-2" role="none"></i>'+
+                '<%= element[2] %>'+
+              '</a>'+
+            '</li>'+
+            <% end %>
+            <% if element[3] != "" %>
+            '<li class="mb-2">'+
+              '<a class="nav-link d-flex align-items-center p-0">'+
+                '<i class="bx bx-map fs-xl text-primary me-2" role="none"></i>'+
+                '<%= element[3] %>'+
+              '</a>'+
+            '</li>'+
+            <% end %>
+          '</ul>'+
+        '</div>',
+        <%= element[4] %>, <%= element[5] %>],
+      <% end %>
+    ];
+
+    var infowindow =  new google.maps.InfoWindow({});
+    var bounds = new google.maps.LatLngBounds();
+    var currentOpenInfowindow = null;
+    var currentOpenMarker = null;
+    
+    const icons = {
+      closed: {
+        icon: "<%= asset_path("marker-closed.png") %>",
+      },
+
+      open: {
+        icon: "<%= asset_path("marker-open.png") %>",
+      }
+    };
+
+    for (var i = 0; i < locations.length; i++) {
+      var position = new google.maps.LatLng(locations[i][1], locations[i][2]);
+      bounds.extend(position);
+
+      var marker = new google.maps.Marker({
+        position: position,
+        icon: icons["closed"].icon,
+        map: map,
+        title: locations[i][0]
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          if (currentOpenInfowindow) {
+            currentOpenInfowindow.close();
+            currentOpenMarker.setIcon(icons["closed"].icon);
+          }
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+          marker.setIcon(icons["open"].icon);
+          currentOpenInfowindow = infowindow;
+          currentOpenMarker = marker;
+        }
+      })(marker, i));
+
+      google.maps.event.addListener(infowindow, 'closeclick', (function(marker) {
+        return function() {
+          marker.setIcon(icons["closed"].icon);
+        }
+      })(marker));
+    }
+
+    map.fitBounds(bounds);
+  }
+
+  google.maps.event.addDomListener(window, 'load', initMap);
+</script>

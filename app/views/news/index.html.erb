@@ -1,0 +1,95 @@
+<!-- Breadcrumb -->
+<div class="mt-4">
+  <%= render 'shared/breadcrumb' %>
+</div>
+
+<!-- Page content -->
+<section class="container mt-4 mb-lg-5 pt-lg-2 pb-5">
+
+  <!-- Page title + Layout switcher + Search form -->
+  <div class="row align-items-end gy-3 mb-4 pb-lg-3 pb-1">
+    <div class="col-lg-5 col-md-4">
+      <h1 class="mb-2 mb-md-0">News</h1>
+    </div>
+  </div>
+
+  <!-- Pagination: Pager -->
+  <div class="swiper swiper-pager swiper-nav-onhover" data-swiper-options='{
+    "spaceBetween": 20,
+    "loop": true,
+    "pager": true,
+    "navigation": {
+      "prevEl": ".page-prev",
+      "nextEl": ".page-next"
+    }
+  }'>
+    <div class="swiper-wrapper">
+
+      <% i = 0 %>
+      <% for x in 0..(@articles.count).fdiv(@articles_per_page).ceil-1 do [i] %>
+        <!-- Swiper Slides -->
+        <div class="swiper-slide">
+          <!-- Items -->
+          <% for j in @articles do %>
+            <article class="card border-0 shadow overflow-hidden mb-4">
+              <div class="row g-0">
+                <!-- Light Mode Image -->
+                <div class="light-mode-img col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-contain" style="background-image: url(<%= asset_path(@articles[i][6]) %>); min-height: 15rem;">
+                  <a href="<%= @articles[i][2] %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                </div>
+                <!-- Dark Mode Image -->
+                <div class="dark-mode-img col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-contain" style="background-image: url(<%= asset_path(@articles[i][7]) %>); min-height: 15rem;">
+                  <a href="<%= @articles[i][2] %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                </div>
+                <div class="col-sm-8">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none"><%= @articles[i][3] %></a>
+                      <span class="fs-sm text-muted border-start ps-3 ms-3"><%= @articles[i][4] %></span>
+                    </div>
+                    <h3 class="h4">
+                      <a href="<%= @articles[i][2] %>"><%= @articles[i][0] %></a>
+                    </h3>
+                    <p><%= @articles[i][1] %></p>
+                    <hr class="my-4">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                        <img src="<%= asset_path(@articles[i][5].split[1].downcase) %>" class="rounded-circle me-3" width="48" alt="Author avatar">
+                        <%= @articles[i][5] %>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <% i += 1 %>
+            <% if i % @articles_per_page == 0 || i == @articles.count %>
+              <% break %>
+            <% end %>
+          <% end %>
+          <!-- Items Ends -->
+        </div>
+        <!-- Swiper Slides Ends -->
+      <% end %>
+
+    </div>
+    <!-- Pagination -->
+    <div class="pt-5">
+      <nav class="pagination d-flex justify-content-center position-absolute bottom-0 zindex-2 start-50 translate-middle-x px-2">
+        <div class="page-item me-2">
+          <a class="page-link page-prev btn-icon btn-sm" href="#">
+            <i class="bx bx-chevron-left" role="none"><span class="d-none">left</span></i>
+          </a>
+        </div>
+        <ul class="list-unstyled d-flex justify-content-center mb-0"></ul>
+        <div class="page-item ms-2">
+          <a class="page-link page-next btn-icon btn-sm" href="#">
+            <i class="bx bx-chevron-right" role="none"><span class="d-none">right</span></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+
+
+  </div>
+</section>

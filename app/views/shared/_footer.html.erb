@@ -1,0 +1,48 @@
+<style>
+  /* Galaxy Fold */
+  @media (min-width: 280px) and (max-width: 320px) {
+    .navbar-brand {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+</style>
+
+<!-- Footer -->
+<footer class="footer bg-dark dark-mode">
+  <div class="container text-center pb-4">
+    <div class="justify-content-center">
+      <img src="<%= asset_path("logo_light.png") %>" alt="EldanMI Logo" width="150">
+    </div>
+
+    <!-- Nav -->
+    <div class="d-none d-sm-block">
+      <div class="pb-sm-3">
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a href="<%= root_path %>" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="<%= about_path %>" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="<%= products_path %>" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="<%= team_path %>" class="nav-link">Team</a></li>
+          <li class="nav-item"><a href="<%= distribution_path %>" class="nav-link">Distribution</a></li>
+          <li class="nav-item"><a href="<%= news_path %>" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="<%= contacts_path %>" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="fs-xs text-center">
+      <span class="text-light opacity-50">&copy; All rights reserved. Made by </span>
+      <a class="nav-link d-inline p-0" href="https://eldan.biz/" target="_blank" rel="noopener" aria-label="Eldan Website">Eldan</a>
+      <div class="pt-2">
+        <span class="text-light opacity-50">Please see our </span>
+        <a class="nav-link d-inline p-0" href="<%= accessability_declaration_path %>" aria-label="Accessibility Declaration">Accessibility Declaration</a>
+        <span class="text-light opacity-50">, </span>
+        <a class="nav-link d-inline p-0" href="<%= tos_path %>" aria-label="Terms & Conditions and Privacy Policy">Terms & Conditions</a>
+        <span class="text-light opacity-50"> and </span>
+        <a class="nav-link d-inline p-0" href="<%= tos_path %>" aria-label="Terms & Conditions and Privacy Policy">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
