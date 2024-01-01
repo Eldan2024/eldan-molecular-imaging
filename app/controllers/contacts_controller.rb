@@ -3,6 +3,10 @@ class ContactsController < ApplicationController
     @title =  "Contact Us"
     @via = params[:via]
     @contact = Contact.new
+
+    @name = "Ziv Gilboa"
+    @email = "ZivG@eldan.biz"
+    @title "International Business Manager"
   end
 
   def create
