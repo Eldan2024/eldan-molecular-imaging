@@ -39,3 +39,6 @@
 
 # Ignore git guardian cache
 .cache_ggshield
+
+# Ignore git rewrite
+.git-rewrite
