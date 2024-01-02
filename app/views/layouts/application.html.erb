@@ -3,9 +3,9 @@
 <% end %>
 
 <% if defined?(@title) %>
-  <% @title = @title + " / Eldan MI" %>
+  <% @title = @title + " / EldanMI" %>
 <% else %>
-  <% @title = "Eldan MI" %>
+  <% @title = "EldanMI" %>
 <% end %>
 
 <!DOCTYPE html>
@@ -127,26 +127,26 @@
     <% if controller.controller_name == "errors" %>
       <script src="<%= asset_path("lottie-player.js") %>"></script>
     <% end %>
-    <script src="<%= asset_path("bootstrap.bundle.min.js") %>"></script>
-    <script src="<%= asset_path("smooth-scroll.polyfills.min.js") %>"></script>
-    <script src="<%= asset_path("cleave.min.js") %>"></script>
-    <script src="<%= asset_path("jarallax.min.js") %>"></script>
-    <script src="<%= asset_path("parallax.min.js") %>"></script>
-    <script src="<%= asset_path("swiper-bundle.min.js") %>"></script>
-    <script src="<%= asset_path("lightgallery.min.js") %>"></script>
-    <script src="<%= asset_path("lg-fullscreen.min.js") %>"></script>
-    <script src="<%= asset_path("lg-zoom.min.js") %>"></script>
-    <script src="<%= asset_path("lg-video.min.js") %>"></script>
-    <script src="<%= asset_path("lg-thumbnail.min.js") %>"></script>
-    <script src="<%= asset_path("rellax.min.js") %>"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"></script>
+    <script src="<%= asset_path("bootstrap.bundle.min.js") %>" async defer></script>
+    <script src="<%= asset_path("smooth-scroll.polyfills.min.js") %>" async defer></script>
+    <script src="<%= asset_path("cleave.min.js") %>" async defer></script>
+    <script src="<%= asset_path("jarallax.min.js") %>" async defer></script>
+    <script src="<%= asset_path("parallax.min.js") %>" async defer></script>
+    <script src="<%= asset_path("swiper-bundle.min.js") %>" async defer></script>
+    <script src="<%= asset_path("lightgallery.min.js") %>" async defer></script>
+    <script src="<%= asset_path("lg-fullscreen.min.js") %>" async defer></script>
+    <script src="<%= asset_path("lg-zoom.min.js") %>" async defer></script>
+    <script src="<%= asset_path("lg-video.min.js") %>" async defer></script>
+    <script src="<%= asset_path("lg-thumbnail.min.js") %>" async defer></script>
+    <script src="<%= asset_path("rellax.min.js") %>" async defer></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js" async defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
 
     <!-- Main Theme Script -->
     <script src="<%= asset_path("theme.min.js") %>"></script>
 
     <!-- Accessability Widget -->
-    <script>(function(){var s = document.createElement("script");s.setAttribute("data-account","kY4u8WUSMk");s.setAttribute("src","https://cdn.userway.org/widget.js");document.body.appendChild(s);})();</script>
+    <script async defer>(function(){var s = document.createElement("script");s.setAttribute("data-account","kY4u8WUSMk");s.setAttribute("src","https://cdn.userway.org/widget.js");document.body.appendChild(s);})();</script>
   </body>
 </html>
