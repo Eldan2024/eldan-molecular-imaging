@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.2"
 
 gem "rails", "~> 7.1.2"
+gem "sqlite3"
 gem "sprockets-rails"
 gem "puma"
 gem "importmap-rails"
@@ -29,7 +30,6 @@ group :production do
 end
 
 group :development, :test do
-  gem "sqlite3"
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'dotenv-rails'
 end
