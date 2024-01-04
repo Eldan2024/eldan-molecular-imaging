@@ -18,26 +18,30 @@
   <h2 class="text-center pb-md-2">Our leadership</h2>
   <div class="swiper mx-n2" data-swiper-options='{
     "centerInsufficientSlides": true,
-    "slidesPerView": 2,
-    "spaceBetween": 20,
+    "slidesPerView": 1,
+    "spaceBetween": 40,
     "pagination": {
       "el": ".swiper-pagination",
       "clickable": true
     },
     "breakpoints": {
-      "500": {
+      "380": {
+        "slidesPerView": 2,
+        "spaceBetween": 40
+      },
+      "550": {
         "slidesPerView": 3,
         "spaceBetween": 40
       },
-      "650": {
+      "740": {
         "slidesPerView": 4,
         "spaceBetween": 40
       },
-      "900": {
-        "slidesPerView": 6,
+      "940": {
+        "slidesPerView": 5,
         "spaceBetween": 40
       },
-      "1100": {
+      "1120": {
         "slidesPerView": 6,
         "spaceBetween": 40
       }
@@ -49,13 +53,13 @@
       <% for member in @members do %>
         <div class="swiper-slide py-3 card border-0 bg-transparent">
           <div class="position-relative card-hover" data-bs-toggle="modal" data-bs-target="#<%= member[0].split(' ').second %>">
-            <img src="<%= asset_path(member[0].split[1].downcase) %>" class="rounded-3" alt="<%= member[0] %>">
+            <img src="<%= asset_path(member[0].split[1].downcase) %>" class="rounded-3 img-fluid" alt="<%= member[0] %>">
             <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Click me for more info!">
               <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50 rounded-3"></span>
             </div>
           </div>
           <div class="card-body text-center p-3">
-            <h3 class="fs-lg fw-semibold pt-1 mb-2 text-nowrap"><%= member[0] %></h3>
+            <h3 class="fs-lg fw-semibold pt-1 mb-2 wrap-words"><%= member[0] %></h3>
             <p class="fs-sm mb-0"><%= member[1] %></p>
           </div>
         </div>
