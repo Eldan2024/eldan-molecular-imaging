@@ -66,3 +66,7 @@ yarn-debug.log*
 
 # Ignore git guardian cache
 .cache_ggshield
+
+# Ignore styling files
+.prettierrc.yml
+.rubocop.yml

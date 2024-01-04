@@ -11,17 +11,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-74Q234CRMB"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-74Q234CRMB');
-    </script>
-
     <meta charset="UTF-8">
     <title><%= @title %></title>
 
@@ -54,6 +43,16 @@
     
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-74Q234CRMB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-74Q234CRMB');
+    </script>
 
     <!-- Theme mode -->
     <script>
@@ -125,6 +124,8 @@
     <!-- Vendor Scripts -->
     <% if controller.controller_name == "errors" %>
       <script src="<%= asset_path("lottie-player.js") %>"></script>
+    <% elsif current_page?(distribution_path) %>
+      <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
     <% end %>
     <script src="<%= asset_path("bootstrap.bundle.min.js") %>" async defer></script>
     <script src="<%= asset_path("smooth-scroll.polyfills.min.js") %>"></script>
@@ -140,7 +141,6 @@
     <script src="<%= asset_path("rellax.min.js") %>" async defer></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js" async defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
 
     <!-- Main Theme Script -->
     <script src="<%= asset_path("theme.min.js") %>"></script>
