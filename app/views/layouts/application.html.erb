@@ -49,9 +49,9 @@
 
     <!-- Theme mode -->
     <script>
-      let mode = window.localStorage.getItem('mode'),
-          root = document.getElementsByTagName('html')[0];
-      if (mode !== null && mode === 'dark') {
+      const mode = window.localStorage.getItem('mode');
+      const root = document.documentElement;
+      if (mode === 'dark') {
         root.classList.add('dark-mode');
       } else {
         root.classList.remove('dark-mode');
@@ -60,13 +60,11 @@
 
     <!-- Page loading script -->
     <script>
-      (function () {
-        window.onload = function () {
+      (() => {
+        window.onload = () => {
           const preloader = document.querySelector('.page-loading');
           preloader.classList.remove('active');
-          setTimeout(function () {
-            preloader.remove();
-          }, 1000);
+          setTimeout(() => preloader.remove(), 1000);
         };
       })();
     </script>
