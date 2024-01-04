@@ -35,9 +35,9 @@
               <div class="d-flex">
                 <div class="mega-dropdown-column w-100">
                   <ul class="list-unstyled">
-                    <li><a href="<%= about_molecular_imaging_path %>" class="dropdown-item <%= is_active(about_molecular_imaging_path) %>">Eldan Molecular Imaging</a></li>
-                    <li><a href="<%= about_eldan_path %>" class="dropdown-item <%= is_active(about_eldan_path) %>">Eldan Electronic Instruments Ltd.</a></li>
-                    <li><a href="<%= about_neopharm_group_path %>" class="dropdown-item <%= is_active(about_neopharm_group_path) %>">Neopharm Group</a></li>
+                    <li><a href="<%= about_molecular_imaging_path %>" class="dropdown-item <%= active?(about_molecular_imaging_path) %>">Eldan Molecular Imaging</a></li>
+                    <li><a href="<%= about_eldan_path %>" class="dropdown-item <%= active?(about_eldan_path) %>">Eldan Electronic Instruments Ltd.</a></li>
+                    <li><a href="<%= about_neopharm_group_path %>" class="dropdown-item <%= active?(about_neopharm_group_path) %>">Neopharm Group</a></li>
                   </ul>
                 </div>
               </div>
@@ -49,25 +49,25 @@
               <div class="d-flex">
                 <div class="mega-dropdown-column">
                   <ul class="list-unstyled">
-                    <li><a href="<%= products_tc99_path %>" class="dropdown-item <%= is_active(products_tc99_path) %>"><sup>99</sup>Mo/<sup>99m</sup>Tc Generator</a></li>
-                    <li><a href="<%= products_tl201_path %>" class="dropdown-item <%= is_active(products_tl201_path) %>">Thallium Chloride (<sup>201</sup>Tl)</a></li>
-                    <li><a href="<%= products_ga67_path %>" class="dropdown-item <%= is_active(products_ga67_path) %>">Gallium citrate (<sup>67</sup>Ga)</a></li>
+                    <li><a href="<%= products_tc99_path %>" class="dropdown-item <%= active?(products_tc99_path) %>"><sup>99</sup>Mo/<sup>99m</sup>Tc Generator</a></li>
+                    <li><a href="<%= products_tl201_path %>" class="dropdown-item <%= active?(products_tl201_path) %>">Thallium Chloride (<sup>201</sup>Tl)</a></li>
+                    <li><a href="<%= products_ga67_path %>" class="dropdown-item <%= active?(products_ga67_path) %>">Gallium citrate (<sup>67</sup>Ga)</a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </li>
           <li class="nav-item">
-            <a href="<%= team_path %>" class="nav-link <%= is_active(team_path) %>">Team</a>
+            <a href="<%= team_path %>" class="nav-link <%= active?(team_path) %>">Team</a>
           </li>
           <li class="nav-item">
-            <a href="<%= distribution_path %>" class="nav-link <%= is_active(distribution_path) %>">Distribution</a>
+            <a href="<%= distribution_path %>" class="nav-link <%= active?(distribution_path) %>">Distribution</a>
           </li>
           <li class="nav-item">
             <a href="<%= news_path %>" class="nav-link <%= "active" if controller.controller_name == 'news' %>">News</a>
           </li>
           <li class="nav-item">
-            <a href="<%= contacts_path %>" class="nav-link <%= is_active(contacts_path) %>">Contact Us</a>
+            <a href="<%= contacts_path %>" class="nav-link <%= active?(contacts_path) %>">Contact Us</a>
           </li>
         </ul>
       </div>

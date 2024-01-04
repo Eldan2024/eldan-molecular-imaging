@@ -1,21 +1,14 @@
-<% if !defined?(@desc) %>
-  <% @desc = "Eldan Molecular Imaging is a young solid division, focused on supporting patients and physicians, by providing them with the highest-level products needed for diagnostic imaging & Nuclear Medicines procedures" %>
-<% end %>
-
-<% if defined?(@title) %>
-  <% @title = @title + " / EldanMI" %>
-<% else %>
-  <% @title = "EldanMI" %>
-<% end %>
+<% content_for :title, (@title.present? ? "#{@title} / EldanMI" : "EldanMI") %>
+<% content_for :description, (@desc || "Eldan Molecular Imaging is a young solid division, focused on supporting patients and physicians, by providing them with the highest-level products needed for diagnostic imaging & Nuclear Medicines procedures") %>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title><%= @title %></title>
+    <title><%= yield :title %></title>
 
     <!-- SEO Meta Tags-->
-    <meta name="description" content="<%= @desc %>">
+    <meta name="description" content="<%= yield :description %>">
     <meta name="keywords" content="radiopharmaceuticals, nuclear medicines, nulecular imaging, radiopharma, technetium, tc99, thallium, gallium, radiopharmacy, generators, isorad, curium, polatom, GE, GBQ, curie, MCI">
     <meta name="author" content="Gelbhart Innovations">
 
@@ -32,9 +25,9 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- Vendor Styles -->
-    <link rel="stylesheet" media="screen" href="<%= asset_path("boxicons.min.css") %>" async defer/>
-    <link rel="stylesheet" media="screen" href="<%= asset_path("swiper-bundle.min.css") %>" async defer/>
-    <link rel="stylesheet" media="screen" href="<%= asset_path("lightgallery-bundle.min.css") %>" async defer/>
+    <link rel="stylesheet" media="screen" href="<%= asset_path("boxicons.min.css") %>" async/>
+    <link rel="stylesheet" media="screen" href="<%= asset_path("swiper-bundle.min.css") %>" async/>
+    <link rel="stylesheet" media="screen" href="<%= asset_path("lightgallery-bundle.min.css") %>" async/>
 
     <!-- Main Theme Styles + Bootstrap -->
     <link rel="stylesheet" media="screen" href="<%= asset_path("theme.css") %>">
@@ -122,28 +115,28 @@
     </a>
 
     <!-- Vendor Scripts -->
+    <%= custom_script_tag("bootstrap.bundle.min.js") %>
+    <%= custom_script_tag("swiper-bundle.min.js") %>
+    <%= custom_script_tag("smooth-scroll.polyfills.min.js") %>
+    <%= custom_script_tag("cleave.min.js") %>
+    <%= custom_script_tag("jarallax.min.js") %>
+    <%= custom_script_tag("parallax.min.js") %>
+    <%= custom_script_tag("lightgallery.min.js") %>
+    <%= custom_script_tag("lg-fullscreen.min.js") %>
+    <%= custom_script_tag("lg-zoom.min.js") %>
+    <%= custom_script_tag("lg-video.min.js") %>
+    <%= custom_script_tag("lg-thumbnail.min.js") %>
+    <%= custom_script_tag("rellax.min.js") %>
+    
     <% if controller.controller_name == "errors" %>
-      <script src="<%= asset_path("lottie-player.js") %>"></script>
-    <% elsif current_page?(distribution_path) %>
-      <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
+      <%= custom_script_tag("lottie-player.js") %>
     <% end %>
-    <script src="<%= asset_path("bootstrap.bundle.min.js") %>" async defer></script>
-    <script src="<%= asset_path("smooth-scroll.polyfills.min.js") %>"></script>
-    <script src="<%= asset_path("cleave.min.js") %>" async defer></script>
-    <script src="<%= asset_path("jarallax.min.js") %>" async defer></script>
-    <script src="<%= asset_path("parallax.min.js") %>" async defer></script>
-    <script src="<%= asset_path("swiper-bundle.min.js") %>"></script>
-    <script src="<%= asset_path("lightgallery.min.js") %>" async defer></script>
-    <script src="<%= asset_path("lg-fullscreen.min.js") %>" async defer></script>
-    <script src="<%= asset_path("lg-zoom.min.js") %>" async defer></script>
-    <script src="<%= asset_path("lg-video.min.js") %>" async defer></script>
-    <script src="<%= asset_path("lg-thumbnail.min.js") %>" async defer></script>
-    <script src="<%= asset_path("rellax.min.js") %>" async defer></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default" async defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js" async defer></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js" defer></script>
 
     <!-- Main Theme Script -->
-    <script src="<%= asset_path("theme.min.js") %>"></script>
+    <%= custom_script_tag("theme.min.js") %>
 
     <!-- Accessability Widget -->
     <script async defer>(function(){var s = document.createElement("script");s.setAttribute("data-account","kY4u8WUSMk");s.setAttribute("src","https://cdn.userway.org/widget.js");document.body.appendChild(s);})();</script>
