@@ -27,7 +27,7 @@
 
     <!-- SEO Meta Tags-->
     <meta name="description" content="<%= @desc %>">
-    <meta name="keywords" content="radiopharmaceuticals, nuclear medicines, nulecular imaging, radiopharma, technetium, tc99, thallium, gallium, radiopharmacy, generators, isorad, curium, polatom, GE, shein, GBQ, curie, MCI">
+    <meta name="keywords" content="radiopharmaceuticals, nuclear medicines, nulecular imaging, radiopharma, technetium, tc99, thallium, gallium, radiopharmacy, generators, isorad, curium, polatom, GE, GBQ, curie, MCI">
     <meta name="author" content="Gelbhart Innovations">
 
     <!-- Viewport-->
@@ -35,7 +35,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Favicon and Touch Icons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_path("apple-touch-icon.png") %>">
     <link rel="icon" type="image/png" sizes="32x32" href="<%= asset_path("favicon-32x32.png") %>">
     <link rel="icon" type="image/png" sizes="16x16" href="<%= asset_path("favicon-16x16.png") %>">
     <link rel="manifest" href="<%= asset_path("site.webmanifest") %>">
@@ -44,9 +43,9 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- Vendor Styles -->
-    <link rel="stylesheet" media="screen" href="<%= asset_path("boxicons.min.css") %>" async defer/>
-    <link rel="stylesheet" media="screen" href="<%= asset_path("swiper-bundle.min.css") %>" async defer/>
-    <link rel="stylesheet" media="screen" href="<%= asset_path("lightgallery-bundle.min.css") %>" async defer/>
+    <link rel="stylesheet" media="screen" href="<%= asset_path("boxicons.min.css") %>"/>
+    <link rel="stylesheet" media="screen" href="<%= asset_path("swiper-bundle.min.css") %>"/>
+    <link rel="stylesheet" media="screen" href="<%= asset_path("lightgallery-bundle.min.css") %>"/>
 
     <!-- Main Theme Styles + Bootstrap -->
     <link rel="stylesheet" media="screen" href="<%= asset_path("theme.css") %>">
@@ -127,26 +126,26 @@
     <% if controller.controller_name == "errors" %>
       <script src="<%= asset_path("lottie-player.js") %>"></script>
     <% end %>
-    <script src="<%= asset_path("bootstrap.bundle.min.js") %>" async defer></script>
-    <script src="<%= asset_path("smooth-scroll.polyfills.min.js") %>" async defer></script>
-    <script src="<%= asset_path("cleave.min.js") %>" async defer></script>
-    <script src="<%= asset_path("jarallax.min.js") %>" async defer></script>
-    <script src="<%= asset_path("parallax.min.js") %>" async defer></script>
-    <script src="<%= asset_path("swiper-bundle.min.js") %>" async defer></script>
-    <script src="<%= asset_path("lightgallery.min.js") %>" async defer></script>
-    <script src="<%= asset_path("lg-fullscreen.min.js") %>" async defer></script>
-    <script src="<%= asset_path("lg-zoom.min.js") %>" async defer></script>
-    <script src="<%= asset_path("lg-video.min.js") %>" async defer></script>
-    <script src="<%= asset_path("lg-thumbnail.min.js") %>" async defer></script>
-    <script src="<%= asset_path("rellax.min.js") %>" async defer></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default" async defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js" async defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
+    <script src="<%= asset_path("bootstrap.bundle.min.js") %>"></script>
+    <script src="<%= asset_path("smooth-scroll.polyfills.min.js") %>"></script>
+    <script src="<%= asset_path("cleave.min.js") %>"></script>
+    <script src="<%= asset_path("jarallax.min.js") %>"></script>
+    <script src="<%= asset_path("parallax.min.js") %>"></script>
+    <script src="<%= asset_path("swiper-bundle.min.js") %>"></script>
+    <script src="<%= asset_path("lightgallery.min.js") %>"></script>
+    <script src="<%= asset_path("lg-fullscreen.min.js") %>"></script>
+    <script src="<%= asset_path("lg-zoom.min.js") %>"></script>
+    <script src="<%= asset_path("lg-video.min.js") %>"></script>
+    <script src="<%= asset_path("lg-thumbnail.min.js") %>"></script>
+    <script src="<%= asset_path("rellax.min.js") %>"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap"></script>
 
     <!-- Main Theme Script -->
     <script src="<%= asset_path("theme.min.js") %>"></script>
 
     <!-- Accessability Widget -->
-    <script async defer>(function(){var s = document.createElement("script");s.setAttribute("data-account","kY4u8WUSMk");s.setAttribute("src","https://cdn.userway.org/widget.js");document.body.appendChild(s);})();</script>
+    <script>(function(){var s = document.createElement("script");s.setAttribute("data-account","kY4u8WUSMk");s.setAttribute("src","https://cdn.userway.org/widget.js");document.body.appendChild(s);})();</script>
   </body>
 </html>

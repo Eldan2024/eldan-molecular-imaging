@@ -1,10 +1,9 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
-gem "rails"
-gem 'sqlite3'
+gem "rails", "~> 7.1.2"
 gem "sprockets-rails"
 gem "puma"
 gem "importmap-rails"
@@ -18,17 +17,19 @@ gem "recaptcha", require: "recaptcha/rails"
 gem 'MailchimpMarketing'
 gem 'sitemap_generator'
 gem 'whenever', require: false
-gem "capistrano"
 gem 'sass-rails', '>= 5'
 
 group :development do
   gem "web-console"
+  gem "capistrano"
 end
 
 group :production do
+  # Add production-specific gems here
 end
 
 group :development, :test do
+  gem "sqlite3"
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'dotenv-rails'
 end
