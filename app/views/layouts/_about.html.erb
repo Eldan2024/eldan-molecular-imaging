@@ -42,9 +42,16 @@
 
   <!-- About -->
   <section class="container text-center mt-4">
+
+    <div class="my-3">
+      <%= image_tag(@logo, alt: 'Logo', style: 'max-width: 100px; height: auto;') if @logo != "" %>
+    </div>
+
     <h1 class="mb-4 text-center" style="font-size: 2.5rem;"><%= @title.split(' / ').first %></h1>
+
     <article class="content-wrapper">
       <%= yield %>
     </article>
+
   </section>
 </div>

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def tc99
-    @desc = "99Mo/99mTc Generator is an instrument that is used to extract the isotope 99mTc from a decaying molybdenum-99"
+    @description = "99Mo/99mTc Generator is an instrument that is used to extract the isotope 99mTc from a decaying molybdenum-99"
 
     set_product_attributes(
       breadcrumb: "<sup>99</sup>Mo/<sup>99m</sup>Tc",
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
   end
 
   def tl201
-    @desc = "Thallium-201 (201Tl) is a radioactive potassium analog used in the diagnosis of coronary artery disease and parathyroid hyperactivity"
+    @description = "Thallium-201 (201Tl) is a radioactive potassium analog used in the diagnosis of coronary artery disease and parathyroid hyperactivity"
 
     set_product_attributes(
       breadcrumb: "<sup>201</sup>Tl",
@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
   end
 
   def ga67
-    @desc = "Gallium-67 (67Ga) is a cyclotron-produced radiometal used by single photon emission computed tomography (SPECT) imaging for localization of inflammatory lesions (infections)"
+    @description = "Gallium-67 (67Ga) is a cyclotron-produced radiometal used by single photon emission computed tomography (SPECT) imaging for localization of inflammatory lesions (infections)"
 
     set_product_attributes(
       breadcrumb: "<sup>67</sup>Ga",

@@ -1,12 +1,12 @@
 class PagesController < ApplicationController
   def index
     @title =  "Home"
-    @desc = "To provide you with the best radiopharmaceutical products, best service, and best distribution channels, so you can provide your patients and caregivers, top-quality products as soon as they need them."
+    @description = "To provide you with the best radiopharmaceutical products, best service, and best distribution channels, so you can provide your patients and caregivers, top-quality products as soon as they need them."
   end
 
   def distribution
     @title =  "Distribution"
-    @desc = "Eldan Molecular Imaging is looking beyond the common practice to provide a better and more reliable service in its distribution of radiopharmaceuticals."
+    @description = "Eldan Molecular Imaging is looking beyond the common practice to provide a better and more reliable service in its distribution of radiopharmaceuticals."
     @jarallax = "distribution_cover"
 
     @partners = []
