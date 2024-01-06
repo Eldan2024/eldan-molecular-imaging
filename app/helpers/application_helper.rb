@@ -7,7 +7,13 @@ module ApplicationHelper
     end
   end
 
-  def custom_script_tag(src)
-    javascript_include_tag src, defer: true
-  end
+  def deferred_javascript_tags(*scripts)
+    scripts.map do |script|
+      if script.match?(/^https?:\/\//)
+        tag.script('', src: script, defer: true)
+      else
+        javascript_include_tag(script, defer: true)
+      end
+    end.join("\n").html_safe
+  end  
 end

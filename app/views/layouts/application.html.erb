@@ -17,24 +17,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Favicon and Touch Icons-->
+    <%= favicon_link_tag 'favicon.ico' %>
     <link rel="icon" type="image/png" sizes="32x32" href="<%= asset_path("favicon-32x32.png") %>">
     <link rel="icon" type="image/png" sizes="16x16" href="<%= asset_path("favicon-16x16.png") %>">
     <link rel="manifest" href="<%= asset_path("site.webmanifest") %>">
-    <link rel="shortcut icon" href="<%= asset_path("favicon.ico") %>">
     <meta name="msapplication-TileColor" content="#080032">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- Vendor Styles -->
-    <link rel="stylesheet" media="screen" href="<%= asset_path("boxicons.min.css") %>" async/>
-    <link rel="stylesheet" media="screen" href="<%= asset_path("swiper-bundle.min.css") %>" async/>
-    <link rel="stylesheet" media="screen" href="<%= asset_path("lightgallery-bundle.min.css") %>" async/>
+    <!-- Styles -->
+    <%= stylesheet_link_tag 'boxicons.min', 'swiper-bundle.min', 'lightgallery-bundle.min', 'theme', media: 'screen', defer: true %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 
-    <!-- Main Theme Styles + Bootstrap -->
-    <link rel="stylesheet" media="screen" href="<%= asset_path("theme.css") %>">
+    <!-- Security meta tags -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <!-- Scripts -->
     <%= javascript_importmap_tags %>
 
     <!-- Google tag (gtag.js) -->
@@ -112,29 +110,25 @@
       <i class="btn-scroll-top-icon bx bx-chevron-up" role="none"></i>
     </a>
 
-    <!-- Vendor Scripts -->
-    <%= custom_script_tag("bootstrap.bundle.min.js") %>
-    <%= custom_script_tag("swiper-bundle.min.js") %>
-    <%= custom_script_tag("smooth-scroll.polyfills.min.js") %>
-    <%= custom_script_tag("cleave.min.js") %>
-    <%= custom_script_tag("jarallax.min.js") %>
-    <%= custom_script_tag("parallax.min.js") %>
-    <%= custom_script_tag("lightgallery.min.js") %>
-    <%= custom_script_tag("lg-fullscreen.min.js") %>
-    <%= custom_script_tag("lg-zoom.min.js") %>
-    <%= custom_script_tag("lg-video.min.js") %>
-    <%= custom_script_tag("lg-thumbnail.min.js") %>
-    <%= custom_script_tag("rellax.min.js") %>
-    
-    <% if controller.controller_name == "errors" %>
-      <%= custom_script_tag("lottie-player.js") %>
-    <% end %>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js" defer></script>
-
-    <!-- Main Theme Script -->
-    <%= custom_script_tag("theme.min.js") %>
+    <!-- Scripts -->
+    <%= deferred_javascript_tags(
+      "bootstrap.bundle.min.js",
+      "swiper-bundle.min.js",
+      "smooth-scroll.polyfills.min.js",
+      "cleave.min.js",
+      "jarallax.min.js",
+      "parallax.min.js",
+      "lightgallery.min.js",
+      "lg-fullscreen.min.js",
+      "lg-zoom.min.js",
+      "lg-video.min.js",
+      "lg-thumbnail.min.js",
+      "rellax.min.js",
+      "theme.min.js",
+      "https://polyfill.io/v3/polyfill.min.js?features=default",
+      "https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"
+    ) %>
+    <%= deferred_javascript_tags("lottie-player.js") if controller.controller_name == "errors" %>
 
     <!-- Accessability Widget -->
     <script async defer>(function(){var s = document.createElement("script");s.setAttribute("data-account","kY4u8WUSMk");s.setAttribute("src","https://cdn.userway.org/widget.js");document.body.appendChild(s);})();</script>
