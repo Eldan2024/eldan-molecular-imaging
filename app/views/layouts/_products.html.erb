@@ -1,33 +1,52 @@
-<!-- Hero -->
-<section class="bg-dark dark-mode">
-  <div class="row justify-content-center align-items-center py-4 w-100">
+<style>
+  .center-image {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 45%;
+  }
 
-    <!-- Breadcrumb -->
-    <div>
-      <%= render 'shared/breadcrumb' %>
-    </div>
+  @media (min-width: 768px) {
+    .center-image {
+      padding-top: 35%;
+    }
+  }
 
-    <!-- Title + Desc + Image -->
-    <div class="mt-3 col-10 col-sm-8 col-md-6 col-lg-6 col-xl-8 col-xxl-6">
-      <h1 class="display-4 text-center"><%= @product_title %></h1>
+  @media (min-width: 992px) {
+    .center-image {
+      padding-top: 30%;
+    }
+  }
 
-      <div class="row">
-        <div class="col-md-7">
-          <figure class="position-relative border-0 shadow-sm py-3 p-0 p-lg-4 mt-4 mb-0 ms-xl-5">
-            <blockquote class="mt-2 mb-0">
-              <p class="fs-lg"><%= @product_desc %></p>
-            </blockquote>
-          </figure>
-        </div>
-        <div class="col-md-5">
-          <div class="position-relative d-flex h-100">
-            <div class="position-absolute top-0 start-0 w-100 h-100 rounded-3 bg-size-contain bg-repeat-0 bg-position-center" style="background-image: url(<%= asset_path(File.basename(request.path, ".*")) %>);"></div>
-          </div>
-        </div>
+  @media (min-width: 1440px) {
+    .center-image {
+      padding-top: 20%;
+    }
+  }
+</style>
+
+<!-- Hero Section -->
+<section class="bg-dark dark-mode text-white">
+  <div class="container-fluid h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+
+      <!-- Breadcrumb -->
+      <div class="col-12 mb-2">
+        <%= render 'shared/breadcrumb' %>
+      </div>
+
+      <!-- Title + Desc + Image -->
+      <div class="col-10 col-lg-8 text-center mb-3">
+        <h1 class="fs-2 fs-md-3 fs-lg-4"><%= @product_title %></h1>
+      </div>
+      <div class="col-10 col-md-8 col-lg-6 text-center mb-3">
+        <p class="fs-6 fs-md-5"><%= @product_desc %></p>
+      </div>
+      <div class="col-10 col-lg-8 mb-3">
+        <div class="center-image w-100 mx-auto" style="background-image: url(<%= asset_path(File.basename(request.path, ".*")) %>);"></div>
       </div>
       
     </div>
-
   </div>
 </section>
 
@@ -58,14 +77,14 @@
         <div class="accordion" id="faq">
 
           <!-- Questions -->
-          <% for question in @questions do %>
+          <% @questions.each_with_index do |question, index| %>
             <div class="accordion-item border-0 rounded-3 shadow-sm">
-              <h2 class="accordion-header" id="q<%= @question.find_index(question) %>-heading">
-                <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q<%= @question.find_index(question) %>" aria-expanded="false" aria-controls="q<%= @question.find_index(question) %>">
+              <h2 class="accordion-header" id="q<%= index %>-heading">
+                <button class="accordion-button shadow-none rounded-3 collapsed mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#q<%= index %>" aria-expanded="false" aria-controls="q<%= index %>">
                   <%= question[0] %>
                 </button>
               </h2>
-              <div id="q<%= i@question.find_index(question) %>" class="accordion-collapse collapse" aria-labelledby="q<%= @question.find_index(question) %>-heading" data-bs-parent="#faq">
+              <div id="q<%= index %>" class="accordion-collapse collapse mb-3" aria-labelledby="q<%= index %>-heading" data-bs-parent="#faq">
                 <div class="accordion-body fs-sm pt-0"><%= question[1] %> </div>
               </div>
             </div>
