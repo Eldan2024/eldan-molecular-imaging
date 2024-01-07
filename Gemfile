@@ -19,6 +19,7 @@ gem 'MailchimpMarketing'
 gem 'sitemap_generator'
 gem 'whenever', require: false
 gem 'sass-rails', '>= 5'
+gem 'turbolinks', '~> 5.2.0'
 
 group :development do
   gem "web-console"

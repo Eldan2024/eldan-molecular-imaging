@@ -24,6 +24,8 @@ exports.lightGalleryCoreSettings = {
     defaultCaptionHeight: 0,
     ariaLabelledby: '',
     ariaDescribedby: '',
+    resetScrollPosition: true,
+    hideScrollbar: false,
     closable: true,
     swipeToClose: true,
     closeOnTap: true,
@@ -32,6 +34,7 @@ exports.lightGalleryCoreSettings = {
     loop: true,
     escKey: true,
     keyPress: true,
+    trapFocus: true,
     controls: true,
     slideEndAnimation: true,
     hideControlOnEnd: false,
@@ -74,6 +77,7 @@ exports.lightGalleryCoreSettings = {
         nextSlide: 'Next slide',
         download: 'Download',
         playVideo: 'Play video',
+        mediaLoadingFailed: 'Oops... Failed to load content...',
     },
 };
 //# sourceMappingURL=lg-settings.js.map

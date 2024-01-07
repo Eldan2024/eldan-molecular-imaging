@@ -27,6 +27,10 @@ export declare enum PlayerEvents {
     Rendered = "rendered",
     Stop = "stop"
 }
+export interface Versions {
+    lottiePlayerVersion: string;
+    lottieWebVersion: string;
+}
 /**
  * Parse a resource into a JSON object or a URL string
  */
@@ -68,6 +72,14 @@ export declare class LottiePlayer extends LitElement {
      */
     direction: number;
     /**
+     * Disable checking if the Lottie is valid before loading
+     */
+    disableCheck?: boolean;
+    /**
+     * Disable using shadow dom as the root
+     */
+    disableShadowDOM: boolean;
+    /**
      * Whether to play on mouse hover
      */
     hover: boolean;
@@ -91,6 +103,10 @@ export declare class LottiePlayer extends LitElement {
      * Renderer to use.
      */
     renderer: "svg";
+    /**
+     * Viewbox size for renderer settings
+     */
+    viewBoxSize?: string;
     /**
      * seeker
      */
@@ -123,6 +139,10 @@ export declare class LottiePlayer extends LitElement {
      * Returns the lottie-web instance used in the component.
      */
     getLottie(): any;
+    /**
+     * Returns the lottie-web version and this player's version
+     */
+    getVersions(): Versions;
     /**
      * Start playing animation.
      */
@@ -188,6 +208,7 @@ export declare class LottiePlayer extends LitElement {
      */
     disconnectedCallback(): void;
     render(): TemplateResult | void;
+    protected createRenderRoot(): Element | ShadowRoot;
     /**
      * Initialize everything on component first render.
      */

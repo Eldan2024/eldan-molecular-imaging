@@ -316,7 +316,7 @@ var Thumbnail = /** @class */ (function () {
         }
         return thumbDragUtils;
     };
-    Thumbnail.prototype.getThumbHtml = function (thumb, index) {
+    Thumbnail.prototype.getThumbHtml = function (thumb, index, alt) {
         var slideVideoInfo = this.core.galleryItems[index].__slideVideoInfo || {};
         var thumbImg;
         if (slideVideoInfo.youtube) {
@@ -335,12 +335,13 @@ var Thumbnail = /** @class */ (function () {
         else {
             thumbImg = thumb;
         }
-        return "<div data-lg-item-id=\"" + index + "\" class=\"lg-thumb-item " + (index === this.core.index ? ' active' : '') + "\" \n        style=\"width:" + this.settings.thumbWidth + "px; height: " + this.settings.thumbHeight + ";\n            margin-right: " + this.settings.thumbMargin + "px;\">\n            <img data-lg-item-id=\"" + index + "\" src=\"" + thumbImg + "\" />\n        </div>";
+        var altAttr = alt ? 'alt="' + alt + '"' : '';
+        return "<div data-lg-item-id=\"" + index + "\" class=\"lg-thumb-item " + (index === this.core.index ? ' active' : '') + "\"\n        style=\"width:" + this.settings.thumbWidth + "px; height: " + this.settings.thumbHeight + ";\n            margin-right: " + this.settings.thumbMargin + "px;\">\n            <img " + altAttr + " data-lg-item-id=\"" + index + "\" src=\"" + thumbImg + "\" />\n        </div>";
     };
     Thumbnail.prototype.getThumbItemHtml = function (items) {
         var thumbList = '';
         for (var i = 0; i < items.length; i++) {
-            thumbList += this.getThumbHtml(items[i].thumb, i);
+            thumbList += this.getThumbHtml(items[i].thumb, i, items[i].alt);
         }
         return thumbList;
     };

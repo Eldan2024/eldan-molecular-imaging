@@ -10,10 +10,10 @@ _High Quality web friendly icons_
 'Boxicons' is a carefully designed open source iconset with 1500+ icons. It's crafted to look enrich your website/app experience.
 
 
-_Announcing Boxicons v2.1.2!_
+_Announcing Boxicons v2.1.3!_
 
 - Fixed the errors with a few svgs, added viewbox
-- Added 22 new icons
+- Added 34 new icons
 
 
 ## Installation
@@ -56,16 +56,16 @@ Instead of installing you may use the remote version
 2. To use an icon on your page, add a class 'bx' and seperate class with the icons name with a prefix 'bx-' for regular icons , 'bxs-' for solid icons and 'bxl-' for logos:
 
 ```html
-<i class="bx bx-hot" role="none"></i>
-<i class="bx bxs-hot" role="none"></i>
-<i class="bx bxl-facebook-square" role="none"></i>
+<i class="bx bx-hot"></i>
+<i class="bx bxs-hot"></i>
+<i class="bx bxl-facebook-square"></i>
 ```
 ### Using via Web Component
 
 Boxicons includes a Custom Element that makes using icons easy and efficient. To use it, add the `box-icon-element.js` file to the page:
 
 ```html
-<script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
 ```
 
 To use an icon, add the `<box-icon>` element to the location where the icon should be displayed:

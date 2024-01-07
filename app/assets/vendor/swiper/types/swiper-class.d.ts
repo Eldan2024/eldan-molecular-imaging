@@ -139,6 +139,11 @@ interface Swiper extends SwiperClass<SwiperEvents> {
   isEnd: boolean;
 
   /**
+   * `true` if slide is "locked" (by `watchOverflow`) and slides can not be, e.g. when amount of slides is less that slides per view
+   */
+  isLocked: boolean;
+
+  /**
    * `true` if swiper is in transition
    */
   animating: boolean;
@@ -184,6 +189,11 @@ interface Swiper extends SwiperClass<SwiperEvents> {
    * Disable / enable ability move slider by grabbing it with mouse or by touching it with finger (on touch screens) by assigning `false` / `true` to this property
    */
   allowTouchMove: boolean;
+
+  /**
+   * Direction of sliding
+   */
+  swipeDirection: 'prev' | 'next';
 
   /**
    * !INTERNAL
@@ -313,6 +323,13 @@ interface Swiper extends SwiperClass<SwiperEvents> {
    * @param needUpdate Will call swiper.update(). Default true
    */
   changeDirection(direction?: 'horizontal' | 'vertical', needUpdate?: boolean): void;
+
+  /**
+   * Changes slider language
+   *
+   * @param direction New direction. Should be `rtl` or `ltr`
+   */
+  changeLanguageDirection(direction: 'rtl' | 'ltr'): void;
 
   /**
    * Detach all events listeners

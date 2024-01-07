@@ -37,7 +37,7 @@ export default class Thumbnail {
     animateThumb(index: number): void;
     onThumbTouchMove(thumbDragUtils: ThumbDragUtils): ThumbDragUtils;
     onThumbTouchEnd(thumbDragUtils: ThumbDragUtils): ThumbDragUtils;
-    getThumbHtml(thumb: string, index: number): string;
+    getThumbHtml(thumb: string, index: number, alt?: string): string;
     getThumbItemHtml(items: ThumbnailGalleryItem[]): string;
     setThumbItemHtml(items: ThumbnailGalleryItem[]): void;
     setAnimateThumbStyles(): void;

@@ -70,3 +70,4 @@ yarn-debug.log*
 # Ignore styling files
 .prettierrc.yml
 .rubocop.yml
+.prettierignore

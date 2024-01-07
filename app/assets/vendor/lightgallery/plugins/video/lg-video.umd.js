@@ -1,5 +1,5 @@
 /*!
- * lightgallery | 2.4.0 | January 29th 2022
+ * lightgallery | 2.7.2 | September 20th 2023
  * http://www.lightgalleryjs.com/
  * Copyright (c) 2020 Sachin Neravath;
  * @license GPLv3
@@ -45,6 +45,7 @@
         gotoNextSlideOnVideoEnd: true,
         autoplayVideoOnSlide: false,
         videojs: false,
+        videojsTheme: '',
         videojsOptions: {},
     };
 
@@ -89,17 +90,58 @@
         })
             .join('&');
     };
+    var paramsToObject = function (url) {
+        var paramas = url
+            .slice(1)
+            .split('&')
+            .map(function (p) { return p.split('='); })
+            .reduce(function (obj, pair) {
+            var _a = pair.map(decodeURIComponent), key = _a[0], value = _a[1];
+            obj[key] = value;
+            return obj;
+        }, {});
+        return paramas;
+    };
+    var getYouTubeParams = function (videoInfo, youTubePlayerParamsSettings) {
+        if (!videoInfo.youtube)
+            return '';
+        var slideUrlParams = videoInfo.youtube[2]
+            ? paramsToObject(videoInfo.youtube[2])
+            : '';
+        // For youtube first params gets priority if duplicates found
+        var defaultYouTubePlayerParams = {
+            wmode: 'opaque',
+            autoplay: 0,
+            mute: 1,
+            enablejsapi: 1,
+        };
+        var playerParamsSettings = youTubePlayerParamsSettings || {};
+        var youTubePlayerParams = __assign(__assign(__assign({}, defaultYouTubePlayerParams), playerParamsSettings), slideUrlParams);
+        var youTubeParams = "?" + param(youTubePlayerParams);
+        return youTubeParams;
+    };
+    var isYouTubeNoCookie = function (url) {
+        return url.includes('youtube-nocookie.com');
+    };
     var getVimeoURLParams = function (defaultParams, videoInfo) {
         if (!videoInfo || !videoInfo.vimeo)
             return '';
         var urlParams = videoInfo.vimeo[2] || '';
-        urlParams =
-            urlParams[0] == '?' ? '&' + urlParams.slice(1) : urlParams || '';
-        var defaultPlayerParams = defaultParams
+        var defaultPlayerParams = defaultParams && Object.keys(defaultParams).length !== 0
             ? '&' + param(defaultParams)
             : '';
-        // For vimeo last parms gets priority if duplicates found
-        var vimeoPlayerParams = "?autoplay=0&muted=1" + defaultPlayerParams + urlParams;
+        // Support private video
+        var urlWithHash = videoInfo.vimeo[0].split('/').pop() || '';
+        var urlWithHashWithParams = urlWithHash.split('?')[0] || '';
+        var hash = urlWithHashWithParams.split('#')[0];
+        var isPrivate = videoInfo.vimeo[1] !== hash;
+        if (isPrivate) {
+            urlParams = urlParams.replace("/" + hash, '');
+        }
+        urlParams =
+            urlParams[0] == '?' ? '&' + urlParams.slice(1) : urlParams || '';
+        // For vimeo last params gets priority if duplicates found
+        var vimeoPlayerParams = "?autoplay=0&muted=1" + (isPrivate ? "&h=" + hash : '') + defaultPlayerParams + urlParams;
         return vimeoPlayerParams;
     };
 
@@ -269,16 +311,12 @@
             var commonIframeProps = "allowtransparency=\"true\"\n            frameborder=\"0\"\n            scrolling=\"no\"\n            allowfullscreen\n            mozallowfullscreen\n            webkitallowfullscreen\n            oallowfullscreen\n            msallowfullscreen";
             if (videoInfo.youtube) {
                 var videoId = 'lg-youtube' + index;
-                var slideUrlParams = videoInfo.youtube[2]
-                    ? videoInfo.youtube[2] + '&'
-                    : '';
-                // For youtube first parms gets priority if duplicates found
-                var youTubePlayerParams = "?" + slideUrlParams + "wmode=opaque&autoplay=0&mute=1&enablejsapi=1";
-                var playerParams = youTubePlayerParams +
-                    (this.settings.youTubePlayerParams
-                        ? '&' + param(this.settings.youTubePlayerParams)
-                        : '');
-                video = "<iframe allow=\"autoplay\" id=" + videoId + " class=\"lg-video-object lg-youtube " + addClass + "\" " + videoTitle + " src=\"//www.youtube.com/embed/" + (videoInfo.youtube[1] + playerParams) + "\" " + commonIframeProps + "></iframe>";
+                var youTubeParams = getYouTubeParams(videoInfo, this.settings.youTubePlayerParams);
+                var isYouTubeNoCookieURL = isYouTubeNoCookie(src);
+                var youtubeURL = isYouTubeNoCookieURL
+                    ? '//www.youtube-nocookie.com/'
+                    : '//www.youtube.com/';
+                video = "<iframe allow=\"autoplay\" id=" + videoId + " class=\"lg-video-object lg-youtube " + addClass + "\" " + videoTitle + " src=\"" + youtubeURL + "embed/" + (videoInfo.youtube[1] + youTubeParams) + "\" " + commonIframeProps + "></iframe>";
             }
             else if (videoInfo.vimeo) {
                 var videoId = 'lg-vimeo' + index;
@@ -314,7 +352,9 @@
                 Object.keys(videoAttributes_1 || {}).forEach(function (key) {
                     html5VideoAttrs_1 += key + "=\"" + videoAttributes_1[key] + "\" ";
                 });
-                video = "<video class=\"lg-video-object lg-html5 " + (this.settings.videojs ? 'video-js' : '') + "\" " + html5VideoAttrs_1 + ">\n                " + html5VideoMarkup + "\n                Your browser does not support HTML5 video.\n            </video>";
+                video = "<video class=\"lg-video-object lg-html5 " + (this.settings.videojs && this.settings.videojsTheme
+                    ? this.settings.videojsTheme + ' '
+                    : '') + " " + (this.settings.videojs ? ' video-js' : '') + "\" " + html5VideoAttrs_1 + ">\n                " + html5VideoMarkup + "\n                Your browser does not support HTML5 video.\n            </video>";
             }
             return video;
         };

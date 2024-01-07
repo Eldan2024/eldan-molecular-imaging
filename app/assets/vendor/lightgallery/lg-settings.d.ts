@@ -21,6 +21,7 @@ export interface LightGalleryCoreStrings {
     nextSlide: string;
     download: string;
     playVideo: string;
+    mediaLoadingFailed: string;
 }
 export declare type LightGalleryAllSettings = LightGalleryCoreSettings & ZoomSettings & ThumbnailsSettings & VideoSettings & AutoplaySettings & CommentSettings & FullscreenSettings & HashSettings & PagerSettings & RotateSettings & ShareSettings;
 export declare type LightGallerySettings = Partial<LightGalleryAllSettings>;
@@ -142,7 +143,7 @@ export interface LightGalleryCoreSettings {
      * Also, toggle thumbnails button is not displayed if allowMediaOverlap is false
      * <section>
      * Note - Changing the position of the media on every slide transition creates a flickering effect.
-     * Therefore, The height of the caption is calculated dynamically, only once based on the first slide caption.
+     * Therefore, the height of the caption is calculated dynamically, only once based on the first slide caption.
      * </section>
      * <section>
      * if you have dynamic captions for each media,
@@ -175,6 +176,18 @@ export interface LightGalleryCoreSettings {
      * aria-describedby attribute for gallery
      */
     ariaDescribedby: string;
+    /**
+     * Hide scrollbar when gallery is opened
+     * @version V2.5.0
+     */
+    hideScrollbar: boolean;
+    /**
+     * Reset to previous scrollPosition when lightGallery is closed
+     * @description By default, lightGallery doesn't hide the scrollbar for a smooth opening transition.
+     * If a user changes the scroll position, lightGallery resets it to the previous value
+     * @version V2.5.0
+     */
+    resetScrollPosition: boolean;
     /**
      * If false user won't be abel to close the gallery at all
      * This is useful for creating inline galleries.
@@ -212,6 +225,11 @@ export interface LightGalleryCoreSettings {
      */
     keyPress: boolean;
     /**
+     * Trap focus within the lightGallery
+     * @version V2.5.0
+     */
+    trapFocus: boolean;
+    /**
      * If false, prev/next buttons will not be displayed.
      */
     controls: boolean;
@@ -221,6 +239,7 @@ export interface LightGalleryCoreSettings {
     slideEndAnimation: boolean;
     /**
      * If true, prev/next button will be hidden on first/last image.
+     * @description Note - this option will be ignored if <code>loop</code> or <code>slideEndAnimation</code> is set to true
      */
     hideControlOnEnd: boolean;
     /**
@@ -392,10 +411,11 @@ export interface LightGalleryCoreSettings {
      */
     mobileSettings: Partial<MobileSettings>;
     /**
-     * Aria label strings for lightGallery core modules.
+     * Customize string.
      * @description This can be useful if you want to localize the lightGallery strings to other languages.
      * Use your own service to translate the strings and pass it via settings.strings
      * You can find dedicated strings option for all lightGallery modules in their respective documentation.
+     * Note - You need to provide values for all the strings. For example, even if you just want to change the closeGallery string, you need to provide all the other strings as well.
      */
     strings: LightGalleryCoreStrings;
     plugins: (new (instance: LightGallery, $LG: LgQuery) => any)[];
