@@ -18,8 +18,11 @@ gem "recaptcha", require: "recaptcha/rails"
 gem 'MailchimpMarketing'
 gem 'sitemap_generator'
 gem 'whenever', require: false
-gem 'sass-rails', '>= 5'
 gem 'turbolinks', '~> 5.2.0'
+gem 'bootstrap', '~> 5.3.2'
+gem 'dartsass-sprockets'
+gem 'jquery-rails'
+gem 'popper_js', '~> 2.11.8'
 
 group :development do
   gem "web-console"
