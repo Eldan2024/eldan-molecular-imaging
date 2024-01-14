@@ -2,5 +2,15 @@
   "devDependencies": {
     "@prettier/plugin-ruby": "^4.0.4",
     "prettier": "^3.1.1"
-  }
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "popper.js": "^1.16.1"
+  },
+  "name": "eldan-molecular-imaging",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gelbh/eldan-molecular-imaging",
+  "author": "gelbh <gelbharttomer@gmail.com>",
+  "license": "MIT"
 }
