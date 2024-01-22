@@ -2,7 +2,7 @@
 <% content_for :description, (@description || "Eldan Molecular Imaging is a young solid division, focused on supporting patients and physicians, by providing them with the highest-level products needed for diagnostic imaging & Nuclear Medicines procedures") %>
 
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta charset="UTF-8">
     <title><%= yield :title %></title>
@@ -50,33 +50,10 @@
       gtag('config', 'G-74Q234CRMB');
     </script>
 
-    <!-- Page loading script -->
-    <script>
-      document.addEventListener("turbolinks:load", function() {
-        const preloader = document.querySelector('.page-loading');
-        if (!preloader.classList.contains('active')) {
-          return;
-        }
-
-        preloader.classList.add('active');
-
-        setTimeout(() => {
-          preloader.classList.remove('active');
-          setTimeout(() => preloader.remove(), 1000);
-        }, 1000);
-      });
-    </script>
   </head>
 
   <!-- Body -->
   <body>
-
-    <!-- Page loading spinner -->
-    <div class="page-loading active">
-      <div class="page-loading-inner">
-        <div class="page-spinner"></div><span>Loading...</span>
-      </div>
-    </div>
 
     <!-- Page wrapper for sticky footer -->
     <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
