@@ -16,5 +16,8 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "file-loader": "^6.2.0",
     "webpack-dev-server": "^3"
+  },
+  "engines": {
+    "node": "16.20.2"
   }
 }
