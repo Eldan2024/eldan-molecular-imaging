@@ -11,4 +11,15 @@ environment.loaders.append("video", {
   },
 });
 
+// file-loader for webmanifest
+environment.loaders.append("webmanifest", {
+  test: /\.webmanifest$/,
+  use: {
+    loader: "file-loader",
+    options: {
+      name: "[name].[ext]",
+    },
+  },
+});
+
 module.exports = environment;

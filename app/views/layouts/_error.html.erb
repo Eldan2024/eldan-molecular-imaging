@@ -5,7 +5,7 @@
 
       <!-- Animation -->
       <div class="col-xl-6 col-md-7 order-md-2 ms-n5">
-        <lottie-player src="<%= asset_path("error.json") %>" background="transparent" speed="1" loop autoplay></lottie-player>
+        <lottie-player src="<%= asset_pack_path "error.json" %>" background="transparent" speed="1" loop autoplay></lottie-player>
       </div>
 
       <!-- Text -->
@@ -21,6 +21,4 @@
   </div>
 </section>
 
-<%= deferred_javascript_tags(
-  "lottie-player.js"
-) %>
+<%= javascript_pack_tag "lottie-player.js" %>

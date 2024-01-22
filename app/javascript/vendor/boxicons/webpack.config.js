@@ -1,40 +1,41 @@
-const path = require('path');
-const webpack = require('webpack');
-const WrapperPlugin = require('wrapper-webpack-plugin');
-const packageJson = require('./package.json');
+const path = require("path");
+const webpack = require("webpack");
+const WrapperPlugin = require("wrapper-webpack-plugin");
+const packageJson = require("./package.json");
 
 module.exports = {
   entry: `${__dirname}/src/index.js`,
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    library: 'BoxIconElement',
-    libraryTarget: 'umd',
-    filename: 'boxicons.js',
+    path: path.resolve(__dirname, "dist"),
+    library: "BoxIconElement",
+    libraryTarget: "umd",
+    filename: "boxicons.js",
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         options: {
           babelrc: false,
-          presets: [
-              ['env', { modules: false, targets: { uglify: true } }],
-          ],
+          presets: [["env", { modules: false, targets: { uglify: true } }]],
           plugins: [
-            ['babel-plugin-transform-builtin-classes', {
-              globals: ['Array', 'Error', 'HTMLElement'],
-            }],
+            [
+              "babel-plugin-transform-builtin-classes",
+              {
+                globals: ["Array", "Error", "HTMLElement"],
+              },
+            ],
           ],
         },
       },
       {
         test: /\.css$/,
         use: [
-            { loader: 'to-string-loader' },
+          { loader: "to-string-loader" },
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               camelCase: true,
             },
@@ -45,14 +46,14 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'BUILD.DATA': {
+      "BUILD.DATA": {
         VERSION: JSON.stringify(packageJson.version),
       },
     }),
     new WrapperPlugin({
       test: /boxicons\.js$/,
-      header: getWrapper('header'),
-      footer: getWrapper('footer'),
+      header: getWrapper("header"),
+      footer: getWrapper("footer"),
     }),
   ],
 };
@@ -179,11 +180,10 @@ function getWrapper(type) {
     function () {
 ____SPLIT_HERE____
     }
-);`.split('____SPLIT_HERE____');
+);`.split("____SPLIT_HERE____");
 
   getWrapper.header = templatePieces[0];
   getWrapper.footer = templatePieces[1];
 
   return getWrapper[type];
 }
-
