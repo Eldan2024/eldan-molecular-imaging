@@ -14,15 +14,7 @@
   </div>
 
   <!-- Pagination: Pager -->
-  <div class="swiper swiper-pager swiper-nav-onhover" data-swiper-options='{
-    "spaceBetween": 20,
-    "loop": true,
-    "pager": true,
-    "navigation": {
-      "prevEl": ".page-prev",
-      "nextEl": ".page-next"
-    }
-  }'>
+  <div class="swiper swiper-pager swiper-nav-onhover">
     <div class="swiper-wrapper">
 
       <% i = 0 %>
@@ -34,11 +26,11 @@
             <article class="card border-0 shadow overflow-hidden mb-4">
               <div class="row g-0">
                 <!-- Light Mode Image -->
-                <div class="light-mode-img col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-contain" style="background-image: url(<%= asset_path(@articles[i][6]) %>); min-height: 15rem;">
+                <div class="light-mode-img col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-contain" style="background-image: url(<%= asset_pack_path "media/images/logos/" + @articles[i][6] %>); min-height: 15rem;">
                   <a href="<%= @articles[i][2] %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
                 </div>
                 <!-- Dark Mode Image -->
-                <div class="dark-mode-img col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-contain" style="background-image: url(<%= asset_path(@articles[i][7]) %>); min-height: 15rem;">
+                <div class="dark-mode-img col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-contain" style="background-image: url(<%= asset_pack_path "media/images/logos/" +  @articles[i][7] %>); min-height: 15rem;">
                   <a href="<%= @articles[i][2] %>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
                 </div>
                 <div class="col-sm-8">
@@ -54,7 +46,7 @@
                     <hr class="my-4">
                     <div class="d-flex align-items-center justify-content-between">
                       <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
-                        <img src="<%= asset_path(@articles[i][5].split[1].downcase) %>" class="rounded-circle me-3" width="48" alt="Author avatar">
+                        <%= image_pack_tag "team/" + @articles[i][5].split[1].downcase + ".jpg", class: 'rounded-circle me-3', width: '48', alt: 'Author avatar' %>
                         <%= @articles[i][5] %>
                       </a>
                     </div>
@@ -93,3 +85,17 @@
 
   </div>
 </section>
+
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+  const swiper = new Swiper('.swiper', {
+    spaceBetween: 20,
+    loop: true,
+    pager: true,
+    navigation: {
+      prevEl: ".page-prev",
+      nextEl: ".page-next"
+    }
+  });
+</script>

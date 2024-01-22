@@ -15,9 +15,6 @@
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Theme switcher -->
-    <script src="<%= asset_path("theme-switcher.min.js") %>"></script>
-
     <!-- Favicon and Touch Icons-->
     <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_path("apple-touch-icon.png") %>">
     <link rel="icon" type="image/png" sizes="32x32" href="<%= asset_path("favicon-32x32.png") %>">
@@ -28,12 +25,16 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- Vendor Styles-->
-    <link rel="stylesheet" media="screen" href="<%= asset_path("boxicons.min.css") %>">
-    <link rel="stylesheet" media="screen" href="<%= asset_path("swiper-bundle.min.css") %>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     <!-- Styles and scripts-->
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+
+    <!-- Theme switcher -->
+    <%= javascript_pack_tag "theme-switcher" %>
 
     <!-- Security meta tags -->
     <%= csrf_meta_tags %>
@@ -51,13 +52,19 @@
 
     <!-- Page loading script -->
     <script>
-      (() => {
-        window.onload = () => {
-          const preloader = document.querySelector('.page-loading');
+      document.addEventListener("turbolinks:load", function() {
+        const preloader = document.querySelector('.page-loading');
+        if (!preloader.classList.contains('active')) {
+          return;
+        }
+
+        preloader.classList.add('active');
+
+        setTimeout(() => {
           preloader.classList.remove('active');
           setTimeout(() => preloader.remove(), 1000);
-        };
-      })();
+        }, 1000);
+      });
     </script>
   </head>
 
@@ -104,11 +111,10 @@
     </a>
 
     <!-- Scripts -->
-    <%= deferred_javascript_tags(
-      "swiper-bundle.min.js",
-      "rellax.min.js",
-      "theme.min.js"
-    ) %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <%= javascript_pack_tag "theme" %>
 
     <!-- Accessability Widget -->
     <script async defer>(function(){var s = document.createElement("script");s.setAttribute("data-account","kY4u8WUSMk");s.setAttribute("src","https://cdn.userway.org/widget.js");document.body.appendChild(s);})();</script>

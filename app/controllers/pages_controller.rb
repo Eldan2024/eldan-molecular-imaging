@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   def distribution
     @title =  "Distribution"
     @description = "Eldan Molecular Imaging is looking beyond the common practice to provide a better and more reliable service in its distribution of radiopharmaceuticals."
-    @jarallax = "distribution_cover"
+    @jarallax = "covers/distribution_cover.jpg"
 
     @partners = []
 
@@ -18,7 +18,7 @@ class PagesController < ApplicationController
 
   def team
     @title =  "Team"
-    @jarallax = "team_cover"
+    @jarallax = "covers/team_cover.jpg"
 
     @desc1 = "Tal Rabinovich joined Eldan in 2012, was appointed as General Manager in 2013 and is heading an extensive operation in molecular diagnostics and radiopharmaceuticals. <br><br>Prior to joining Eldan, Tal served as VP for business development and operations at LDD Advanced Technologies.".html_safe
 

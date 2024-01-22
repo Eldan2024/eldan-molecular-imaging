@@ -6,7 +6,7 @@
 
 <div class="jarallax d-none d-md-block mb-4" data-jarallax data-speed="0.35">
   <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary-translucent"></span>
-  <div class="jarallax-img" style="background-image: url(<%= asset_path(@jarallax) %>);"></div>
+  <div class="jarallax-img" style="background-image: url(<%= asset_pack_path 'media/images/' + @jarallax %>);"></div>
   <div class="d-none d-md-block" style="height: 200px;"></div>
 </div>
 
@@ -16,44 +16,14 @@
 <!-- Brands (Carousel) -->
 <section class="container py-3 pb-lg-5 mb-3 px-5">
   <h2 class="text-center pb-md-2">Our leadership</h2>
-  <div class="swiper mx-n2" data-swiper-options='{
-    "centerInsufficientSlides": true,
-    "slidesPerView": 1,
-    "spaceBetween": 40,
-    "pagination": {
-      "el": ".swiper-pagination",
-      "clickable": true
-    },
-    "breakpoints": {
-      "380": {
-        "slidesPerView": 2,
-        "spaceBetween": 40
-      },
-      "550": {
-        "slidesPerView": 3,
-        "spaceBetween": 40
-      },
-      "740": {
-        "slidesPerView": 4,
-        "spaceBetween": 40
-      },
-      "940": {
-        "slidesPerView": 5,
-        "spaceBetween": 40
-      },
-      "1120": {
-        "slidesPerView": 6,
-        "spaceBetween": 40
-      }
-    }
-  }'>
+  <div class="swiper mx-n2">
     <div class="swiper-wrapper">
 
       <!-- Team Members -->
       <% for member in @members do %>
         <div class="swiper-slide py-3 card border-0 bg-transparent">
           <div class="position-relative card-hover" data-bs-toggle="modal" data-bs-target="#<%= member[0].split(' ').second %>">
-            <img src="<%= asset_path(member[0].split[1].downcase) %>" class="rounded-3 img-fluid" alt="<%= member[0] %>">
+            <%= image_pack_tag "media/images/team/" + member[0].split[1].downcase + ".jpg", class: 'rounded-3 img-fluid', alt: member[0] %>
             <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Click me for more info!">
               <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50 rounded-3"></span>
             </div>
@@ -81,7 +51,7 @@
               <p class="fs-sm mb-0"><%= member[1] %></p>
             </div>
             <div class="col-6 text-end">
-              <img src="<%= asset_path(member[0].split[1].downcase) %>" class="rounded-3" alt="<%= member[0] %>" width="100">
+              <%= image_pack_tag "media/images/team/" + member[0].split[1].downcase + ".jpg", class: 'rounded-3', alt: member[0], width: '100' %>
             </div>
           </div>
           <div class="modal-body"><p><%= member[2] %></p></div>
@@ -91,3 +61,38 @@
   <% end %>
 
 </section>
+
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    breakpoints: {
+      380: {
+        slidesPerView: 2,
+        spaceBetween: 40
+      },
+      550: {
+        slidesPerView: 3,
+        spaceBetween: 40
+      },
+      740: {
+        slidesPerView: 4,
+        spaceBetween: 40
+      },
+      940: {
+        slidesPerView: 5,
+        spaceBetween: 40
+      },
+      1120: {
+        slidesPerView: 6,
+        spaceBetween: 40
+      }
+    }
+  });
+</script>

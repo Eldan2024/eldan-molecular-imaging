@@ -25,7 +25,7 @@
 
 <div class="jarallax d-none d-md-block mb-4" data-jarallax data-speed="0.1">
   <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary-translucent"></span>
-  <div class="jarallax-img" style="background-image: url(<%= asset_path(@jarallax) %>);"></div>
+  <div class="jarallax-img" style="background-image: url(<%= asset_pack_path 'media/images/' + @jarallax %>);"></div>
   <div class="d-none d-lg-block" style="height: 400px;"></div>
   <div class="d-none d-md-block d-lg-none" style="height: 200px;"></div>
 </div>
@@ -54,7 +54,7 @@
           <div class="d-flex align-items-center justify-content-center">
             <div class="py-3 w-50" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" title="Isorad" data-bs-content="Established more than 40 years ago, Isorad Radiopharmaceuticals is a leading manufacturer of SPECT, PET, MRI contrast agents, and nuclear products, located in the SOREQ Nuclear Research Center (Soreq NRC) near Yavne, Israel.">
               <a class="card card-body card-hover px-2 mx-2">
-                <img src="<%= asset_path("isorad") %>" class="d-block mx-auto my-2" width="154" alt="Isorad logo">
+                <%= image_pack_tag "distribution/isorad.png", class: 'd-block mx-auto my-2', width: '154', alt: 'Isorad logo' %>
               </a>
             </div>
           </div>
@@ -144,7 +144,7 @@
         <% for partner in @partners do %>
           <div class="swiper-slide py-3" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" title="<%= partner[0] %>" data-bs-content="<%= partner[1] %>">
             <a class="card card-body card-hover px-2 mx-2">
-              <img src="<%= asset_path(partner[0].downcase) %>" class="d-block mx-auto my-2" width="154" alt="<%= partner[0] + " logo" %>">
+              <%= image_pack_tag "distribution/" + partner[0].downcase + ".png", width: '154', alt: partner[0] + " logo" %>
             </a>
           </div>
         <% end %>
@@ -209,11 +209,11 @@
     
     const icons = {
       closed: {
-        icon: "<%= asset_path("marker-closed.png") %>",
+        icon: "<%= asset_pack_path "media/images/distribution/marker-closed.png" %>",
       },
 
       open: {
-        icon: "<%= asset_path("marker-open.png") %>",
+        icon: "<%= asset_pack_path "media/images/distribution/marker-open.png" %>",
       }
     };
 

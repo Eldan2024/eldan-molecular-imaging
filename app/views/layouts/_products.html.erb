@@ -43,7 +43,7 @@
         <p class="fs-6 fs-md-5"><%= @product_desc %></p>
       </div>
       <div class="col-10 col-lg-8 mb-3">
-        <div class="center-image w-100 mx-auto" style="background-image: url(<%= asset_path(File.basename(request.path, ".*")) %>);"></div>
+        <div class="center-image w-100 mx-auto" style="background-image: url(<%= asset_pack_path "media/images/products/" + File.basename(request.path, ".*") + ".png" %>);"></div>
       </div>
       
     </div>
