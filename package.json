@@ -10,7 +10,12 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "babel-plugin-module-resolver": "^5.0.0",
     "file-loader": "^6.2.0",
     "webpack-dev-server": "^3"
+  },
+  "scripts": {
+    "build": "yarn babel src --extensions \".js,.ts\" --out-dir dist --copy-files && npx typeorm migration:run",
+    "start": "node dist/shared/infra/http/server.js"
   }
 }
