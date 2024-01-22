@@ -76,3 +76,4 @@ yarn-debug.log*
 
 # Stylelint
 .stylelintrc.json
+/config/master.key

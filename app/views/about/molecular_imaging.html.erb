@@ -1,3 +1,25 @@
+<style>
+    .video-responsive {
+        position: relative;
+        overflow: hidden;
+        padding-top: 56.25%;
+    }
+
+    .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<div class="video-responsive mb-3">
+    <video controls subtitles description>
+    <source src="<%= asset_path('about.mp4') %>" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+</div>
 <p>
     Established as part of the Eldan Electronic Instruments Ltd., Eldan Molecular Imaging is a young solid division, focused on supporting patients and physicians, by providing them with the highest-level products needed for diagnostic imaging & Nuclear Medicines procedures. Leveraging on Eldan Electronic Instruments Ltd. experience and professionals, Eldan Molecular Imaging distributes its products worldwide, supported by its technical services and quality standards.
 </p>
