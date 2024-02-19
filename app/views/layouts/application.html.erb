@@ -1,5 +1,5 @@
-<% content_for :title, (@title.present? ? "#{@title} / EldanMI" : "EldanMI") %>
-<% content_for :description, (@description || "Eldan Molecular Imaging is a young solid division, focused on supporting patients and physicians, by providing them with the highest-level products needed for diagnostic imaging & Nuclear Medicines procedures") %>
+<% content_for :title, @title.present? ? "#{@title} / EldanMI" : "EldanMI" %>
+<% content_for :description, @description || "Eldan Molecular Imaging is a young solid division, focused on supporting patients and physicians, by providing them with the highest-level products needed for diagnostic imaging & Nuclear Medicines procedures" %>
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
@@ -92,6 +92,8 @@
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <%= javascript_pack_tag "theme" %>
+
+    <script type="module"> import lightgallery from 'https://cdn.jsdelivr.net/npm/lightgallery/+esm' </script>
 
     <!-- Accessability Widget -->
     <script async defer>(function(){var s = document.createElement("script");s.setAttribute("data-account","kY4u8WUSMk");s.setAttribute("src","https://cdn.userway.org/widget.js");document.body.appendChild(s);})();</script>
