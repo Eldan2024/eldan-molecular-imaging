@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
       product_title: "<sup>99</sup>Mo/<sup>99m</sup>Tc Generator",
       product_desc: "A technetium-99m generator is a device used to extract the isotope <sup>99m</sup>Tc from a decaying molybdenum-99. <sup>99m</sup>Tc is used for a variety of nuclear medicine diagnostic in single photon emission computed tomography (SPECT) procedures, where its short half-life is very useful. Sterile Technetium-99m generators are manufactured in Israel since 1976 utilizing dry technology. The generators are ergonomic and recyclable.",
       data: [
-        ["Manufacturer", "<a class='text-decoration-none' href='http://www.isorad.co.il/en/' target='_blank'>Isorad Radiopharmaceuticals, Israel</a>"],
+        ["Manufacturer", "<a class='text-decoration-none' href='https://isorad.co.il/' target='_blank'>Isorad Radiopharmaceuticals, Israel</a>"],
         ["Storage", "Room Temperature"],
         ["Expiration", "24 days from production day"],
         ["Half Life", "66 hours"],
@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
       product_title: "Thallium Chloride (<sup>201</sup>Tl) injection",
       product_desc: "Thallium-201 (<sup>201</sup>Tl) is a radioactive potassium analog used in the diagnosis of coronary artery disease and parathyroid hyperactivity using single photon emission computed tomography (SPECT). Sterile <sup>201</sup>Tl has been manufactured in Israel since 1987.",
       data: [
-        ["Manufacturer", "<a class='text-decoration-none' href='http://www.isorad.co.il/en/' target='_blank'>Isorad Radiopharmaceuticals, Israel</a>"],
+        ["Manufacturer", "<a class='text-decoration-none' href='https://isorad.co.il/' target='_blank'>Isorad Radiopharmaceuticals, Israel</a>"],
         ["Activity Reference Time", "ART 13:00 hr CET"],
         ["Storage", "Room Temperature"],
         ["Expiration", "15 days from production day"],
@@ -45,7 +45,7 @@ class ProductsController < ApplicationController
       product_title: "Gallium citrate (<sup>67</sup>Ga) injection",
       product_desc: "Gallium-67 (<sup>67</sup>Ga) is a cyclotron-produced radiometal used by single photon emission computed tomography (SPECT) imaging for localization of inflammatory lesions (infections). With <sup>67</sup>Ga you can obtain images of a specific type of tissue, or disease state of tissue. Sterile <sup>67</sup>Ga manufactured in Israel since 1987.",
       data: [
-        ["Manufacturer", "<a class='text-decoration-none' href='http://www.isorad.co.il/en/' target='_blank'>Isorad Radiopharmaceuticals, Israel</a>"],
+        ["Manufacturer", "<a class='text-decoration-none' href='https://isorad.co.il/' target='_blank'>Isorad Radiopharmaceuticals, Israel</a>"],
         ["Activity Reference Time", "ART 13:00 hr CET"],
         ["Storage", "Room Temperature"],
         ["Expiration", "15 days from production day"],

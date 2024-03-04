@@ -57,5 +57,4 @@ end
 group :test do
   gem "capybara"                   # Integration testing tool
   gem "selenium-webdriver"         # Tool for automating web applications
-  gem "webdrivers"                 # Automatically manages web drivers
 end
