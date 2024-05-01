@@ -17,7 +17,7 @@
 
     // Set default theme to 'light'.
     // Possible options: 'dark' or system color mode (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-    return "dark";
+    return "light";
   };
 
   const setTheme = (theme) => {
